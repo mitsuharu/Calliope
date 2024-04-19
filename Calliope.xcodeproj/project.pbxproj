@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,11 @@
 		9B12BEFD2BD2706F0065DA76 /* CalliopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BEFC2BD2706F0065DA76 /* CalliopeTests.swift */; };
 		9B12BF072BD2706F0065DA76 /* CalliopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF062BD2706F0065DA76 /* CalliopeUITests.swift */; };
 		9B12BF092BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */; };
+		9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */; };
+		9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */; };
+		9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */; };
+		9B12BF262BD27D650065DA76 /* libepos2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF232BD27D650065DA76 /* libepos2.xcframework */; };
+		9B12BF272BD27D650065DA76 /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF242BD27D650065DA76 /* libeposeasyselect.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,12 @@
 		9B12BF022BD2706F0065DA76 /* CalliopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalliopeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B12BF062BD2706F0065DA76 /* CalliopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeUITests.swift; sourceTree = "<group>"; };
 		9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		9B12BF212BD27BE80065DA76 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		9B12BF232BD27D650065DA76 /* libepos2.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libepos2.xcframework; sourceTree = "<group>"; };
+		9B12BF242BD27D650065DA76 /* libeposeasyselect.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libeposeasyselect.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +62,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */,
+				9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */,
+				9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */,
+				9B12BF262BD27D650065DA76 /* libepos2.xcframework in Frameworks */,
+				9B12BF272BD27D650065DA76 /* libeposeasyselect.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +94,7 @@
 				9B12BEFB2BD2706F0065DA76 /* CalliopeTests */,
 				9B12BF052BD2706F0065DA76 /* CalliopeUITests */,
 				9B12BEE92BD2706D0065DA76 /* Products */,
+				9B12BF1A2BD27B200065DA76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,10 +111,12 @@
 		9B12BEEA2BD2706D0065DA76 /* Calliope */ = {
 			isa = PBXGroup;
 			children = (
+				9B12BF252BD27D650065DA76 /* EpsonFrameworks */,
 				9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */,
 				9B12BEED2BD2706D0065DA76 /* ContentView.swift */,
 				9B12BEEF2BD2706F0065DA76 /* Assets.xcassets */,
 				9B12BEF12BD2706F0065DA76 /* Preview Content */,
+				9B12BF212BD27BE80065DA76 /* Bridging-Header.h */,
 			);
 			path = Calliope;
 			sourceTree = "<group>";
@@ -125,6 +144,25 @@
 				9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */,
 			);
 			path = CalliopeUITests;
+			sourceTree = "<group>";
+		};
+		9B12BF1A2BD27B200065DA76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */,
+				9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */,
+				9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B12BF252BD27D650065DA76 /* EpsonFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF232BD27D650065DA76 /* libepos2.xcframework */,
+				9B12BF242BD27D650065DA76 /* libeposeasyselect.xcframework */,
+			);
+			path = EpsonFrameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +463,8 @@
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calliope/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +494,8 @@
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calliope/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
