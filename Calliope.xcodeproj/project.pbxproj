@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B12BEEC2BD2706D0065DA76 /* CalliopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */; };
+		9B12BEEE2BD2706D0065DA76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BEED2BD2706D0065DA76 /* ContentView.swift */; };
+		9B12BEF02BD2706F0065DA76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B12BEEF2BD2706F0065DA76 /* Assets.xcassets */; };
+		9B12BEF32BD2706F0065DA76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B12BEF22BD2706F0065DA76 /* Preview Assets.xcassets */; };
+		9B12BEFD2BD2706F0065DA76 /* CalliopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BEFC2BD2706F0065DA76 /* CalliopeTests.swift */; };
+		9B12BF072BD2706F0065DA76 /* CalliopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF062BD2706F0065DA76 /* CalliopeUITests.swift */; };
+		9B12BF092BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B12BEF92BD2706F0065DA76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B12BEE02BD2706D0065DA76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B12BEE72BD2706D0065DA76;
+			remoteInfo = Calliope;
+		};
+		9B12BF032BD2706F0065DA76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B12BEE02BD2706D0065DA76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B12BEE72BD2706D0065DA76;
+			remoteInfo = Calliope;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9B12BEE82BD2706D0065DA76 /* Calliope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calliope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeApp.swift; sourceTree = "<group>"; };
+		9B12BEED2BD2706D0065DA76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B12BEEF2BD2706F0065DA76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B12BEF22BD2706F0065DA76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9B12BEF82BD2706F0065DA76 /* CalliopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalliopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B12BEFC2BD2706F0065DA76 /* CalliopeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeTests.swift; sourceTree = "<group>"; };
+		9B12BF022BD2706F0065DA76 /* CalliopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalliopeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B12BF062BD2706F0065DA76 /* CalliopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeUITests.swift; sourceTree = "<group>"; };
+		9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B12BEE52BD2706D0065DA76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B12BEF52BD2706F0065DA76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B12BEFF2BD2706F0065DA76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B12BEDF2BD2706D0065DA76 = {
+			isa = PBXGroup;
+			children = (
+				9B12BEEA2BD2706D0065DA76 /* Calliope */,
+				9B12BEFB2BD2706F0065DA76 /* CalliopeTests */,
+				9B12BF052BD2706F0065DA76 /* CalliopeUITests */,
+				9B12BEE92BD2706D0065DA76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B12BEE92BD2706D0065DA76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BEE82BD2706D0065DA76 /* Calliope.app */,
+				9B12BEF82BD2706F0065DA76 /* CalliopeTests.xctest */,
+				9B12BF022BD2706F0065DA76 /* CalliopeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B12BEEA2BD2706D0065DA76 /* Calliope */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */,
+				9B12BEED2BD2706D0065DA76 /* ContentView.swift */,
+				9B12BEEF2BD2706F0065DA76 /* Assets.xcassets */,
+				9B12BEF12BD2706F0065DA76 /* Preview Content */,
+			);
+			path = Calliope;
+			sourceTree = "<group>";
+		};
+		9B12BEF12BD2706F0065DA76 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BEF22BD2706F0065DA76 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9B12BEFB2BD2706F0065DA76 /* CalliopeTests */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BEFC2BD2706F0065DA76 /* CalliopeTests.swift */,
+			);
+			path = CalliopeTests;
+			sourceTree = "<group>";
+		};
+		9B12BF052BD2706F0065DA76 /* CalliopeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF062BD2706F0065DA76 /* CalliopeUITests.swift */,
+				9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */,
+			);
+			path = CalliopeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B12BEE72BD2706D0065DA76 /* Calliope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B12BF0C2BD2706F0065DA76 /* Build configuration list for PBXNativeTarget "Calliope" */;
+			buildPhases = (
+				9B12BEE42BD2706D0065DA76 /* Sources */,
+				9B12BEE52BD2706D0065DA76 /* Frameworks */,
+				9B12BEE62BD2706D0065DA76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Calliope;
+			productName = Calliope;
+			productReference = 9B12BEE82BD2706D0065DA76 /* Calliope.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B12BEF72BD2706F0065DA76 /* CalliopeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B12BF0F2BD2706F0065DA76 /* Build configuration list for PBXNativeTarget "CalliopeTests" */;
+			buildPhases = (
+				9B12BEF42BD2706F0065DA76 /* Sources */,
+				9B12BEF52BD2706F0065DA76 /* Frameworks */,
+				9B12BEF62BD2706F0065DA76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B12BEFA2BD2706F0065DA76 /* PBXTargetDependency */,
+			);
+			name = CalliopeTests;
+			productName = CalliopeTests;
+			productReference = 9B12BEF82BD2706F0065DA76 /* CalliopeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9B12BF012BD2706F0065DA76 /* CalliopeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B12BF122BD2706F0065DA76 /* Build configuration list for PBXNativeTarget "CalliopeUITests" */;
+			buildPhases = (
+				9B12BEFE2BD2706F0065DA76 /* Sources */,
+				9B12BEFF2BD2706F0065DA76 /* Frameworks */,
+				9B12BF002BD2706F0065DA76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B12BF042BD2706F0065DA76 /* PBXTargetDependency */,
+			);
+			name = CalliopeUITests;
+			productName = CalliopeUITests;
+			productReference = 9B12BF022BD2706F0065DA76 /* CalliopeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B12BEE02BD2706D0065DA76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					9B12BEE72BD2706D0065DA76 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					9B12BEF72BD2706F0065DA76 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 9B12BEE72BD2706D0065DA76;
+					};
+					9B12BF012BD2706F0065DA76 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 9B12BEE72BD2706D0065DA76;
+					};
+				};
+			};
+			buildConfigurationList = 9B12BEE32BD2706D0065DA76 /* Build configuration list for PBXProject "Calliope" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B12BEDF2BD2706D0065DA76;
+			productRefGroup = 9B12BEE92BD2706D0065DA76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B12BEE72BD2706D0065DA76 /* Calliope */,
+				9B12BEF72BD2706F0065DA76 /* CalliopeTests */,
+				9B12BF012BD2706F0065DA76 /* CalliopeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B12BEE62BD2706D0065DA76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B12BEF32BD2706F0065DA76 /* Preview Assets.xcassets in Resources */,
+				9B12BEF02BD2706F0065DA76 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B12BEF62BD2706F0065DA76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B12BF002BD2706F0065DA76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B12BEE42BD2706D0065DA76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B12BEEE2BD2706D0065DA76 /* ContentView.swift in Sources */,
+				9B12BEEC2BD2706D0065DA76 /* CalliopeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B12BEF42BD2706F0065DA76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B12BEFD2BD2706F0065DA76 /* CalliopeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B12BEFE2BD2706F0065DA76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B12BF092BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift in Sources */,
+				9B12BF072BD2706F0065DA76 /* CalliopeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B12BEFA2BD2706F0065DA76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B12BEE72BD2706D0065DA76 /* Calliope */;
+			targetProxy = 9B12BEF92BD2706F0065DA76 /* PBXContainerItemProxy */;
+		};
+		9B12BF042BD2706F0065DA76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B12BEE72BD2706D0065DA76 /* Calliope */;
+			targetProxy = 9B12BF032BD2706F0065DA76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9B12BF0A2BD2706F0065DA76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9B12BF0B2BD2706F0065DA76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B12BF0D2BD2706F0065DA76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Calliope/Preview Content\"";
+				DEVELOPMENT_TEAM = X2E52A945M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.Calliope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B12BF0E2BD2706F0065DA76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Calliope/Preview Content\"";
+				DEVELOPMENT_TEAM = X2E52A945M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.Calliope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9B12BF102BD2706F0065DA76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2E52A945M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.CalliopeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calliope.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Calliope";
+			};
+			name = Debug;
+		};
+		9B12BF112BD2706F0065DA76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2E52A945M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.CalliopeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calliope.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Calliope";
+			};
+			name = Release;
+		};
+		9B12BF132BD2706F0065DA76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2E52A945M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.CalliopeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Calliope;
+			};
+			name = Debug;
+		};
+		9B12BF142BD2706F0065DA76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2E52A945M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.CalliopeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Calliope;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B12BEE32BD2706D0065DA76 /* Build configuration list for PBXProject "Calliope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B12BF0A2BD2706F0065DA76 /* Debug */,
+				9B12BF0B2BD2706F0065DA76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B12BF0C2BD2706F0065DA76 /* Build configuration list for PBXNativeTarget "Calliope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B12BF0D2BD2706F0065DA76 /* Debug */,
+				9B12BF0E2BD2706F0065DA76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B12BF0F2BD2706F0065DA76 /* Build configuration list for PBXNativeTarget "CalliopeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B12BF102BD2706F0065DA76 /* Debug */,
+				9B12BF112BD2706F0065DA76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B12BF122BD2706F0065DA76 /* Build configuration list for PBXNativeTarget "CalliopeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B12BF132BD2706F0065DA76 /* Debug */,
+				9B12BF142BD2706F0065DA76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B12BEE02BD2706D0065DA76 /* Project object */;
+}
