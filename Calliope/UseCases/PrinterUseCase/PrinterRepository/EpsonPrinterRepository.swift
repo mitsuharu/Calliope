@@ -36,13 +36,77 @@ final class EpsonPrinterRepository: NSObject, PrinterRepositoryProtocol {
         let printer = try makePrinter()
         try connect(printer: printer, device: device)
         
-        transact(printer)
+        // transact 内の SDK のコマンドを使った例、一旦コメントアウト
+//        transact(printer)
+        
+        // ESC/POSコマンドを実行した場合の例
+        addPOSCommand(printer: printer)
 
+        printer.addFeedLine(5)
         do {
             try sendData(printer: printer)
         } catch {
             try disconnect(printer: printer)
         }
+    }
+}
+
+extension EpsonPrinterRepository {
+    
+    /**
+     @see: https://www.epson-biz.com/pos/reference_ja/
+     */
+    func addPOSCommand(printer: Epos2Printer) {
+        // 太字の有効化
+        // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=25
+        let boldOnCommand = Data([0x1b, 0x45, 0x01]) // ESC E 1
+        printer.addCommand(boldOnCommand)
+        
+        // テキストデータの追加
+        let textData = "Hello, world!\n".data(using: .ascii)
+        printer.addCommand(textData)
+        printer.addFeedLine(1)
+        
+        // 太字の無効化
+        let boldOffCommand = Data([0x1b, 0x45, 0x00]) // ESC E 0
+        printer.addCommand(boldOffCommand)
+                
+        // 二重印字
+        printer.addCommand(Data([0x1b, 0x47, 0x01]))
+        printer.addCommand("nijuinji\n".data(using: .ascii))
+        printer.addCommand("二重印字\n".data(using: .ascii))
+        printer.addText("二重印字\n")
+        printer.addFeedLine(1)
+        printer.addCommand(Data([0x1b, 0x47, 0x00]))
+        
+        if let text = "こんにちは".data(using: .shiftJIS) {
+            printer.addCommand(text)
+        }
+
+//        // QRコードのモデル設定
+//        let modelCommand = Data([0x1d, 0x28, 0x6b, 0x04, 0x00, 0x31, 0x41, 0x32, 0x00])
+//        printer.addCommand(modelCommand)
+//
+//        // QRコードのサイズ設定
+//        let sizeCommand = Data([0x1d, 0x28, 0x6b, 0x03, 0x00, 0x31, 0x43, 0x08])
+//        printer.addCommand(sizeCommand)
+//
+//        // QRコードのエラー訂正レベル設定
+//        let errorCorrectionCommand = Data([0x1d, 0x28, 0x6b, 0x03, 0x00, 0x31, 0x45, 0x33])
+//        printer.addCommand(errorCorrectionCommand)
+//
+//        // QRコードデータの追加
+//        let qrData = "http://www.example.com"
+//        let pL = UInt8((qrData.count + 3) % 256)
+//        let pH = UInt8((qrData.count + 3) / 256)
+//        var storeCommand = Data([0x1d, 0x28, 0x6b, pL, pH, 0x31, 0x50, 0x30])
+//        storeCommand.append(qrData.data(using: .ascii)!)
+//        printer.addCommand(storeCommand)
+//
+//        // QRコードの印刷命令
+//        let printCommand = Data([0x1d, 0x28, 0x6b, 0x03, 0x00, 0x31, 0x51, 0x30])
+//        printer.addCommand(printCommand)
+        
     }
 }
 
@@ -57,6 +121,11 @@ extension EpsonPrinterRepository {
         guard let printer = printer else {
             throw PrinterError.instanceFailed
         }
+        let result = printer.addTextLang(EPOS2_LANG_JA.rawValue)
+        if result != EPOS2_SUCCESS.rawValue {
+            throw PrinterError.langJaFailed
+        }
+        
         return printer
     }
     

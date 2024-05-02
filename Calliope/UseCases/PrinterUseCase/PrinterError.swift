@@ -9,6 +9,7 @@ import Foundation
 
 enum PrinterError: Error {
     case instanceFailed
+    case langJaFailed
     case scanFailed
     case connectFailed
     case disconnectFailed
