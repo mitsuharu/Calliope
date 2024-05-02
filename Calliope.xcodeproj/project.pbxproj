@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,16 @@
 		9B12BEFD2BD2706F0065DA76 /* CalliopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BEFC2BD2706F0065DA76 /* CalliopeTests.swift */; };
 		9B12BF072BD2706F0065DA76 /* CalliopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF062BD2706F0065DA76 /* CalliopeUITests.swift */; };
 		9B12BF092BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */; };
+		9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */; };
+		9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */; };
+		9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */; };
+		9B12BF262BD27D650065DA76 /* libepos2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF232BD27D650065DA76 /* libepos2.xcframework */; };
+		9B12BF272BD27D650065DA76 /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF242BD27D650065DA76 /* libeposeasyselect.xcframework */; };
+		9B12BF2B2BD27F060065DA76 /* PrinterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF2A2BD27F060065DA76 /* PrinterUseCase.swift */; };
+		9B12BF2E2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF2D2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift */; };
+		9B12BF302BD27F8F0065DA76 /* EpsonPrinterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF2F2BD27F8F0065DA76 /* EpsonPrinterRepository.swift */; };
+		9B12BF322BD286C50065DA76 /* PrinterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF312BD286C50065DA76 /* PrinterError.swift */; };
+		9B12BF362BD2A15A0065DA76 /* PrinterDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +54,17 @@
 		9B12BF022BD2706F0065DA76 /* CalliopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalliopeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B12BF062BD2706F0065DA76 /* CalliopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeUITests.swift; sourceTree = "<group>"; };
 		9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		9B12BF212BD27BE80065DA76 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		9B12BF232BD27D650065DA76 /* libepos2.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libepos2.xcframework; sourceTree = "<group>"; };
+		9B12BF242BD27D650065DA76 /* libeposeasyselect.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libeposeasyselect.xcframework; sourceTree = "<group>"; };
+		9B12BF2A2BD27F060065DA76 /* PrinterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterUseCase.swift; sourceTree = "<group>"; };
+		9B12BF2D2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterRepositoryProtocol.swift; sourceTree = "<group>"; };
+		9B12BF2F2BD27F8F0065DA76 /* EpsonPrinterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpsonPrinterRepository.swift; sourceTree = "<group>"; };
+		9B12BF312BD286C50065DA76 /* PrinterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterError.swift; sourceTree = "<group>"; };
+		9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */,
+				9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */,
+				9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */,
+				9B12BF262BD27D650065DA76 /* libepos2.xcframework in Frameworks */,
+				9B12BF272BD27D650065DA76 /* libeposeasyselect.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +104,7 @@
 				9B12BEFB2BD2706F0065DA76 /* CalliopeTests */,
 				9B12BF052BD2706F0065DA76 /* CalliopeUITests */,
 				9B12BEE92BD2706D0065DA76 /* Products */,
+				9B12BF1A2BD27B200065DA76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,10 +121,13 @@
 		9B12BEEA2BD2706D0065DA76 /* Calliope */ = {
 			isa = PBXGroup;
 			children = (
+				9B12BF282BD27EA20065DA76 /* UseCases */,
+				9B12BF252BD27D650065DA76 /* EpsonFrameworks */,
 				9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */,
 				9B12BEED2BD2706D0065DA76 /* ContentView.swift */,
 				9B12BEEF2BD2706F0065DA76 /* Assets.xcassets */,
 				9B12BEF12BD2706F0065DA76 /* Preview Content */,
+				9B12BF212BD27BE80065DA76 /* Bridging-Header.h */,
 			);
 			path = Calliope;
 			sourceTree = "<group>";
@@ -125,6 +155,53 @@
 				9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */,
 			);
 			path = CalliopeUITests;
+			sourceTree = "<group>";
+		};
+		9B12BF1A2BD27B200065DA76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */,
+				9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */,
+				9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B12BF252BD27D650065DA76 /* EpsonFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF232BD27D650065DA76 /* libepos2.xcframework */,
+				9B12BF242BD27D650065DA76 /* libeposeasyselect.xcframework */,
+			);
+			path = EpsonFrameworks;
+			sourceTree = "<group>";
+		};
+		9B12BF282BD27EA20065DA76 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF292BD27EC00065DA76 /* PrinterUseCase */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9B12BF292BD27EC00065DA76 /* PrinterUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF2C2BD27F0F0065DA76 /* PrinterRepository */,
+				9B12BF2A2BD27F060065DA76 /* PrinterUseCase.swift */,
+				9B12BF312BD286C50065DA76 /* PrinterError.swift */,
+				9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */,
+			);
+			path = PrinterUseCase;
+			sourceTree = "<group>";
+		};
+		9B12BF2C2BD27F0F0065DA76 /* PrinterRepository */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF2D2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift */,
+				9B12BF2F2BD27F8F0065DA76 /* EpsonPrinterRepository.swift */,
+			);
+			path = PrinterRepository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +335,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B12BEEE2BD2706D0065DA76 /* ContentView.swift in Sources */,
+				9B12BF2E2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift in Sources */,
+				9B12BF322BD286C50065DA76 /* PrinterError.swift in Sources */,
+				9B12BF302BD27F8F0065DA76 /* EpsonPrinterRepository.swift in Sources */,
 				9B12BEEC2BD2706D0065DA76 /* CalliopeApp.swift in Sources */,
+				9B12BF2B2BD27F060065DA76 /* PrinterUseCase.swift in Sources */,
+				9B12BF362BD2A15A0065DA76 /* PrinterDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +507,8 @@
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calliope/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -438,6 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.Calliope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Calliope/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,6 +539,8 @@
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calliope/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -467,6 +554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.Calliope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Calliope/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
