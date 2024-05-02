@@ -24,6 +24,8 @@
 		9B12BF302BD27F8F0065DA76 /* EpsonPrinterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF2F2BD27F8F0065DA76 /* EpsonPrinterRepository.swift */; };
 		9B12BF322BD286C50065DA76 /* PrinterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF312BD286C50065DA76 /* PrinterError.swift */; };
 		9B12BF362BD2A15A0065DA76 /* PrinterDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */; };
+		9B12BF842BE3907E0065DA76 /* BluetoothPrinterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */; };
+		9B12BF872BE391D60065DA76 /* AsyncBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF862BE391D60065DA76 /* AsyncBluetooth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 		9B12BF2F2BD27F8F0065DA76 /* EpsonPrinterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpsonPrinterRepository.swift; sourceTree = "<group>"; };
 		9B12BF312BD286C50065DA76 /* PrinterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterError.swift; sourceTree = "<group>"; };
 		9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterDevice.swift; sourceTree = "<group>"; };
+		9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPrinterRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 				9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */,
 				9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */,
 				9B12BF262BD27D650065DA76 /* libepos2.xcframework in Frameworks */,
+				9B12BF872BE391D60065DA76 /* AsyncBluetooth in Frameworks */,
 				9B12BF272BD27D650065DA76 /* libeposeasyselect.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +204,7 @@
 			children = (
 				9B12BF2D2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift */,
 				9B12BF2F2BD27F8F0065DA76 /* EpsonPrinterRepository.swift */,
+				9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */,
 			);
 			path = PrinterRepository;
 			sourceTree = "<group>";
@@ -220,6 +225,9 @@
 			dependencies = (
 			);
 			name = Calliope;
+			packageProductDependencies = (
+				9B12BF862BE391D60065DA76 /* AsyncBluetooth */,
+			);
 			productName = Calliope;
 			productReference = 9B12BEE82BD2706D0065DA76 /* Calliope.app */;
 			productType = "com.apple.product-type.application";
@@ -292,6 +300,9 @@
 				Base,
 			);
 			mainGroup = 9B12BEDF2BD2706D0065DA76;
+			packageReferences = (
+				9B12BF852BE391D60065DA76 /* XCRemoteSwiftPackageReference "AsyncBluetooth" */,
+			);
 			productRefGroup = 9B12BEE92BD2706D0065DA76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -336,6 +347,7 @@
 			files = (
 				9B12BEEE2BD2706D0065DA76 /* ContentView.swift in Sources */,
 				9B12BF2E2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift in Sources */,
+				9B12BF842BE3907E0065DA76 /* BluetoothPrinterRepository.swift in Sources */,
 				9B12BF322BD286C50065DA76 /* PrinterError.swift in Sources */,
 				9B12BF302BD27F8F0065DA76 /* EpsonPrinterRepository.swift in Sources */,
 				9B12BEEC2BD2706D0065DA76 /* CalliopeApp.swift in Sources */,
@@ -676,6 +688,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B12BF852BE391D60065DA76 /* XCRemoteSwiftPackageReference "AsyncBluetooth" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/manolofdez/AsyncBluetooth";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B12BF862BE391D60065DA76 /* AsyncBluetooth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B12BF852BE391D60065DA76 /* XCRemoteSwiftPackageReference "AsyncBluetooth" */;
+			productName = AsyncBluetooth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B12BEE02BD2706D0065DA76 /* Project object */;
 }

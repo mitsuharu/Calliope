@@ -11,7 +11,7 @@ final class PrinterUseCase {
     
     private let repository: any PrinterRepositoryProtocol
 
-    init(repository: any PrinterRepositoryProtocol = EpsonPrinterRepository()) {
+    init(repository: any PrinterRepositoryProtocol = BluetoothPrinterRepository()){ //} EpsonPrinterRepository()) {
         self.repository = repository
     }
         
@@ -25,6 +25,6 @@ extension PrinterUseCase {
     
     func run() {
         print("run is 今停止中")
-//        try? scan()
+        try? scan()
     }
 }
