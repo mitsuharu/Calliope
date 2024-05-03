@@ -26,11 +26,6 @@
 		9B12BF872BE391D60065DA76 /* AsyncBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF862BE391D60065DA76 /* AsyncBluetooth */; };
 		9B12BF8D2BE5038A0065DA76 /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF8C2BE5038A0065DA76 /* ReSwift */; };
 		9B12BF902BE503AA0065DA76 /* ReSwiftSaga in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF8F2BE503AA0065DA76 /* ReSwiftSaga */; };
-		9B12BFA72BE509330065DA76 /* CounterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF922BE509330065DA76 /* CounterAction.swift */; };
-		9B12BFA82BE509330065DA76 /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF932BE509330065DA76 /* CounterReducer.swift */; };
-		9B12BFA92BE509330065DA76 /* CounterSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF942BE509330065DA76 /* CounterSaga.swift */; };
-		9B12BFAA2BE509330065DA76 /* CounterSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF952BE509330065DA76 /* CounterSelectors.swift */; };
-		9B12BFAB2BE509330065DA76 /* CounterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF962BE509330065DA76 /* CounterState.swift */; };
 		9B12BFAC2BE509330065DA76 /* ToastAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF982BE509330065DA76 /* ToastAction.swift */; };
 		9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF992BE509330065DA76 /* ToastSaga.swift */; };
 		9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA22BE509330065DA76 /* AppReducer.swift */; };
@@ -49,6 +44,11 @@
 		9B12BFD62BE51D0B0065DA76 /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */; };
 		9B12BFD72BE51D0B0065DA76 /* libeposeasyselect.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B12BFD92BE51D900065DA76 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B12BFD82BE51D900065DA76 /* Localizable.xcstrings */; };
+		9B12BFDC2BE522E10065DA76 /* PrinterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFDB2BE522E10065DA76 /* PrinterAction.swift */; };
+		9B12BFDE2BE522ED0065DA76 /* PrinterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFDD2BE522ED0065DA76 /* PrinterReducer.swift */; };
+		9B12BFE02BE522F90065DA76 /* PrinterSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFDF2BE522F90065DA76 /* PrinterSaga.swift */; };
+		9B12BFE22BE523120065DA76 /* PrinterSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFE12BE523120065DA76 /* PrinterSelectors.swift */; };
+		9B12BFE42BE5231D0065DA76 /* PrinterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFE32BE5231D0065DA76 /* PrinterState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,11 +104,6 @@
 		9B12BF312BD286C50065DA76 /* PrinterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterError.swift; sourceTree = "<group>"; };
 		9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterDevice.swift; sourceTree = "<group>"; };
 		9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPrinterRepository.swift; sourceTree = "<group>"; };
-		9B12BF922BE509330065DA76 /* CounterAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterAction.swift; sourceTree = "<group>"; };
-		9B12BF932BE509330065DA76 /* CounterReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
-		9B12BF942BE509330065DA76 /* CounterSaga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterSaga.swift; sourceTree = "<group>"; };
-		9B12BF952BE509330065DA76 /* CounterSelectors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterSelectors.swift; sourceTree = "<group>"; };
-		9B12BF962BE509330065DA76 /* CounterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterState.swift; sourceTree = "<group>"; };
 		9B12BF982BE509330065DA76 /* ToastAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastAction.swift; sourceTree = "<group>"; };
 		9B12BF992BE509330065DA76 /* ToastSaga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSaga.swift; sourceTree = "<group>"; };
 		9B12BFA22BE509330065DA76 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -124,6 +119,11 @@
 		9B12BFCD2BE51CCB0065DA76 /* libepos2.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libepos2.xcframework; sourceTree = "<group>"; };
 		9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libeposeasyselect.xcframework; sourceTree = "<group>"; };
 		9B12BFD82BE51D900065DA76 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9B12BFDB2BE522E10065DA76 /* PrinterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterAction.swift; sourceTree = "<group>"; };
+		9B12BFDD2BE522ED0065DA76 /* PrinterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterReducer.swift; sourceTree = "<group>"; };
+		9B12BFDF2BE522F90065DA76 /* PrinterSaga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterSaga.swift; sourceTree = "<group>"; };
+		9B12BFE12BE523120065DA76 /* PrinterSelectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterSelectors.swift; sourceTree = "<group>"; };
+		9B12BFE32BE5231D0065DA76 /* PrinterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,18 +264,6 @@
 			path = PrinterRepository;
 			sourceTree = "<group>";
 		};
-		9B12BF972BE509330065DA76 /* Counter */ = {
-			isa = PBXGroup;
-			children = (
-				9B12BF922BE509330065DA76 /* CounterAction.swift */,
-				9B12BF932BE509330065DA76 /* CounterReducer.swift */,
-				9B12BF942BE509330065DA76 /* CounterSaga.swift */,
-				9B12BF952BE509330065DA76 /* CounterSelectors.swift */,
-				9B12BF962BE509330065DA76 /* CounterState.swift */,
-			);
-			path = Counter;
-			sourceTree = "<group>";
-		};
 		9B12BF9A2BE509330065DA76 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,7 +276,7 @@
 		9B12BFA12BE509330065DA76 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9B12BF972BE509330065DA76 /* Counter */,
+				9B12BFDA2BE522D20065DA76 /* Printer */,
 				9B12BF9A2BE509330065DA76 /* Toast */,
 			);
 			path = Modules;
@@ -372,6 +360,18 @@
 				9B12BFCF2BE51CCB0065DA76 /* Epson */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B12BFDA2BE522D20065DA76 /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFDB2BE522E10065DA76 /* PrinterAction.swift */,
+				9B12BFDD2BE522ED0065DA76 /* PrinterReducer.swift */,
+				9B12BFDF2BE522F90065DA76 /* PrinterSaga.swift */,
+				9B12BFE12BE523120065DA76 /* PrinterSelectors.swift */,
+				9B12BFE32BE5231D0065DA76 /* PrinterState.swift */,
+			);
+			path = Printer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,21 +520,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B12BEEE2BD2706D0065DA76 /* ContentView.swift in Sources */,
-				9B12BFAA2BE509330065DA76 /* CounterSelectors.swift in Sources */,
+				9B12BFE42BE5231D0065DA76 /* PrinterState.swift in Sources */,
+				9B12BFDE2BE522ED0065DA76 /* PrinterReducer.swift in Sources */,
+				9B12BFE02BE522F90065DA76 /* PrinterSaga.swift in Sources */,
 				9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */,
-				9B12BFA82BE509330065DA76 /* CounterReducer.swift in Sources */,
 				9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */,
 				9B12BF2E2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift in Sources */,
 				9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */,
 				9B12BF842BE3907E0065DA76 /* BluetoothPrinterRepository.swift in Sources */,
 				9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */,
 				9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */,
-				9B12BFA72BE509330065DA76 /* CounterAction.swift in Sources */,
+				9B12BFDC2BE522E10065DA76 /* PrinterAction.swift in Sources */,
 				9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */,
 				9B12BFCC2BE51A090065DA76 /* NavigationModifier.swift in Sources */,
 				9B12BFB42BE509330065DA76 /* AppSaga.swift in Sources */,
 				9B12BFBC2BE50B130065DA76 /* ToastViewModel.swift in Sources */,
-				9B12BFAB2BE509330065DA76 /* CounterState.swift in Sources */,
 				9B12BF322BD286C50065DA76 /* PrinterError.swift in Sources */,
 				9B12BFB62BE509330065DA76 /* AppStore.swift in Sources */,
 				9B12BF302BD27F8F0065DA76 /* EpsonPrinterRepository.swift in Sources */,
@@ -542,7 +542,7 @@
 				9B12BEEC2BD2706D0065DA76 /* CalliopeApp.swift in Sources */,
 				9B12BF2B2BD27F060065DA76 /* PrinterUseCase.swift in Sources */,
 				9B12BFAC2BE509330065DA76 /* ToastAction.swift in Sources */,
-				9B12BFA92BE509330065DA76 /* CounterSaga.swift in Sources */,
+				9B12BFE22BE523120065DA76 /* PrinterSelectors.swift in Sources */,
 				9B12BF362BD2A15A0065DA76 /* PrinterDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

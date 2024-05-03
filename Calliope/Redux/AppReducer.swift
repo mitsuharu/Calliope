@@ -12,17 +12,17 @@ func appReducer(action: Action, state: AppState?) -> AppState {
 
     let state = state ?? AppState.initialState()
 
-    var nextCounter = state.counter
-
+    var nextPrinter = state.printer
+    
     switch action {
-    case let action as CounterAction:
-        nextCounter = counterReducer(action: action, state: state.counter)
+    case let action as PrinterAction:
+        nextPrinter = printerReducer(action: action, state: state.printer)
     
     default:
         break
     }
     
     return AppState(
-        counter: nextCounter
+        printer: nextPrinter
     )
 }

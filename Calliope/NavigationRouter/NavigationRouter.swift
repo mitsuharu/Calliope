@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ メインのナビゲーションルーター
+ */
 final class NavigationRouter: ObservableObject {
     @Published var items: [Item] = []
     

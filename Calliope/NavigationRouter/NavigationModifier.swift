@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ NavigationRouter に対応するルーティング制御
+ */
 struct NavigationModifier: ViewModifier {
     
     func body(content: Content) -> some View {

@@ -8,11 +8,11 @@
 import Foundation
 
 struct AppState {
-    let counter: CounterState
+    let printer: PrinterState
 
     static func initialState() -> AppState {
         AppState(
-            counter: CounterState.initialState()
+            printer: PrinterState.initialState()
         )
     }
 }

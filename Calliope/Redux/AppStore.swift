@@ -30,7 +30,6 @@ func makeAppStore() -> Store<AppState> {
     return store
 }
 
-
 extension Store {
     
     public func dispatch(onMain action: Action) {
