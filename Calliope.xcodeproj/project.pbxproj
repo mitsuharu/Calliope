@@ -49,6 +49,7 @@
 		9B12BFE02BE522F90065DA76 /* PrinterSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFDF2BE522F90065DA76 /* PrinterSaga.swift */; };
 		9B12BFE22BE523120065DA76 /* PrinterSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFE12BE523120065DA76 /* PrinterSelectors.swift */; };
 		9B12BFE42BE5231D0065DA76 /* PrinterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFE32BE5231D0065DA76 /* PrinterState.swift */; };
+		9B12BFE62BE536C40065DA76 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFE52BE536C40065DA76 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		9B12BFDF2BE522F90065DA76 /* PrinterSaga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterSaga.swift; sourceTree = "<group>"; };
 		9B12BFE12BE523120065DA76 /* PrinterSelectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterSelectors.swift; sourceTree = "<group>"; };
 		9B12BFE32BE5231D0065DA76 /* PrinterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterState.swift; sourceTree = "<group>"; };
+		9B12BFE52BE536C40065DA76 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				9B12BFC32BE50CE50065DA76 /* MainView.swift */,
+				9B12BFE52BE536C40065DA76 /* MainViewModel.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				9B12BFDE2BE522ED0065DA76 /* PrinterReducer.swift in Sources */,
 				9B12BFE02BE522F90065DA76 /* PrinterSaga.swift in Sources */,
 				9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */,
+				9B12BFE62BE536C40065DA76 /* MainViewModel.swift in Sources */,
 				9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */,
 				9B12BF2E2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift in Sources */,
 				9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */,
@@ -717,7 +721,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -754,7 +758,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
