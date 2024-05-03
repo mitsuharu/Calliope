@@ -1,6 +1,15 @@
 {
-  "originHash" : "911fb96da7e1e0d3cbd2be9a7a7fc88117d491621717bf4f4d6df5d4afe9ee52",
+  "originHash" : "953536d2e38cc495c7a25fc3104e7da1c430e766ac37c8751a9e5d9c30792e4a",
   "pins" : [
+    {
+      "identity" : "alerttoast",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/elai950/AlertToast",
+      "state" : {
+        "revision" : "b39252eacd159904afd7d718bba0afabb87f2f2f",
+        "version" : "1.3.9"
+      }
+    },
     {
       "identity" : "asyncbluetooth",
       "kind" : "remoteSourceControl",
@@ -8,6 +17,24 @@
       "state" : {
         "revision" : "2bb6c48e886b4cb2bdf82074352ed60fe0515b35",
         "version" : "1.11.0"
+      }
+    },
+    {
+      "identity" : "reswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReSwift/ReSwift",
+      "state" : {
+        "revision" : "cb5c3c02f652420ef413dea41e13ac5a76b6c0fd",
+        "version" : "6.1.1"
+      }
+    },
+    {
+      "identity" : "reswift-saga",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mitsuharu/ReSwift-Saga",
+      "state" : {
+        "revision" : "2d60e2f5dec2d828b19c419eab3d72dd9330f501",
+        "version" : "0.0.5"
       }
     }
   ],

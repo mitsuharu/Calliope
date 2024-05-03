@@ -26,6 +26,26 @@
 		9B12BF362BD2A15A0065DA76 /* PrinterDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */; };
 		9B12BF842BE3907E0065DA76 /* BluetoothPrinterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */; };
 		9B12BF872BE391D60065DA76 /* AsyncBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF862BE391D60065DA76 /* AsyncBluetooth */; };
+		9B12BF8D2BE5038A0065DA76 /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF8C2BE5038A0065DA76 /* ReSwift */; };
+		9B12BF902BE503AA0065DA76 /* ReSwiftSaga in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF8F2BE503AA0065DA76 /* ReSwiftSaga */; };
+		9B12BFA72BE509330065DA76 /* CounterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF922BE509330065DA76 /* CounterAction.swift */; };
+		9B12BFA82BE509330065DA76 /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF932BE509330065DA76 /* CounterReducer.swift */; };
+		9B12BFA92BE509330065DA76 /* CounterSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF942BE509330065DA76 /* CounterSaga.swift */; };
+		9B12BFAA2BE509330065DA76 /* CounterSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF952BE509330065DA76 /* CounterSelectors.swift */; };
+		9B12BFAB2BE509330065DA76 /* CounterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF962BE509330065DA76 /* CounterState.swift */; };
+		9B12BFAC2BE509330065DA76 /* ToastAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF982BE509330065DA76 /* ToastAction.swift */; };
+		9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF992BE509330065DA76 /* ToastSaga.swift */; };
+		9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA22BE509330065DA76 /* AppReducer.swift */; };
+		9B12BFB42BE509330065DA76 /* AppSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA32BE509330065DA76 /* AppSaga.swift */; };
+		9B12BFB52BE509330065DA76 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA42BE509330065DA76 /* AppState.swift */; };
+		9B12BFB62BE509330065DA76 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA52BE509330065DA76 /* AppStore.swift */; };
+		9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFB72BE50B130065DA76 /* ToastModifier.swift */; };
+		9B12BFBC2BE50B130065DA76 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFB82BE50B130065DA76 /* ToastViewModel.swift */; };
+		9B12BFBF2BE50B600065DA76 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BFBE2BE50B600065DA76 /* AlertToast */; };
+		9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC32BE50CE50065DA76 /* MainView.swift */; };
+		9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC62BE50D090065DA76 /* ScanView.swift */; };
+		9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC92BE5130A0065DA76 /* NavigationRouter.swift */; };
+		9B12BFCC2BE51A090065DA76 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFCB2BE51A090065DA76 /* NavigationModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +88,23 @@
 		9B12BF312BD286C50065DA76 /* PrinterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterError.swift; sourceTree = "<group>"; };
 		9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterDevice.swift; sourceTree = "<group>"; };
 		9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPrinterRepository.swift; sourceTree = "<group>"; };
+		9B12BF922BE509330065DA76 /* CounterAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterAction.swift; sourceTree = "<group>"; };
+		9B12BF932BE509330065DA76 /* CounterReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
+		9B12BF942BE509330065DA76 /* CounterSaga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterSaga.swift; sourceTree = "<group>"; };
+		9B12BF952BE509330065DA76 /* CounterSelectors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterSelectors.swift; sourceTree = "<group>"; };
+		9B12BF962BE509330065DA76 /* CounterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterState.swift; sourceTree = "<group>"; };
+		9B12BF982BE509330065DA76 /* ToastAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastAction.swift; sourceTree = "<group>"; };
+		9B12BF992BE509330065DA76 /* ToastSaga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSaga.swift; sourceTree = "<group>"; };
+		9B12BFA22BE509330065DA76 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		9B12BFA32BE509330065DA76 /* AppSaga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSaga.swift; sourceTree = "<group>"; };
+		9B12BFA42BE509330065DA76 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9B12BFA52BE509330065DA76 /* AppStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		9B12BFB72BE50B130065DA76 /* ToastModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		9B12BFB82BE50B130065DA76 /* ToastViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewModel.swift; sourceTree = "<group>"; };
+		9B12BFC32BE50CE50065DA76 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9B12BFC62BE50D090065DA76 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		9B12BFC92BE5130A0065DA76 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		9B12BFCB2BE51A090065DA76 /* NavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +115,9 @@
 				9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */,
 				9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */,
 				9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */,
+				9B12BFBF2BE50B600065DA76 /* AlertToast in Frameworks */,
+				9B12BF902BE503AA0065DA76 /* ReSwiftSaga in Frameworks */,
+				9B12BF8D2BE5038A0065DA76 /* ReSwift in Frameworks */,
 				9B12BF262BD27D650065DA76 /* libepos2.xcframework in Frameworks */,
 				9B12BF872BE391D60065DA76 /* AsyncBluetooth in Frameworks */,
 				9B12BF272BD27D650065DA76 /* libeposeasyselect.xcframework in Frameworks */,
@@ -125,13 +165,17 @@
 		9B12BEEA2BD2706D0065DA76 /* Calliope */ = {
 			isa = PBXGroup;
 			children = (
-				9B12BF282BD27EA20065DA76 /* UseCases */,
-				9B12BF252BD27D650065DA76 /* EpsonFrameworks */,
+				9B12BF212BD27BE80065DA76 /* Bridging-Header.h */,
 				9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */,
 				9B12BEED2BD2706D0065DA76 /* ContentView.swift */,
 				9B12BEEF2BD2706F0065DA76 /* Assets.xcassets */,
+				9B12BF252BD27D650065DA76 /* EpsonFrameworks */,
+				9B12BFC82BE512FD0065DA76 /* NavigationRouter */,
 				9B12BEF12BD2706F0065DA76 /* Preview Content */,
-				9B12BF212BD27BE80065DA76 /* Bridging-Header.h */,
+				9B12BFA62BE509330065DA76 /* Redux */,
+				9B12BF282BD27EA20065DA76 /* UseCases */,
+				9B12BFC02BE50BDB0065DA76 /* View */,
+				9B12BFBA2BE50B130065DA76 /* ViewModifier */,
 			);
 			path = Calliope;
 			sourceTree = "<group>";
@@ -209,6 +253,99 @@
 			path = PrinterRepository;
 			sourceTree = "<group>";
 		};
+		9B12BF972BE509330065DA76 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF922BE509330065DA76 /* CounterAction.swift */,
+				9B12BF932BE509330065DA76 /* CounterReducer.swift */,
+				9B12BF942BE509330065DA76 /* CounterSaga.swift */,
+				9B12BF952BE509330065DA76 /* CounterSelectors.swift */,
+				9B12BF962BE509330065DA76 /* CounterState.swift */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		9B12BF9A2BE509330065DA76 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF982BE509330065DA76 /* ToastAction.swift */,
+				9B12BF992BE509330065DA76 /* ToastSaga.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		9B12BFA12BE509330065DA76 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF972BE509330065DA76 /* Counter */,
+				9B12BF9A2BE509330065DA76 /* Toast */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9B12BFA62BE509330065DA76 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFA12BE509330065DA76 /* Modules */,
+				9B12BFA22BE509330065DA76 /* AppReducer.swift */,
+				9B12BFA32BE509330065DA76 /* AppSaga.swift */,
+				9B12BFA42BE509330065DA76 /* AppState.swift */,
+				9B12BFA52BE509330065DA76 /* AppStore.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		9B12BFB92BE50B130065DA76 /* ToastModifier */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFB72BE50B130065DA76 /* ToastModifier.swift */,
+				9B12BFB82BE50B130065DA76 /* ToastViewModel.swift */,
+			);
+			path = ToastModifier;
+			sourceTree = "<group>";
+		};
+		9B12BFBA2BE50B130065DA76 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFB92BE50B130065DA76 /* ToastModifier */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		9B12BFC02BE50BDB0065DA76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFC22BE50CD70065DA76 /* MainView */,
+				9B12BFC12BE50CD70065DA76 /* ScanView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B12BFC12BE50CD70065DA76 /* ScanView */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFC62BE50D090065DA76 /* ScanView.swift */,
+			);
+			path = ScanView;
+			sourceTree = "<group>";
+		};
+		9B12BFC22BE50CD70065DA76 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFC32BE50CE50065DA76 /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		9B12BFC82BE512FD0065DA76 /* NavigationRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFC92BE5130A0065DA76 /* NavigationRouter.swift */,
+				9B12BFCB2BE51A090065DA76 /* NavigationModifier.swift */,
+			);
+			path = NavigationRouter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +364,9 @@
 			name = Calliope;
 			packageProductDependencies = (
 				9B12BF862BE391D60065DA76 /* AsyncBluetooth */,
+				9B12BF8C2BE5038A0065DA76 /* ReSwift */,
+				9B12BF8F2BE503AA0065DA76 /* ReSwiftSaga */,
+				9B12BFBE2BE50B600065DA76 /* AlertToast */,
 			);
 			productName = Calliope;
 			productReference = 9B12BEE82BD2706D0065DA76 /* Calliope.app */;
@@ -302,6 +442,9 @@
 			mainGroup = 9B12BEDF2BD2706D0065DA76;
 			packageReferences = (
 				9B12BF852BE391D60065DA76 /* XCRemoteSwiftPackageReference "AsyncBluetooth" */,
+				9B12BF8B2BE5038A0065DA76 /* XCRemoteSwiftPackageReference "ReSwift" */,
+				9B12BF8E2BE503AA0065DA76 /* XCRemoteSwiftPackageReference "ReSwift-Saga" */,
+				9B12BFBD2BE50B600065DA76 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = 9B12BEE92BD2706D0065DA76 /* Products */;
 			projectDirPath = "";
@@ -346,12 +489,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B12BEEE2BD2706D0065DA76 /* ContentView.swift in Sources */,
+				9B12BFAA2BE509330065DA76 /* CounterSelectors.swift in Sources */,
+				9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */,
+				9B12BFA82BE509330065DA76 /* CounterReducer.swift in Sources */,
+				9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */,
 				9B12BF2E2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift in Sources */,
+				9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */,
 				9B12BF842BE3907E0065DA76 /* BluetoothPrinterRepository.swift in Sources */,
+				9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */,
+				9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */,
+				9B12BFA72BE509330065DA76 /* CounterAction.swift in Sources */,
+				9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */,
+				9B12BFCC2BE51A090065DA76 /* NavigationModifier.swift in Sources */,
+				9B12BFB42BE509330065DA76 /* AppSaga.swift in Sources */,
+				9B12BFBC2BE50B130065DA76 /* ToastViewModel.swift in Sources */,
+				9B12BFAB2BE509330065DA76 /* CounterState.swift in Sources */,
 				9B12BF322BD286C50065DA76 /* PrinterError.swift in Sources */,
+				9B12BFB62BE509330065DA76 /* AppStore.swift in Sources */,
 				9B12BF302BD27F8F0065DA76 /* EpsonPrinterRepository.swift in Sources */,
+				9B12BFB52BE509330065DA76 /* AppState.swift in Sources */,
 				9B12BEEC2BD2706D0065DA76 /* CalliopeApp.swift in Sources */,
 				9B12BF2B2BD27F060065DA76 /* PrinterUseCase.swift in Sources */,
+				9B12BFAC2BE509330065DA76 /* ToastAction.swift in Sources */,
+				9B12BFA92BE509330065DA76 /* CounterSaga.swift in Sources */,
 				9B12BF362BD2A15A0065DA76 /* PrinterDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +858,30 @@
 				minimumVersion = 1.11.0;
 			};
 		};
+		9B12BF8B2BE5038A0065DA76 /* XCRemoteSwiftPackageReference "ReSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReSwift/ReSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.1;
+			};
+		};
+		9B12BF8E2BE503AA0065DA76 /* XCRemoteSwiftPackageReference "ReSwift-Saga" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mitsuharu/ReSwift-Saga";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+		9B12BFBD2BE50B600065DA76 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -705,6 +889,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B12BF852BE391D60065DA76 /* XCRemoteSwiftPackageReference "AsyncBluetooth" */;
 			productName = AsyncBluetooth;
+		};
+		9B12BF8C2BE5038A0065DA76 /* ReSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B12BF8B2BE5038A0065DA76 /* XCRemoteSwiftPackageReference "ReSwift" */;
+			productName = ReSwift;
+		};
+		9B12BF8F2BE503AA0065DA76 /* ReSwiftSaga */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B12BF8E2BE503AA0065DA76 /* XCRemoteSwiftPackageReference "ReSwift-Saga" */;
+			productName = ReSwiftSaga;
+		};
+		9B12BFBE2BE50B600065DA76 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B12BFBD2BE50B600065DA76 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

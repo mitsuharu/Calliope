@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    let printerUseCase = PrinterUseCase()
+    @StateObject var router = NavigationRouter()
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack(path: $router.items) {
+            MainView()
+                .navigationTitle("印刷アプリ")
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            router.navigate(.scan)
+                        }) {
+                            Label("scan", systemImage: "plus.viewfinder")
+                        }
+                    }
+                }
+                .modifier(NavigationModifier())
+                .modifier(ToastModifier())
         }
-        .padding()
-        .onAppear(){
-            printerUseCase.run()
-        }
+        .environmentObject(router)
     }
 }
 
