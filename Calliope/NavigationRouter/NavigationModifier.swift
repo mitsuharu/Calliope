@@ -14,7 +14,7 @@ struct NavigationModifier: ViewModifier {
             .navigationDestination(for: NavigationRouter.Item.self) {
                 switch $0 {
                 case .scan:
-                    ScanView().navigationTitle("スキャン")
+                    ScanView().navigationTitle("scan")
                 }
             }
     }

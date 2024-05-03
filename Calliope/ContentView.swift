@@ -13,7 +13,8 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $router.items) {
             MainView()
-                .navigationTitle("印刷アプリ")
+                .navigationTitle("App_Home")
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {

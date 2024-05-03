@@ -1,0 +1,46 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "App_Home" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printer App"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印刷アプリ"
+          }
+        }
+      }
+    },
+    "MainView" : {
+
+    },
+    "scan" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "scan"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン"
+          }
+        }
+      }
+    },
+    "ScanView" : {
+
+    }
+  },
+  "version" : "1.0"
+}
