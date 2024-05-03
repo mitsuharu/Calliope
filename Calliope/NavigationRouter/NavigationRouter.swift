@@ -21,11 +21,11 @@ final class NavigationRouter: ObservableObject {
         items.append(item)
     }
     
-    func goBack(_ item: Item){
+    func goBack(){
         items.removeLast()
     }
     
-    func goRoot(_ item: Item){
+    func goRoot(){
         items.removeAll()
     }
 }

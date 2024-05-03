@@ -12,6 +12,11 @@ struct ScanView: View {
     
     var body: some View {
         Text("ScanView")
+        Button(action: {
+            router.goBack()
+        }, label: {
+            Text("Back")
+        })
     }
 }
 
