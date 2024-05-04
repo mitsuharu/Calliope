@@ -8,15 +8,32 @@
 import SwiftUI
 
 struct ScanView: View {
+    @ObservedObject private var viewModel = ScanViewModel()
     @EnvironmentObject var router: NavigationRouter
     
     var body: some View {
-        Text("ScanView")
-        Button(action: {
-            router.goBack()
-        }, label: {
-            Text("Back")
-        })
+        if viewModel.candiates.count == 0 {
+            VStack {
+                ProgressView()
+                Spacer().frame(height: 10)
+                Button(action: {
+                    router.goBack()
+                }, label: {
+                    Text("Back")
+                })
+            }
+        }else {
+            List {
+                ForEach($viewModel.candiates, id: \.self) { item in
+                    Button(action: {
+                        viewModel.selectCandiate(deviceInfo: item.wrappedValue)
+                    }) {
+                        CandiateCell(deviceInfo: item)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+        }
     }
 }
 

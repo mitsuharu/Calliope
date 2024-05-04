@@ -6,16 +6,25 @@
 //
 
 import Foundation
-import AsyncBluetooth
 
-func selectManufacturer(store: AppState) -> PrinterState.Manufacturer {
-    store.printer.manufacturer
+func selectPrinterDeviceInfo(store: AppState) -> PrinterDeviceInfo? {
+    store.printer.deviceInfo
 }
 
-func selectPeripheral(store: AppState) -> Peripheral? {
-    store.printer.peripheral
+func selectPrinterCandiates(store: AppState) -> [PrinterDeviceInfo] {
+    Array(store.printer.candiates ?? [])
 }
 
-func selectPeripherals(store: AppState) -> [Peripheral] {
-    store.printer.peripherals
+func selectPrinterName(store: AppState) -> String? {
+    guard let deviceInfo = selectPrinterDeviceInfo(store: store) else {
+        return nil
+    }
+    return deviceInfo.name
+}
+
+func selectPrinterUUID(store: AppState) -> String? {
+    guard let deviceInfo = selectPrinterDeviceInfo(store: store) else {
+        return nil
+    }
+    return deviceInfo.uuid
 }

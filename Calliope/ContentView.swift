@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var router = NavigationRouter()
+    @ObservedObject var router = NavigationRouter.shared
     
     var body: some View {
         NavigationStack(path: $router.items) {

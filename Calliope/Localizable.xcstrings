@@ -24,6 +24,12 @@
     "MainView" : {
 
     },
+    "name: " : {
+
+    },
+    "name: %@" : {
+
+    },
     "scan" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -41,7 +47,10 @@
         }
       }
     },
-    "ScanView" : {
+    "uuid: " : {
+
+    },
+    "uuid: %@" : {
 
     }
   },

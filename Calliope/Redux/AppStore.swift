@@ -10,7 +10,6 @@ import ReSwift
 import ReSwiftSaga
 
 func makeAppStore() -> Store<AppState> {
-    
     let sagaMiddleware: Middleware<AppState> = createSagaMiddleware()
     
     let store = Store<AppState>(

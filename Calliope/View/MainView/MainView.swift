@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct MainView: View {
-    let printerUseCase = PrinterUseCase()
+    @ObservedObject private var viewModel = MainViewModel()
+//    let printerUseCase = PrinterUseCase()
     
     var body: some View {
-        Text("MainView")
-            .onAppear(){
-//                printerUseCase.run()
-            }
+        VStack {
+            Text("MainView")
+            Spacer().frame(height: 10)
+            Text("name: \(viewModel.name ?? "-")")
+            Spacer().frame(height: 10)
+            Text("uuid: \(viewModel.uuid ?? "-")")
+        }
     }
 }
 

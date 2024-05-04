@@ -1,8 +1,8 @@
 //
-//  BluetoothPrinterRepository.swift
+//  BluetoothHandler.swift
 //  Calliope
 //
-//  Created by Mitsuharu Emoto on 2024/05/02.
+//  Created by Mitsuharu Emoto on 2024/05/04.
 //
 
 import Foundation
@@ -10,40 +10,42 @@ import Combine
 import AsyncBluetooth
 import CoreBluetooth
 
-final class BluetoothPrinterRepository: PrinterRepositoryProtocol {
+final class BluetoothHandler: PrinterHandlerProtocol {
     
-    private let centralManager = CentralManager()
-    private var peripheral: Peripheral? = nil
-    
+    private let centralManager = CentralManager()    
     private var cancellables: Set<AnyCancellable> = []
     
-    func scan() throws {
-        Task {
-            try await scanBluetooth()
-        }
-    }
-    
-    func stopScan() throws {
-    }
-    
-    func run(device: PrinterDevice, transact: [PrinterOrder]) throws {
-    }
-    
-    typealias PrinterType = NSObject
-    
     init() {
-        prepare()
     }
     
     deinit {
         cancellables.forEach{ $0.cancel() }
         cancellables.removeAll()
     }
+    
+    func prepare() throws {
+        prepareBluetooth()
+    }
+        
+    func startScan() throws {
+        Task {
+            try await startScanBluetooth()
+        }
+    }
+    
+    func stopScan() throws {
+        Task {
+            try await stopScanBluetooth()
+        }
+    }
+    
+    func run(device: PrinterDeviceInfo, transact: [PrinterOrder]) throws {
+    }    
 }
 
-extension BluetoothPrinterRepository {
+extension BluetoothHandler {
     
-    fileprivate func prepare() {
+    fileprivate func prepareBluetooth() {
         AsyncBluetoothLogging.isEnabled = false
         centralManager.eventPublisher
             .sink {
@@ -61,9 +63,9 @@ extension BluetoothPrinterRepository {
             .store(in: &cancellables)
     }
     
-    fileprivate func scanBluetooth() async throws {
+    fileprivate func startScanBluetooth() async throws {
+        appStore.dispatch(onMain: AssignPrinterCandiates(candiates: []))
         
-        print("scanBluetooth")
         // peripheral: Optional("CloudPrint_0449"), B1F5385B-AB54-B398-F8F2-46391AB93EEA
         
         do {
@@ -71,21 +73,18 @@ extension BluetoothPrinterRepository {
             
             let stream = try await centralManager.scanForPeripherals(withServices: nil)
             for await scanData in stream {
-                let peripheral = scanData.peripheral
-//                print("peripheral: \(String(describing: peripheral.name)), \(peripheral.identifier)")
                 
-                // sunmi 58 kitchen cloud printer
-                if peripheral.identifier.uuidString == "B1F5385B-AB54-B398-F8F2-46391AB93EEA" {
-                    self.peripheral = peripheral
-                    await centralManager.stopScan()
-                    print("peripheral: \(String(describing: peripheral.name)), \(peripheral.identifier)")
-                    
-                    await connect(peripheral: peripheral)
-//                    try await centralManager.connect(peripheral, options: nil)
-                    
-
-                    
-                }
+                let peripheral = scanData.peripheral
+                let candiate = PrinterDeviceInfo(bluetooth: peripheral)
+                appStore.dispatch(onMain: AppendPrinterCandiate(candiate: candiate))
+                
+                
+//                // sunmi 58 kitchen cloud printer
+//                if peripheral.identifier.uuidString == "B1F5385B-AB54-B398-F8F2-46391AB93EEA" {
+//                    self.peripheral = peripheral
+//                    await centralManager.stopScan()
+//                    await connect(peripheral: peripheral)
+//                }
             }
             
         } catch {
@@ -94,13 +93,18 @@ extension BluetoothPrinterRepository {
         }
     }
     
+    fileprivate func stopScanBluetooth() async throws {
+        await centralManager.stopScan()
+    }
+    
+    
     fileprivate func connect(peripheral: Peripheral) async {
         
         let characteristicUUID = CBUUID()
         print("characteristicUUID: \(characteristicUUID)")
         
         peripheral.characteristicValueUpdatedPublisher
-            .filter { 
+            .filter {
                 print("$0.uuid: \($0.uuid)")
                 return $0.uuid == characteristicUUID }
             .map { try? $0.parsedValue() as String? } // replace `String?` with your type
@@ -214,12 +218,12 @@ extension BluetoothPrinterRepository {
 //        // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=25
 //        let boldOnCommand = Data([0x1b, 0x45, 0x01]) // ESC E 1
 //        printer.addCommand(boldOnCommand)
-//        
+//
 //        // テキストデータの追加
 //        let textData = "Hello, world!\n".data(using: .ascii)
 //        printer.addCommand(textData)
 //        printer.addFeedLine(1)
-//        
+//
 //        // 太字の無効化
 //        let boldOffCommand = Data([0x1b, 0x45, 0x00]) // ESC E 0
 //        printer.addCommand(boldOffCommand)

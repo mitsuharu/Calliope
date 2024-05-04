@@ -7,18 +7,26 @@
 
 import Foundation
 import ReSwift
-import AsyncBluetooth
 
 protocol PrinterAction: Action {}
 
-struct AssignManufacturer: PrinterAction {
-    let manufacturer: PrinterState.Manufacturer
+struct AssignPrinterDeviceInfo: PrinterAction {
+    let deviceInfo: PrinterDeviceInfo
 }
 
-struct AssignPeripheral: PrinterAction {
-    let peripheral: PrinterAction?
+struct AssignPrinterCandiates: PrinterAction {
+    let candiates: Set<PrinterDeviceInfo>
 }
 
-struct AssignPeripherals: PrinterAction {
-    let peripherals: [PrinterAction]
+struct AppendPrinterCandiate: PrinterAction {
+    let candiate: PrinterDeviceInfo
+}
+
+struct PreparePrinterHandler: PrinterAction {
+}
+
+struct StartScanDevices: PrinterAction {
+}
+
+struct StopScanDevices: PrinterAction {
 }

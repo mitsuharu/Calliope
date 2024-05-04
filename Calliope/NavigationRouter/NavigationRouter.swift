@@ -13,6 +13,9 @@ import Foundation
 final class NavigationRouter: ObservableObject {
     @Published var items: [Item] = []
     
+    static let shared = NavigationRouter()
+    private init() {}
+    
     enum Item: Hashable {
       case scan
     }

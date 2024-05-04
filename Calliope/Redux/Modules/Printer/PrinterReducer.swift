@@ -6,30 +6,24 @@
 //
 
 import Foundation
-import AsyncBluetooth
 
 func printerReducer(action: PrinterAction, state: PrinterState) -> PrinterState {
     
     switch action {
-    case let action as AssignManufacturer:
-        return PrinterState(
-            manufacturer: action.manufacturer,
-            peripheral: state.peripheral,
-            peripherals: state.peripherals
-        )
+    case let action as AssignPrinterDeviceInfo:
+        return PrinterState(deviceInfo: action.deviceInfo, candiates: nil)
         
-    case let action as AssignPeripheral:
+    case let action as AssignPrinterCandiates:
+        return PrinterState(deviceInfo: state.deviceInfo, candiates: action.candiates)
+        
+    case let action as AppendPrinterCandiate:
+        
+        var nextCandiates : Set<PrinterDeviceInfo> = (state.candiates ?? [])
+        nextCandiates.insert(action.candiate)
+        
         return PrinterState(
-            manufacturer: state.manufacturer,
-            peripheral: action.peripheral as? Peripheral,
-            peripherals: state.peripherals
-        )
-    
-    case let action as AssignPeripherals:
-        return PrinterState(
-            manufacturer: state.manufacturer,
-            peripheral: state.peripheral,
-            peripherals: action.peripherals as? [Peripheral] ?? []
+            deviceInfo: state.deviceInfo,
+            candiates: nextCandiates
         )
         
     default:

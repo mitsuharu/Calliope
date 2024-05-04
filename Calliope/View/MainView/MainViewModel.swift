@@ -7,23 +7,21 @@
 
 import Foundation
 import ReSwift
-import AsyncBluetooth
 
-@Observable
-final class MainViewModel: StoreSubscriber {
+final class MainViewModel: ObservableObject, StoreSubscriber {
     typealias StoreSubscriberStateType = (
-        manufacturer: PrinterState.Manufacturer,
-        peripheral: Peripheral?
+        name: String?,
+        uuid: String?
     )
     
-    private(set) var manufacturer: PrinterState.Manufacturer = .notSelected
-    private(set) var peripheral: Peripheral? = nil
+    @Published var name: String? = nil
+    @Published var uuid: String? = nil
     
     init() {
         appStore.subscribe(self) {
             $0.select { (
-                selectManufacturer(store: $0),
-                selectPeripheral(store: $0)
+                selectPrinterName(store: $0),
+                selectPrinterUUID(store: $0)
             ) }
         }
     }
@@ -33,7 +31,9 @@ final class MainViewModel: StoreSubscriber {
     }
     
     func newState(state: StoreSubscriberStateType) {
-        self.manufacturer = state.manufacturer
-        self.peripheral = state.peripheral
+        Task { @MainActor in
+            self.name = state.name
+            self.uuid = state.uuid
+        }
     }
 }
