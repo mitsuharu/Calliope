@@ -58,6 +58,7 @@
 		9B3939EA2BE62DAC00EF6AED /* PrinterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939E92BE62DAC00EF6AED /* PrinterHandler.swift */; };
 		9B3939EC2BE62F3800EF6AED /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939EB2BE62F3800EF6AED /* ScanViewModel.swift */; };
 		9B3939EE2BE6406C00EF6AED /* CandiateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939ED2BE6406C00EF6AED /* CandiateCell.swift */; };
+		9B3939F02BE676F800EF6AED /* DoPrintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939EF2BE676F800EF6AED /* DoPrintCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		9B3939E92BE62DAC00EF6AED /* PrinterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterHandler.swift; sourceTree = "<group>"; };
 		9B3939EB2BE62F3800EF6AED /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
 		9B3939ED2BE6406C00EF6AED /* CandiateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandiateCell.swift; sourceTree = "<group>"; };
+		9B3939EF2BE676F800EF6AED /* DoPrintCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoPrintCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 			children = (
 				9B12BFC32BE50CE50065DA76 /* MainView.swift */,
 				9B12BFE52BE536C40065DA76 /* MainViewModel.swift */,
+				9B3939EF2BE676F800EF6AED /* DoPrintCell.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				9B12BF2E2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift in Sources */,
 				9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */,
 				9B12BF842BE3907E0065DA76 /* BluetoothPrinterRepository.swift in Sources */,
+				9B3939F02BE676F800EF6AED /* DoPrintCell.swift in Sources */,
 				9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */,
 				9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */,
 				9B3939E72BE628F400EF6AED /* EpsonHandler.swift in Sources */,
@@ -777,7 +781,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -814,7 +818,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
