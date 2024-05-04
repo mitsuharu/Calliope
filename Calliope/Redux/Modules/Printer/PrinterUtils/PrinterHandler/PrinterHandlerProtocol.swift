@@ -14,6 +14,6 @@ protocol PrinterHandlerProtocol {
     func startScan() throws -> Void
     
     func stopScan() throws -> Void
-    
-    func run(device: PrinterDeviceInfo, transact: [PrinterOrder]) throws
+        
+    func run(device: PrinterDeviceInfo, transaction: [PrinterOrder]) async throws -> Void
 }

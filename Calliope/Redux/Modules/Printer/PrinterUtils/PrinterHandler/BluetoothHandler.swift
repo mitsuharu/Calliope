@@ -39,8 +39,28 @@ final class BluetoothHandler: PrinterHandlerProtocol {
         }
     }
     
-    func run(device: PrinterDeviceInfo, transact: [PrinterOrder]) throws {
-    }    
+    func run(device: PrinterDeviceInfo, transaction: [PrinterOrder]) async throws {
+        guard let peripheral = device.bluetooth else {
+            throw PrinterError.instanceFailed
+        }
+        try await connectBluetooth(peripheral: peripheral)
+        
+        let uuid = try await peripheral.fetchUUIDs()
+        
+//        // sunmi 58 kitchen cloud printer
+//        let sUUID = "E7810A71-73AE-499D-8C15-FAA9AEF0C3F2" // UUID(uuidString: sUUID)!
+//        let cUUID = "BEF8D6C9-9C21-4C9E-B632-BD58C1009F9F"
+        
+        let value = makeCommandData(transaction: transaction)
+        try await peripheral.writeValue(
+            value,
+            forCharacteristicWithUUID: uuid.characteristic,
+            ofServiceWithUUID: uuid.service
+        )
+        
+        try await disconnectBluetooth(peripheral: peripheral)
+       
+    }
 }
 
 extension BluetoothHandler {
@@ -98,58 +118,42 @@ extension BluetoothHandler {
     }
     
     
-    fileprivate func connect(peripheral: Peripheral) async {
-        
-        let characteristicUUID = CBUUID()
-        print("characteristicUUID: \(characteristicUUID)")
-        
-        peripheral.characteristicValueUpdatedPublisher
-            .filter {
-                print("$0.uuid: \($0.uuid)")
-                return $0.uuid == characteristicUUID }
-            .map { try? $0.parsedValue() as String? } // replace `String?` with your type
-            .sink { value in
-                print("Value updated to '\(String(describing: value))'")
-            }
-            .store(in: &cancellables)
-        
+    fileprivate func connectBluetooth(peripheral: Peripheral) async throws {
         do {
             try await centralManager.connect(peripheral, options: nil)
             
-            try await peripheral.discoverServices(nil)
-            
-            for service in peripheral.discoveredServices ?? [] {
-                print("service: \(service)")
-                try await peripheral.discoverCharacteristics(nil, for: service)
-                
-                if let serviceUUID = UUID(uuidString: service.uuid.uuidString) {
-                    let characteristics = service.discoveredCharacteristics?.map {
-                                   "\($0.uuid)"
-                               }.joined(separator: ", ") ?? "-"
-                    print("service serviceUUID: \(service.uuid), characteristics: \(characteristics)")
-                }
-            }
-            
-            // sunmi 58 kitchen cloud printer
-            let sUUID = "E7810A71-73AE-499D-8C15-FAA9AEF0C3F2"
-            let cUUID = "BEF8D6C9-9C21-4C9E-B632-BD58C1009F9F"
-            
-            let value = makeData()
-            
-            
-            try await peripheral.writeValue(
-                value,
-                forCharacteristicWithUUID: UUID(uuidString: cUUID)!,
-                ofServiceWithUUID: UUID(uuidString: sUUID)!
-            )
+//            let uuid = try await peripheral.fetchUUIDs()
+//            // sunmi 58 kitchen cloud printer
+//            let sUUID = "E7810A71-73AE-499D-8C15-FAA9AEF0C3F2" // UUID(uuidString: sUUID)!
+//            let cUUID = "BEF8D6C9-9C21-4C9E-B632-BD58C1009F9F"
+//            
+//            let value = makeData()
+//            try await peripheral.writeValue(
+//                value,
+//                forCharacteristicWithUUID: uuid.characteristic,
+//                ofServiceWithUUID: uuid.service
+//            )
             
         } catch {
-            
+            print(error)
+            throw error
         }
-
     }
     
-    func makeData() -> Data {
+    fileprivate func disconnectBluetooth(peripheral: Peripheral) async throws {
+        do {
+            try await centralManager.cancelPeripheralConnection(peripheral)
+        } catch {
+            print(error)
+            throw error
+        }
+    }
+        
+    func makeCommandData(transaction: [PrinterOrder]) -> Data {
+        
+        for order in transaction {
+            // 解析していく
+        }
         
         // 初期化 ESC @
         var data = Data([0x1b, 0x40])
@@ -229,4 +233,45 @@ extension BluetoothHandler {
 //        printer.addCommand(boldOffCommand)
     }
     
+}
+
+
+extension Peripheral {
+    
+    typealias UUIDTuple = (service: String, characteristics: [String])
+    typealias PeripheralUUID = (service: UUID, characteristic: UUID)
+    
+    private func discoverUUIDs() async throws -> [UUIDTuple] {
+        
+        var results: [UUIDTuple] = []
+        
+        try await self.discoverServices(nil)
+        for service in self.discoveredServices ?? [] {
+            try await self.discoverCharacteristics(nil, for: service)
+            
+            let serviceUUID = service.uuid.uuidString
+            let characteristicUUID = service.discoveredCharacteristics?.map {
+                $0.uuid.uuidString
+            } ?? []
+            
+            let tuple: UUIDTuple = (service: serviceUUID, characteristics: characteristicUUID)
+            results.append(tuple)
+        }
+        
+        return results
+    }
+    
+    func fetchUUIDs() async throws -> PeripheralUUID {
+        let uuids = try await self.discoverUUIDs()
+        guard 
+            let serviceUUID = uuids.first?.service,
+            let characteristicUUID = uuids.first?.characteristics.first
+        else {
+            throw PrinterError.instanceFailed
+        }
+        
+        let result: PeripheralUUID = (service: UUID(uuidString: serviceUUID)!,
+                                      characteristic: UUID(uuidString: characteristicUUID)!)
+        return result
+    }
 }

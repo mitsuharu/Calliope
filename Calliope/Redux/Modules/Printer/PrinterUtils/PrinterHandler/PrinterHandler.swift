@@ -30,12 +30,12 @@ final class PrinterHandler: PrinterHandlerProtocol {
         try bluetooth.stopScan()
     }
     
-    func run(device: PrinterDeviceInfo, transact: [PrinterOrder]) throws {
+    func run(device: PrinterDeviceInfo, transaction: [PrinterOrder]) async throws {
         switch device.manufacturer {
         case .epson:
-            try epson.run(device: device, transact: transact)
+            try await epson.run(device: device, transaction: transaction)
         case .bluetooth:
-            try bluetooth.run(device: device, transact: transact)
+            try await bluetooth.run(device: device, transaction: transaction)
         }
     }
     

@@ -9,40 +9,32 @@ import Foundation
 
 final class EpsonHandler: NSObject, PrinterHandlerProtocol {
     
+    var printer: Epos2Printer? = nil
+    var isConnected: Bool = false
+    
     func prepare() throws {
+        printer = try makePrinter()
     }
     
     func startScan() throws {
-        appStore.dispatch(onMain: AssignPrinterCandiates(candiates: []))
-        
-        let filterOption: Epos2FilterOption = Epos2FilterOption()
-        
-        // プリンターを検索する
-        filterOption.deviceType = EPOS2_TYPE_PRINTER.rawValue
-        
-        let result = Epos2Discovery.start(filterOption, delegate: self)
-        if result != EPOS2_SUCCESS.rawValue {
-            throw PrinterError.scanFailed
-        }
+        try startScanEpson()
     }
     
     func stopScan() throws {
-        while Epos2Discovery.stop() == EPOS2_ERR_PROCESSING.rawValue {
-            // retry stop function
-        }
+        try stopScanEpson()
     }
-    
-    func run(device: PrinterDeviceInfo, transact: [PrinterOrder]) throws {
-
-        guard let epsonDevice = device.epson else {
-            throw PrinterError.scanFailed
-        }
         
-        let printer = try makePrinter()
-        try connect(printer: printer, device: epsonDevice)
+    func run(device: PrinterDeviceInfo, transaction: [PrinterOrder]) async throws {
+        guard
+            let printer = printer,
+            let device = device.epson
+        else {
+            throw PrinterError.instanceFailed
+        }
+        try await connectEpson(printer: printer, device: device)
         
         // transact 内の SDK のコマンドを使った例、一旦コメントアウト
-        transact.forEach {
+        transaction.forEach {
             switch $0 {
             case .text(let text, let size, let style):
                 printer.addText("\(text)\n")
@@ -52,15 +44,12 @@ final class EpsonHandler: NSObject, PrinterHandlerProtocol {
                 printer.addCommand(data)
             }
         }
+        printer.addFeedLine(4)
         
-        // ESC/POSコマンドを実行した場合の例
-        addPOSCommand(printer: printer)
-
-        printer.addFeedLine(5)
         do {
             try sendData(printer: printer)
         } catch {
-            try disconnect(printer: printer)
+            try await disconnectEpson(printer: printer)
         }
     }
 }
@@ -143,7 +132,27 @@ extension EpsonHandler {
         return printer
     }
     
-    private func connect(printer: Epos2Printer, device: Epos2DeviceInfo) throws {
+    private func startScanEpson() throws {
+        appStore.dispatch(onMain: AssignPrinterCandiates(candiates: []))
+        
+        let filterOption: Epos2FilterOption = Epos2FilterOption()
+        
+        // プリンターを検索する
+        filterOption.deviceType = EPOS2_TYPE_PRINTER.rawValue
+        
+        let result = Epos2Discovery.start(filterOption, delegate: self)
+        if result != EPOS2_SUCCESS.rawValue {
+            throw PrinterError.scanFailed
+        }
+    }
+    
+    private func stopScanEpson() throws {
+        while Epos2Discovery.stop() == EPOS2_ERR_PROCESSING.rawValue {
+            // retry stop function
+        }
+    }
+    
+    private func connectEpson(printer: Epos2Printer, device: Epos2DeviceInfo) async throws {
         let result = printer.connect(device.target,
                                      timeout:Int(EPOS2_PARAM_DEFAULT))
         if result != EPOS2_SUCCESS.rawValue {
@@ -159,7 +168,7 @@ extension EpsonHandler {
         }
     }
     
-    private func disconnect(printer: Epos2Printer) throws {
+    private func disconnectEpson(printer: Epos2Printer) async throws {
         let result = printer.disconnect()
         if result != EPOS2_SUCCESS.rawValue {
             throw PrinterError.disconnectFailed
