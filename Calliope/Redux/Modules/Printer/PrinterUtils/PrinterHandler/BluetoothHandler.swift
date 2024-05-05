@@ -126,22 +126,20 @@ extension BluetoothHandler {
         transaction.forEach {
             switch $0 {
             case .text(let text, let size, let style):
-                if let d = text.data(using: .ascii) {
+                if let d = text.data(using: .shiftJIS) {
                     result.append(d)
                     result.append(0x0a)
                 }
             case .feed(let count):
-                (0...count).forEach { _ in
-                    result.append(0x0a)
-                }
+                // https://download4.epson.biz/sec_pubs/pos/reference_ja/escpos/esc_ld.html
+                result.append(Data([0x1b, 0x64, UInt8(count)]))
             case .escPosCommond(let data):
                 result.append(data)
             }
         }
         
-        (0...3).forEach { _ in
-            result.append(0x0a)
-        }
+        // 紙送り
+        result.append(Data([0x1b, 0x64, UInt8(10)]))
         
         return result
         
