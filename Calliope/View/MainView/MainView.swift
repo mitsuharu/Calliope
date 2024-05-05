@@ -27,7 +27,9 @@ struct MainView: View {
                         Button(action: {
                             let orders: [PrinterOrder] = [
                                 .text(text: "hello"),
-                                .text(text: "こんにちはコンニチワ今日わ")]
+                                .text(text: "こんにちはコンニチワ今日わ"),
+                                .feed(count: 1),
+                                .qrCode(text: "http://www.example.com")]
                             appStore.dispatch(onMain: RunPrinterOrder(orders: orders))
                         }) {
                             DoPrintCell()
