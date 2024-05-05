@@ -17,7 +17,7 @@ final class ScanViewModel: ObservableObject, StoreSubscriber {
         print("ScanViewModel init")
         appStore.subscribe(self) {
             $0.select {
-                selectPrinterCandiates(store: $0)
+                selectPrinterCandiates(stare: $0)
             }
         }
         appStore.dispatch(onMain: StartScanDevices())

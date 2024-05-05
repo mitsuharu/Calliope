@@ -20,8 +20,8 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
     init() {
         appStore.subscribe(self) {
             $0.select { (
-                selectPrinterName(store: $0),
-                selectPrinterUUID(store: $0)
+                selectPrinterName(stare: $0),
+                selectPrinterUUID(stare: $0)
             ) }
         }
     }

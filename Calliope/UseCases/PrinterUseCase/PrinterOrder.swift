@@ -8,7 +8,7 @@
 import Foundation
 
 enum PrinterOrder {
-    case text(text: String, size: Int = 20, style: TextStyle?)
+    case text(text: String, size: Int = 20, style: TextStyle? = nil)
     case feed(count: Int)
     case escPosCommond(data: Data)
 }

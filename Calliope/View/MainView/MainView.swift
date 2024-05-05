@@ -26,6 +26,11 @@ struct MainView: View {
                     ForEach((0..<8), id: \.self) { _ in
                         Button(action: {
                             // do anything
+                            
+                            print("do Button")
+                            
+                            let orders: [PrinterOrder] = [.text(text: "hello")]
+                            appStore.dispatch(onMain: RunPrinterOrder(orders: orders))
                         }) {
                             DoPrintCell()
                         }

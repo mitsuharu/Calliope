@@ -14,6 +14,7 @@ let printerSaga: Saga = { _ in
     
     await takeEvery(StartScanDevices.self, saga: startScanSaga)
     await takeEvery(StopScanDevices.self, saga: stopScanSaga)
+    await takeEvery(RunPrinterOrder.self, saga: runPrinterOrderSaga)
 }
 
 private let preparePrinterHandlerSaga: Saga = { action async in
@@ -53,3 +54,23 @@ private let stopScanSaga: Saga = { action async in
         
     }
 }
+
+private let runPrinterOrderSaga: Saga = { action async in
+    guard let action = action as? RunPrinterOrder else {
+        return
+    }
+    
+    guard let device = selectPrinterDeviceInfo(stare: appStore.state) else {
+        return
+    }
+    
+    print("runPrinterOrderSaga")
+    
+    do {
+        let handler = PrinterHandler.shared
+        try await handler.run(device: device, transaction: action.orders)
+    } catch {
+        
+    }
+}
+

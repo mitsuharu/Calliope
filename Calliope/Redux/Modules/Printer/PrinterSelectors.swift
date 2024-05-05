@@ -7,23 +7,43 @@
 
 import Foundation
 
-func selectPrinterDeviceInfo(store: AppState) -> PrinterDeviceInfo? {
-    store.printer.deviceInfo
+func selectPrinterDeviceInfo(stare: AppState) -> PrinterDeviceInfo? {
+    stare.printer.deviceInfo
 }
 
-func selectPrinterCandiates(store: AppState) -> [PrinterDeviceInfo] {
-    Array(store.printer.candiates ?? [])
+func selectPrinterCandiates(stare: AppState) -> [PrinterDeviceInfo] {
+    let candiates = (stare.printer.candiates ?? []).sorted { lhs, rhs in
+        let keyword = "CloudPrint"
+        switch (lhs.name, rhs.name) {
+        case (let leftName?, let rightName?):
+            let left = leftName.contains(keyword)
+            let right = rightName.contains(keyword)
+            if left && !right {
+                return true
+            } else if !right {
+                return false
+            }
+            return leftName.lowercased() < rightName.lowercased()
+        case (nil, nil):
+            return false
+        case (nil, _):
+            return false
+        case (_, nil):
+            return true
+        }
+    }
+    return candiates
 }
 
-func selectPrinterName(store: AppState) -> String? {
-    guard let deviceInfo = selectPrinterDeviceInfo(store: store) else {
+func selectPrinterName(stare: AppState) -> String? {
+    guard let deviceInfo = selectPrinterDeviceInfo(stare: stare) else {
         return nil
     }
     return deviceInfo.name
 }
 
-func selectPrinterUUID(store: AppState) -> String? {
-    guard let deviceInfo = selectPrinterDeviceInfo(store: store) else {
+func selectPrinterUUID(stare: AppState) -> String? {
+    guard let deviceInfo = selectPrinterDeviceInfo(stare: stare) else {
         return nil
     }
     return deviceInfo.uuid
