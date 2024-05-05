@@ -23,9 +23,6 @@
 		9B12BF322BD286C50065DA76 /* PrinterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF312BD286C50065DA76 /* PrinterError.swift */; };
 		9B12BF362BD2A15A0065DA76 /* PrinterDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */; };
 		9B12BF842BE3907E0065DA76 /* BluetoothPrinterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */; };
-		9B12BF872BE391D60065DA76 /* AsyncBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF862BE391D60065DA76 /* AsyncBluetooth */; };
-		9B12BF8D2BE5038A0065DA76 /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF8C2BE5038A0065DA76 /* ReSwift */; };
-		9B12BF902BE503AA0065DA76 /* ReSwiftSaga in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BF8F2BE503AA0065DA76 /* ReSwiftSaga */; };
 		9B12BFAC2BE509330065DA76 /* ToastAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF982BE509330065DA76 /* ToastAction.swift */; };
 		9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF992BE509330065DA76 /* ToastSaga.swift */; };
 		9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA22BE509330065DA76 /* AppReducer.swift */; };
@@ -34,7 +31,6 @@
 		9B12BFB62BE509330065DA76 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA52BE509330065DA76 /* AppStore.swift */; };
 		9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFB72BE50B130065DA76 /* ToastModifier.swift */; };
 		9B12BFBC2BE50B130065DA76 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFB82BE50B130065DA76 /* ToastViewModel.swift */; };
-		9B12BFBF2BE50B600065DA76 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9B12BFBE2BE50B600065DA76 /* AlertToast */; };
 		9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC32BE50CE50065DA76 /* MainView.swift */; };
 		9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC62BE50D090065DA76 /* ScanView.swift */; };
 		9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC92BE5130A0065DA76 /* NavigationRouter.swift */; };
@@ -59,6 +55,10 @@
 		9B3939EC2BE62F3800EF6AED /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939EB2BE62F3800EF6AED /* ScanViewModel.swift */; };
 		9B3939EE2BE6406C00EF6AED /* CandiateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939ED2BE6406C00EF6AED /* CandiateCell.swift */; };
 		9B3939F02BE676F800EF6AED /* DoPrintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939EF2BE676F800EF6AED /* DoPrintCell.swift */; };
+		9B3939F32BE73F1B00EF6AED /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939F22BE73F1B00EF6AED /* ReSwift */; };
+		9B3939F62BE73F3000EF6AED /* ReSwiftSaga in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939F52BE73F3000EF6AED /* ReSwiftSaga */; };
+		9B3939F92BE73F3C00EF6AED /* AsyncBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */; };
+		9B3939FC2BE73F4600EF6AED /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939FB2BE73F4600EF6AED /* AlertToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,14 +152,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B12BFD62BE51D0B0065DA76 /* libeposeasyselect.xcframework in Frameworks */,
+				9B3939F62BE73F3000EF6AED /* ReSwiftSaga in Frameworks */,
+				9B3939F92BE73F3C00EF6AED /* AsyncBluetooth in Frameworks */,
+				9B3939FC2BE73F4600EF6AED /* AlertToast in Frameworks */,
 				9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */,
 				9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */,
+				9B3939F32BE73F1B00EF6AED /* ReSwift in Frameworks */,
 				9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */,
 				9B12BFD32BE51D090065DA76 /* libepos2.xcframework in Frameworks */,
-				9B12BFBF2BE50B600065DA76 /* AlertToast in Frameworks */,
-				9B12BF902BE503AA0065DA76 /* ReSwiftSaga in Frameworks */,
-				9B12BF8D2BE5038A0065DA76 /* ReSwift in Frameworks */,
-				9B12BF872BE391D60065DA76 /* AsyncBluetooth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,10 +446,10 @@
 			);
 			name = Calliope;
 			packageProductDependencies = (
-				9B12BF862BE391D60065DA76 /* AsyncBluetooth */,
-				9B12BF8C2BE5038A0065DA76 /* ReSwift */,
-				9B12BF8F2BE503AA0065DA76 /* ReSwiftSaga */,
-				9B12BFBE2BE50B600065DA76 /* AlertToast */,
+				9B3939F22BE73F1B00EF6AED /* ReSwift */,
+				9B3939F52BE73F3000EF6AED /* ReSwiftSaga */,
+				9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */,
+				9B3939FB2BE73F4600EF6AED /* AlertToast */,
 			);
 			productName = Calliope;
 			productReference = 9B12BEE82BD2706D0065DA76 /* Calliope.app */;
@@ -525,10 +525,10 @@
 			);
 			mainGroup = 9B12BEDF2BD2706D0065DA76;
 			packageReferences = (
-				9B12BF852BE391D60065DA76 /* XCRemoteSwiftPackageReference "AsyncBluetooth" */,
-				9B12BF8B2BE5038A0065DA76 /* XCRemoteSwiftPackageReference "ReSwift" */,
-				9B12BF8E2BE503AA0065DA76 /* XCRemoteSwiftPackageReference "ReSwift-Saga" */,
-				9B12BFBD2BE50B600065DA76 /* XCRemoteSwiftPackageReference "AlertToast" */,
+				9B3939F12BE73F1B00EF6AED /* XCRemoteSwiftPackageReference "ReSwift" */,
+				9B3939F42BE73F3000EF6AED /* XCRemoteSwiftPackageReference "ReSwift-Saga" */,
+				9B3939F72BE73F3C00EF6AED /* XCRemoteSwiftPackageReference "AsyncBluetooth" */,
+				9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = 9B12BEE92BD2706D0065DA76 /* Products */;
 			projectDirPath = "";
@@ -957,15 +957,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9B12BF852BE391D60065DA76 /* XCRemoteSwiftPackageReference "AsyncBluetooth" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/manolofdez/AsyncBluetooth";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.11.0;
-			};
-		};
-		9B12BF8B2BE5038A0065DA76 /* XCRemoteSwiftPackageReference "ReSwift" */ = {
+		9B3939F12BE73F1B00EF6AED /* XCRemoteSwiftPackageReference "ReSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReSwift/ReSwift";
 			requirement = {
@@ -973,7 +965,7 @@
 				minimumVersion = 6.1.1;
 			};
 		};
-		9B12BF8E2BE503AA0065DA76 /* XCRemoteSwiftPackageReference "ReSwift-Saga" */ = {
+		9B3939F42BE73F3000EF6AED /* XCRemoteSwiftPackageReference "ReSwift-Saga" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mitsuharu/ReSwift-Saga";
 			requirement = {
@@ -981,7 +973,15 @@
 				minimumVersion = 0.0.5;
 			};
 		};
-		9B12BFBD2BE50B600065DA76 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+		9B3939F72BE73F3C00EF6AED /* XCRemoteSwiftPackageReference "AsyncBluetooth" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/manolofdez/AsyncBluetooth";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.0;
+			};
+		};
+		9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elai950/AlertToast";
 			requirement = {
@@ -992,24 +992,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9B12BF862BE391D60065DA76 /* AsyncBluetooth */ = {
+		9B3939F22BE73F1B00EF6AED /* ReSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9B12BF852BE391D60065DA76 /* XCRemoteSwiftPackageReference "AsyncBluetooth" */;
-			productName = AsyncBluetooth;
-		};
-		9B12BF8C2BE5038A0065DA76 /* ReSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9B12BF8B2BE5038A0065DA76 /* XCRemoteSwiftPackageReference "ReSwift" */;
+			package = 9B3939F12BE73F1B00EF6AED /* XCRemoteSwiftPackageReference "ReSwift" */;
 			productName = ReSwift;
 		};
-		9B12BF8F2BE503AA0065DA76 /* ReSwiftSaga */ = {
+		9B3939F52BE73F3000EF6AED /* ReSwiftSaga */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9B12BF8E2BE503AA0065DA76 /* XCRemoteSwiftPackageReference "ReSwift-Saga" */;
+			package = 9B3939F42BE73F3000EF6AED /* XCRemoteSwiftPackageReference "ReSwift-Saga" */;
 			productName = ReSwiftSaga;
 		};
-		9B12BFBE2BE50B600065DA76 /* AlertToast */ = {
+		9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9B12BFBD2BE50B600065DA76 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			package = 9B3939F72BE73F3C00EF6AED /* XCRemoteSwiftPackageReference "AsyncBluetooth" */;
+			productName = AsyncBluetooth;
+		};
+		9B3939FB2BE73F4600EF6AED /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
 		};
 /* End XCSwiftPackageProductDependency section */
