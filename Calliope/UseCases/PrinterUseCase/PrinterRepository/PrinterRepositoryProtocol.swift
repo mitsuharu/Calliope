@@ -8,9 +8,6 @@
 import Foundation
 
 protocol PrinterRepositoryProtocol {
-    associatedtype PrinterType
-    
-    typealias Transact = (PrinterType) -> Void
     
     /**
      端末に接続している対応POSプリンターをスキャンする
@@ -22,6 +19,6 @@ protocol PrinterRepositoryProtocol {
     
     func stopScan() throws -> Void
     
-    func run(device: PrinterDevice, transact: Transact) throws
+    func run(device: PrinterDevice, transact: [PrinterOrder]) throws
 }
 

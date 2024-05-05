@@ -26,7 +26,7 @@ final class BluetoothPrinterRepository: PrinterRepositoryProtocol {
     func stopScan() throws {
     }
     
-    func run(device: PrinterDevice, transact: (NSObject) -> Void) throws {
+    func run(device: PrinterDevice, transact: [PrinterOrder]) throws {
     }
     
     typealias PrinterType = NSObject
