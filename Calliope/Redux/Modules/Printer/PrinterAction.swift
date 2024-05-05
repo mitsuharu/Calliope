@@ -22,9 +22,6 @@ struct AppendPrinterCandiate: PrinterAction {
     let candiate: PrinterDeviceInfo
 }
 
-struct PreparePrinterHandler: PrinterAction {
-}
-
 struct StartScanDevices: PrinterAction {
 }
 

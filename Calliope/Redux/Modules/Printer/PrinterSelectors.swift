@@ -13,7 +13,7 @@ func selectPrinterDeviceInfo(stare: AppState) -> PrinterDeviceInfo? {
 
 func selectPrinterCandiates(stare: AppState) -> [PrinterDeviceInfo] {
     let candiates = (stare.printer.candiates ?? []).sorted { lhs, rhs in
-        let keyword = "CloudPrint"
+        let keyword = "CloudPrint" // TM-P20II
         switch (lhs.name, rhs.name) {
         case (let leftName?, let rightName?):
             let left = leftName.contains(keyword)

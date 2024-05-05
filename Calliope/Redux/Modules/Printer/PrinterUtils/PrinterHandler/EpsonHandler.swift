@@ -181,12 +181,5 @@ extension EpsonHandler: Epos2DiscoveryDelegate {
     func onDiscovery(_ deviceInfo: Epos2DeviceInfo) {
         let candiate = PrinterDeviceInfo(epson: deviceInfo)
         appStore.dispatch(onMain: AppendPrinterCandiate(candiate: candiate))
-//        stopScan()
-//        try? run(device: device, transact:
-//            [
-//                PrinterOrder.text(text: "test", size: 20, style: .normal),
-//                PrinterOrder.feed(count: 5)
-//            ]
-//        )
     }
 }

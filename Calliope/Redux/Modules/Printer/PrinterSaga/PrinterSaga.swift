@@ -18,14 +18,11 @@ let printerSaga: Saga = { _ in
 }
 
 private let preparePrinterHandlerSaga: Saga = { action async in
-    guard let action = action as? PreparePrinterHandler else {
-        return
-    }
     do {
         let handler = PrinterHandler.shared
         try handler.prepare()
     } catch {
-        
+        print(error)
     }
 }
 
@@ -63,8 +60,6 @@ private let runPrinterOrderSaga: Saga = { action async in
     guard let device = selectPrinterDeviceInfo(stare: appStore.state) else {
         return
     }
-    
-    print("runPrinterOrderSaga")
     
     do {
         let handler = PrinterHandler.shared
