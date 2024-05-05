@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,51 @@
 		9B12BEFD2BD2706F0065DA76 /* CalliopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BEFC2BD2706F0065DA76 /* CalliopeTests.swift */; };
 		9B12BF072BD2706F0065DA76 /* CalliopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF062BD2706F0065DA76 /* CalliopeUITests.swift */; };
 		9B12BF092BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */; };
+		9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */; };
+		9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */; };
+		9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */; };
+		9B12BF2B2BD27F060065DA76 /* PrinterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF2A2BD27F060065DA76 /* PrinterUseCase.swift */; };
+		9B12BF2E2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF2D2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift */; };
+		9B12BF302BD27F8F0065DA76 /* EpsonPrinterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF2F2BD27F8F0065DA76 /* EpsonPrinterRepository.swift */; };
+		9B12BF322BD286C50065DA76 /* PrinterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF312BD286C50065DA76 /* PrinterError.swift */; };
+		9B12BF362BD2A15A0065DA76 /* PrinterDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */; };
+		9B12BF842BE3907E0065DA76 /* BluetoothPrinterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */; };
+		9B12BFAC2BE509330065DA76 /* ToastAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF982BE509330065DA76 /* ToastAction.swift */; };
+		9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF992BE509330065DA76 /* ToastSaga.swift */; };
+		9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA22BE509330065DA76 /* AppReducer.swift */; };
+		9B12BFB42BE509330065DA76 /* AppSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA32BE509330065DA76 /* AppSaga.swift */; };
+		9B12BFB52BE509330065DA76 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA42BE509330065DA76 /* AppState.swift */; };
+		9B12BFB62BE509330065DA76 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFA52BE509330065DA76 /* AppStore.swift */; };
+		9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFB72BE50B130065DA76 /* ToastModifier.swift */; };
+		9B12BFBC2BE50B130065DA76 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFB82BE50B130065DA76 /* ToastViewModel.swift */; };
+		9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC32BE50CE50065DA76 /* MainView.swift */; };
+		9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC62BE50D090065DA76 /* ScanView.swift */; };
+		9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC92BE5130A0065DA76 /* NavigationRouter.swift */; };
+		9B12BFCC2BE51A090065DA76 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFCB2BE51A090065DA76 /* NavigationModifier.swift */; };
+		9B12BFD32BE51D090065DA76 /* libepos2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCD2BE51CCB0065DA76 /* libepos2.xcframework */; };
+		9B12BFD42BE51D090065DA76 /* libepos2.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCD2BE51CCB0065DA76 /* libepos2.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B12BFD62BE51D0B0065DA76 /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */; };
+		9B12BFD72BE51D0B0065DA76 /* libeposeasyselect.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B12BFD92BE51D900065DA76 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B12BFD82BE51D900065DA76 /* Localizable.xcstrings */; };
+		9B12BFDC2BE522E10065DA76 /* PrinterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFDB2BE522E10065DA76 /* PrinterAction.swift */; };
+		9B12BFDE2BE522ED0065DA76 /* PrinterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFDD2BE522ED0065DA76 /* PrinterReducer.swift */; };
+		9B12BFE02BE522F90065DA76 /* PrinterSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFDF2BE522F90065DA76 /* PrinterSaga.swift */; };
+		9B12BFE22BE523120065DA76 /* PrinterSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFE12BE523120065DA76 /* PrinterSelectors.swift */; };
+		9B12BFE42BE5231D0065DA76 /* PrinterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFE32BE5231D0065DA76 /* PrinterState.swift */; };
+		9B12BFE62BE536C40065DA76 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFE52BE536C40065DA76 /* MainViewModel.swift */; };
+		9B12BFEF2BE610A70065DA76 /* PrinterDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFEE2BE610A70065DA76 /* PrinterDeviceInfo.swift */; };
+		9B12BFF22BE61B4B0065DA76 /* PrinterOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFF12BE61B4B0065DA76 /* PrinterOrder.swift */; };
+		9B3939E62BE628F400EF6AED /* BluetoothHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939E22BE628F400EF6AED /* BluetoothHandler.swift */; };
+		9B3939E72BE628F400EF6AED /* EpsonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939E32BE628F400EF6AED /* EpsonHandler.swift */; };
+		9B3939E82BE628F400EF6AED /* PrinterHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939E42BE628F400EF6AED /* PrinterHandlerProtocol.swift */; };
+		9B3939EA2BE62DAC00EF6AED /* PrinterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939E92BE62DAC00EF6AED /* PrinterHandler.swift */; };
+		9B3939EC2BE62F3800EF6AED /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939EB2BE62F3800EF6AED /* ScanViewModel.swift */; };
+		9B3939EE2BE6406C00EF6AED /* CandiateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939ED2BE6406C00EF6AED /* CandiateCell.swift */; };
+		9B3939F02BE676F800EF6AED /* DoPrintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939EF2BE676F800EF6AED /* DoPrintCell.swift */; };
+		9B3939F32BE73F1B00EF6AED /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939F22BE73F1B00EF6AED /* ReSwift */; };
+		9B3939F62BE73F3000EF6AED /* ReSwiftSaga in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939F52BE73F3000EF6AED /* ReSwiftSaga */; };
+		9B3939F92BE73F3C00EF6AED /* AsyncBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */; };
+		9B3939FC2BE73F4600EF6AED /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939FB2BE73F4600EF6AED /* AlertToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +78,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9B12BFD52BE51D090065DA76 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9B12BFD72BE51D0B0065DA76 /* libeposeasyselect.xcframework in Embed Frameworks */,
+				9B12BFD42BE51D090065DA76 /* libepos2.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9B12BEE82BD2706D0065DA76 /* Calliope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calliope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeApp.swift; sourceTree = "<group>"; };
@@ -44,6 +104,46 @@
 		9B12BF022BD2706F0065DA76 /* CalliopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalliopeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B12BF062BD2706F0065DA76 /* CalliopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeUITests.swift; sourceTree = "<group>"; };
 		9B12BF082BD2706F0065DA76 /* CalliopeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalliopeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		9B12BF212BD27BE80065DA76 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		9B12BF2A2BD27F060065DA76 /* PrinterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterUseCase.swift; sourceTree = "<group>"; };
+		9B12BF2D2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterRepositoryProtocol.swift; sourceTree = "<group>"; };
+		9B12BF2F2BD27F8F0065DA76 /* EpsonPrinterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpsonPrinterRepository.swift; sourceTree = "<group>"; };
+		9B12BF312BD286C50065DA76 /* PrinterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterError.swift; sourceTree = "<group>"; };
+		9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterDevice.swift; sourceTree = "<group>"; };
+		9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPrinterRepository.swift; sourceTree = "<group>"; };
+		9B12BF982BE509330065DA76 /* ToastAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastAction.swift; sourceTree = "<group>"; };
+		9B12BF992BE509330065DA76 /* ToastSaga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSaga.swift; sourceTree = "<group>"; };
+		9B12BFA22BE509330065DA76 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		9B12BFA32BE509330065DA76 /* AppSaga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSaga.swift; sourceTree = "<group>"; };
+		9B12BFA42BE509330065DA76 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9B12BFA52BE509330065DA76 /* AppStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		9B12BFB72BE50B130065DA76 /* ToastModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		9B12BFB82BE50B130065DA76 /* ToastViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastViewModel.swift; sourceTree = "<group>"; };
+		9B12BFC32BE50CE50065DA76 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9B12BFC62BE50D090065DA76 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		9B12BFC92BE5130A0065DA76 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		9B12BFCB2BE51A090065DA76 /* NavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModifier.swift; sourceTree = "<group>"; };
+		9B12BFCD2BE51CCB0065DA76 /* libepos2.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libepos2.xcframework; sourceTree = "<group>"; };
+		9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libeposeasyselect.xcframework; sourceTree = "<group>"; };
+		9B12BFD82BE51D900065DA76 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9B12BFDB2BE522E10065DA76 /* PrinterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterAction.swift; sourceTree = "<group>"; };
+		9B12BFDD2BE522ED0065DA76 /* PrinterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterReducer.swift; sourceTree = "<group>"; };
+		9B12BFDF2BE522F90065DA76 /* PrinterSaga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterSaga.swift; sourceTree = "<group>"; };
+		9B12BFE12BE523120065DA76 /* PrinterSelectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterSelectors.swift; sourceTree = "<group>"; };
+		9B12BFE32BE5231D0065DA76 /* PrinterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterState.swift; sourceTree = "<group>"; };
+		9B12BFE52BE536C40065DA76 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9B12BFEE2BE610A70065DA76 /* PrinterDeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterDeviceInfo.swift; sourceTree = "<group>"; };
+		9B12BFF12BE61B4B0065DA76 /* PrinterOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterOrder.swift; sourceTree = "<group>"; };
+		9B3939E22BE628F400EF6AED /* BluetoothHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothHandler.swift; sourceTree = "<group>"; };
+		9B3939E32BE628F400EF6AED /* EpsonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpsonHandler.swift; sourceTree = "<group>"; };
+		9B3939E42BE628F400EF6AED /* PrinterHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterHandlerProtocol.swift; sourceTree = "<group>"; };
+		9B3939E92BE62DAC00EF6AED /* PrinterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterHandler.swift; sourceTree = "<group>"; };
+		9B3939EB2BE62F3800EF6AED /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
+		9B3939ED2BE6406C00EF6AED /* CandiateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandiateCell.swift; sourceTree = "<group>"; };
+		9B3939EF2BE676F800EF6AED /* DoPrintCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoPrintCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +151,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B12BFD62BE51D0B0065DA76 /* libeposeasyselect.xcframework in Frameworks */,
+				9B3939F62BE73F3000EF6AED /* ReSwiftSaga in Frameworks */,
+				9B3939F92BE73F3C00EF6AED /* AsyncBluetooth in Frameworks */,
+				9B3939FC2BE73F4600EF6AED /* AlertToast in Frameworks */,
+				9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */,
+				9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */,
+				9B3939F32BE73F1B00EF6AED /* ReSwift in Frameworks */,
+				9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */,
+				9B12BFD32BE51D090065DA76 /* libepos2.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +187,7 @@
 				9B12BEFB2BD2706F0065DA76 /* CalliopeTests */,
 				9B12BF052BD2706F0065DA76 /* CalliopeUITests */,
 				9B12BEE92BD2706D0065DA76 /* Products */,
+				9B12BF1A2BD27B200065DA76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,10 +204,18 @@
 		9B12BEEA2BD2706D0065DA76 /* Calliope */ = {
 			isa = PBXGroup;
 			children = (
+				9B12BF212BD27BE80065DA76 /* Bridging-Header.h */,
 				9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */,
 				9B12BEED2BD2706D0065DA76 /* ContentView.swift */,
 				9B12BEEF2BD2706F0065DA76 /* Assets.xcassets */,
+				9B12BFD82BE51D900065DA76 /* Localizable.xcstrings */,
+				9B12BFD02BE51CCB0065DA76 /* Frameworks */,
+				9B12BFC82BE512FD0065DA76 /* NavigationRouter */,
 				9B12BEF12BD2706F0065DA76 /* Preview Content */,
+				9B12BFA62BE509330065DA76 /* Redux */,
+				9B12BF282BD27EA20065DA76 /* UseCases */,
+				9B12BFC02BE50BDB0065DA76 /* View */,
+				9B12BFBA2BE50B130065DA76 /* ViewModifier */,
 			);
 			path = Calliope;
 			sourceTree = "<group>";
@@ -127,6 +245,189 @@
 			path = CalliopeUITests;
 			sourceTree = "<group>";
 		};
+		9B12BF1A2BD27B200065DA76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */,
+				9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */,
+				9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B12BF282BD27EA20065DA76 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF292BD27EC00065DA76 /* PrinterUseCase */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9B12BF292BD27EC00065DA76 /* PrinterUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF2C2BD27F0F0065DA76 /* PrinterRepository */,
+				9B12BF2A2BD27F060065DA76 /* PrinterUseCase.swift */,
+				9B12BF312BD286C50065DA76 /* PrinterError.swift */,
+				9B12BF352BD2A15A0065DA76 /* PrinterDevice.swift */,
+				9B12BFF12BE61B4B0065DA76 /* PrinterOrder.swift */,
+			);
+			path = PrinterUseCase;
+			sourceTree = "<group>";
+		};
+		9B12BF2C2BD27F0F0065DA76 /* PrinterRepository */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF2D2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift */,
+				9B12BF2F2BD27F8F0065DA76 /* EpsonPrinterRepository.swift */,
+				9B12BF832BE3907E0065DA76 /* BluetoothPrinterRepository.swift */,
+			);
+			path = PrinterRepository;
+			sourceTree = "<group>";
+		};
+		9B12BF9A2BE509330065DA76 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF982BE509330065DA76 /* ToastAction.swift */,
+				9B12BF992BE509330065DA76 /* ToastSaga.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		9B12BFA12BE509330065DA76 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFDA2BE522D20065DA76 /* Printer */,
+				9B12BF9A2BE509330065DA76 /* Toast */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9B12BFA62BE509330065DA76 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFA12BE509330065DA76 /* Modules */,
+				9B12BFA22BE509330065DA76 /* AppReducer.swift */,
+				9B12BFA32BE509330065DA76 /* AppSaga.swift */,
+				9B12BFA42BE509330065DA76 /* AppState.swift */,
+				9B12BFA52BE509330065DA76 /* AppStore.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		9B12BFB92BE50B130065DA76 /* ToastModifier */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFB72BE50B130065DA76 /* ToastModifier.swift */,
+				9B12BFB82BE50B130065DA76 /* ToastViewModel.swift */,
+			);
+			path = ToastModifier;
+			sourceTree = "<group>";
+		};
+		9B12BFBA2BE50B130065DA76 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFB92BE50B130065DA76 /* ToastModifier */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		9B12BFC02BE50BDB0065DA76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFC22BE50CD70065DA76 /* MainView */,
+				9B12BFC12BE50CD70065DA76 /* ScanView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B12BFC12BE50CD70065DA76 /* ScanView */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFC62BE50D090065DA76 /* ScanView.swift */,
+				9B3939EB2BE62F3800EF6AED /* ScanViewModel.swift */,
+				9B3939ED2BE6406C00EF6AED /* CandiateCell.swift */,
+			);
+			path = ScanView;
+			sourceTree = "<group>";
+		};
+		9B12BFC22BE50CD70065DA76 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFC32BE50CE50065DA76 /* MainView.swift */,
+				9B12BFE52BE536C40065DA76 /* MainViewModel.swift */,
+				9B3939EF2BE676F800EF6AED /* DoPrintCell.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		9B12BFC82BE512FD0065DA76 /* NavigationRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFC92BE5130A0065DA76 /* NavigationRouter.swift */,
+				9B12BFCB2BE51A090065DA76 /* NavigationModifier.swift */,
+			);
+			path = NavigationRouter;
+			sourceTree = "<group>";
+		};
+		9B12BFCF2BE51CCB0065DA76 /* Epson */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFCD2BE51CCB0065DA76 /* libepos2.xcframework */,
+				9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */,
+			);
+			path = Epson;
+			sourceTree = "<group>";
+		};
+		9B12BFD02BE51CCB0065DA76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFCF2BE51CCB0065DA76 /* Epson */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B12BFDA2BE522D20065DA76 /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFF02BE6183A0065DA76 /* PrinterSaga */,
+				9B12BFEC2BE610400065DA76 /* PrinterUtils */,
+				9B12BFDB2BE522E10065DA76 /* PrinterAction.swift */,
+				9B12BFDD2BE522ED0065DA76 /* PrinterReducer.swift */,
+				9B12BFE12BE523120065DA76 /* PrinterSelectors.swift */,
+				9B12BFE32BE5231D0065DA76 /* PrinterState.swift */,
+			);
+			path = Printer;
+			sourceTree = "<group>";
+		};
+		9B12BFEC2BE610400065DA76 /* PrinterUtils */ = {
+			isa = PBXGroup;
+			children = (
+				9B3939E52BE628F400EF6AED /* PrinterHandler */,
+				9B12BFEE2BE610A70065DA76 /* PrinterDeviceInfo.swift */,
+			);
+			path = PrinterUtils;
+			sourceTree = "<group>";
+		};
+		9B12BFF02BE6183A0065DA76 /* PrinterSaga */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BFDF2BE522F90065DA76 /* PrinterSaga.swift */,
+			);
+			path = PrinterSaga;
+			sourceTree = "<group>";
+		};
+		9B3939E52BE628F400EF6AED /* PrinterHandler */ = {
+			isa = PBXGroup;
+			children = (
+				9B3939E22BE628F400EF6AED /* BluetoothHandler.swift */,
+				9B3939E32BE628F400EF6AED /* EpsonHandler.swift */,
+				9B3939E42BE628F400EF6AED /* PrinterHandlerProtocol.swift */,
+				9B3939E92BE62DAC00EF6AED /* PrinterHandler.swift */,
+			);
+			path = PrinterHandler;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,12 +438,19 @@
 				9B12BEE42BD2706D0065DA76 /* Sources */,
 				9B12BEE52BD2706D0065DA76 /* Frameworks */,
 				9B12BEE62BD2706D0065DA76 /* Resources */,
+				9B12BFD52BE51D090065DA76 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Calliope;
+			packageProductDependencies = (
+				9B3939F22BE73F1B00EF6AED /* ReSwift */,
+				9B3939F52BE73F3000EF6AED /* ReSwiftSaga */,
+				9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */,
+				9B3939FB2BE73F4600EF6AED /* AlertToast */,
+			);
 			productName = Calliope;
 			productReference = 9B12BEE82BD2706D0065DA76 /* Calliope.app */;
 			productType = "com.apple.product-type.application";
@@ -213,8 +521,15 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 9B12BEDF2BD2706D0065DA76;
+			packageReferences = (
+				9B3939F12BE73F1B00EF6AED /* XCRemoteSwiftPackageReference "ReSwift" */,
+				9B3939F42BE73F3000EF6AED /* XCRemoteSwiftPackageReference "ReSwift-Saga" */,
+				9B3939F72BE73F3C00EF6AED /* XCRemoteSwiftPackageReference "AsyncBluetooth" */,
+				9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = 9B12BEE92BD2706D0065DA76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +548,7 @@
 			files = (
 				9B12BEF32BD2706F0065DA76 /* Preview Assets.xcassets in Resources */,
 				9B12BEF02BD2706F0065DA76 /* Assets.xcassets in Resources */,
+				9B12BFD92BE51D900065DA76 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +573,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3939EE2BE6406C00EF6AED /* CandiateCell.swift in Sources */,
+				9B3939E82BE628F400EF6AED /* PrinterHandlerProtocol.swift in Sources */,
 				9B12BEEE2BD2706D0065DA76 /* ContentView.swift in Sources */,
+				9B12BFF22BE61B4B0065DA76 /* PrinterOrder.swift in Sources */,
+				9B12BFE42BE5231D0065DA76 /* PrinterState.swift in Sources */,
+				9B12BFDE2BE522ED0065DA76 /* PrinterReducer.swift in Sources */,
+				9B12BFE02BE522F90065DA76 /* PrinterSaga.swift in Sources */,
+				9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */,
+				9B12BFE62BE536C40065DA76 /* MainViewModel.swift in Sources */,
+				9B3939E62BE628F400EF6AED /* BluetoothHandler.swift in Sources */,
+				9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */,
+				9B12BF2E2BD27F3A0065DA76 /* PrinterRepositoryProtocol.swift in Sources */,
+				9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */,
+				9B12BF842BE3907E0065DA76 /* BluetoothPrinterRepository.swift in Sources */,
+				9B3939F02BE676F800EF6AED /* DoPrintCell.swift in Sources */,
+				9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */,
+				9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */,
+				9B3939E72BE628F400EF6AED /* EpsonHandler.swift in Sources */,
+				9B12BFDC2BE522E10065DA76 /* PrinterAction.swift in Sources */,
+				9B3939EA2BE62DAC00EF6AED /* PrinterHandler.swift in Sources */,
+				9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */,
+				9B12BFCC2BE51A090065DA76 /* NavigationModifier.swift in Sources */,
+				9B12BFEF2BE610A70065DA76 /* PrinterDeviceInfo.swift in Sources */,
+				9B12BFB42BE509330065DA76 /* AppSaga.swift in Sources */,
+				9B12BFBC2BE50B130065DA76 /* ToastViewModel.swift in Sources */,
+				9B12BF322BD286C50065DA76 /* PrinterError.swift in Sources */,
+				9B12BFB62BE509330065DA76 /* AppStore.swift in Sources */,
+				9B3939EC2BE62F3800EF6AED /* ScanViewModel.swift in Sources */,
+				9B12BF302BD27F8F0065DA76 /* EpsonPrinterRepository.swift in Sources */,
+				9B12BFB52BE509330065DA76 /* AppState.swift in Sources */,
 				9B12BEEC2BD2706D0065DA76 /* CalliopeApp.swift in Sources */,
+				9B12BF2B2BD27F060065DA76 /* PrinterUseCase.swift in Sources */,
+				9B12BFAC2BE509330065DA76 /* ToastAction.swift in Sources */,
+				9B12BFE22BE523120065DA76 /* PrinterSelectors.swift in Sources */,
+				9B12BF362BD2A15A0065DA76 /* PrinterDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +649,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -363,6 +713,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -425,11 +776,14 @@
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calliope/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,9 +791,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.Calliope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Calliope/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,11 +813,14 @@
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calliope/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,9 +828,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.Calliope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Calliope/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -588,6 +955,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B3939F12BE73F1B00EF6AED /* XCRemoteSwiftPackageReference "ReSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReSwift/ReSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.1;
+			};
+		};
+		9B3939F42BE73F3000EF6AED /* XCRemoteSwiftPackageReference "ReSwift-Saga" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mitsuharu/ReSwift-Saga";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+		9B3939F72BE73F3C00EF6AED /* XCRemoteSwiftPackageReference "AsyncBluetooth" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/manolofdez/AsyncBluetooth";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.0;
+			};
+		};
+		9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B3939F22BE73F1B00EF6AED /* ReSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3939F12BE73F1B00EF6AED /* XCRemoteSwiftPackageReference "ReSwift" */;
+			productName = ReSwift;
+		};
+		9B3939F52BE73F3000EF6AED /* ReSwiftSaga */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3939F42BE73F3000EF6AED /* XCRemoteSwiftPackageReference "ReSwift-Saga" */;
+			productName = ReSwiftSaga;
+		};
+		9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3939F72BE73F3C00EF6AED /* XCRemoteSwiftPackageReference "AsyncBluetooth" */;
+			productName = AsyncBluetooth;
+		};
+		9B3939FB2BE73F4600EF6AED /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B12BEE02BD2706D0065DA76 /* Project object */;
 }

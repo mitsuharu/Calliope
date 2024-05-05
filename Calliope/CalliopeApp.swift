@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let appStore = makeAppStore()
+
 @main
 struct CalliopeApp: App {
     var body: some Scene {

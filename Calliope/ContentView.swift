@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var router = NavigationRouter.shared
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack(path: $router.items) {
+            MainView()
+                .navigationTitle("App_Home")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            router.navigate(.scan)
+                        }) {
+                            Label("scan", systemImage: "plus.viewfinder")
+                        }
+                    }
+                }
+                .modifier(NavigationModifier())
+                .modifier(ToastModifier())
         }
-        .padding()
+        .environmentObject(router)
     }
 }
 
