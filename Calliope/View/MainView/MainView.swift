@@ -25,11 +25,9 @@ struct MainView: View {
                 LazyVGrid(columns: columns) {
                     ForEach((0..<8), id: \.self) { _ in
                         Button(action: {
-                            // do anything
-                            
-                            print("do Button")
-                            
-                            let orders: [PrinterOrder] = [.text(text: "hello")]
+                            let orders: [PrinterOrder] = [
+                                .text(text: "hello"),
+                                .text(text: "こんにちはコンニチワ今日わ")]
                             appStore.dispatch(onMain: RunPrinterOrder(orders: orders))
                         }) {
                             DoPrintCell()
