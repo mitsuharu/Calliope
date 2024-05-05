@@ -35,14 +35,7 @@ final class EpsonHandler: NSObject, PrinterHandlerProtocol {
         
         // transact 内の SDK のコマンドを使った例、一旦コメントアウト
         transaction.forEach {
-            switch $0 {
-            case .text(let text, let size, let style):
-                printer.addText("\(text)\n")
-            case .feed(let count):
-                printer.addFeedLine(count)
-            case .escPosCommond(let data):
-                printer.addCommand(data)
-            }
+            printer.addPrinterOrder(order: $0)
         }
         printer.addFeedLine(4)
         
