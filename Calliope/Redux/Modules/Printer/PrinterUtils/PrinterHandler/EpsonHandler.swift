@@ -41,8 +41,8 @@ final class EpsonHandler: NSObject, PrinterHandlerProtocol {
         
         do {
             try sendData(printer: printer)
-        } catch {
             try await disconnectEpson(printer: printer)
+        } catch {
         }
     }
 }

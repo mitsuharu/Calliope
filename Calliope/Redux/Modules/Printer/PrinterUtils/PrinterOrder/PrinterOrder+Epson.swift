@@ -39,6 +39,8 @@ extension Epos2Printer {
             self.setPrinterOrderTextStyle(style: style)
         case .qrCode(let text):
             self.addCommand(EscPosCommond.qrCode(text: text))
+        case .image(let image):
+            self.addCommand(EscPosCommond.image(image: image))
         }
     }
     

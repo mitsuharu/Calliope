@@ -42,6 +42,8 @@ extension PrinterOrder {
                 return EscPosCommond.textStyle(style: style)
             case .qrCode(let text):
                 return EscPosCommond.qrCode(text: text)
+            case .image(let image):
+                return EscPosCommond.image(image: image)
             }
         }
     }

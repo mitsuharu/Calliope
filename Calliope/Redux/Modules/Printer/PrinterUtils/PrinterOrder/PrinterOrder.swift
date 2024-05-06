@@ -14,6 +14,7 @@ enum PrinterOrder {
     case feed(count: Int)
     case qrCode(text: String)
     case escPosCommond(data: Data)
+    case image(image: UIImage)
 }
 
 extension PrinterOrder {

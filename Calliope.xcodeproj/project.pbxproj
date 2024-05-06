@@ -57,6 +57,9 @@
 		9B3939FF2BE750B900EF6AED /* EscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939FE2BE750B900EF6AED /* EscPosCommond.swift */; };
 		9B393A012BE75C4F00EF6AED /* PrinterOrder+Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B393A002BE75C4F00EF6AED /* PrinterOrder+Bluetooth.swift */; };
 		9B393A032BE7613E00EF6AED /* PrinterOrder+Epson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B393A022BE7613E00EF6AED /* PrinterOrder+Epson.swift */; };
+		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
+		9B853D572BE8936800ED1CE0 /* Bitmap in Frameworks */ = {isa = PBXBuildFile; productRef = 9B853D562BE8936800ED1CE0 /* Bitmap */; };
+		9B853D592BE8939B00ED1CE0 /* EscPosCommond+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B853D582BE8939B00ED1CE0 /* EscPosCommond+Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +143,8 @@
 		9B3939FE2BE750B900EF6AED /* EscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscPosCommond.swift; sourceTree = "<group>"; };
 		9B393A002BE75C4F00EF6AED /* PrinterOrder+Bluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrinterOrder+Bluetooth.swift"; sourceTree = "<group>"; };
 		9B393A022BE7613E00EF6AED /* PrinterOrder+Epson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrinterOrder+Epson.swift"; sourceTree = "<group>"; };
+		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
+		9B853D582BE8939B00ED1CE0 /* EscPosCommond+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EscPosCommond+Image.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +157,7 @@
 				9B3939F92BE73F3C00EF6AED /* AsyncBluetooth in Frameworks */,
 				9B3939FC2BE73F4600EF6AED /* AlertToast in Frameworks */,
 				9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */,
+				9B853D572BE8936800ED1CE0 /* Bitmap in Frameworks */,
 				9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */,
 				9B3939F32BE73F1B00EF6AED /* ReSwift in Frameworks */,
 				9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */,
@@ -200,6 +206,7 @@
 		9B12BEEA2BD2706D0065DA76 /* Calliope */ = {
 			isa = PBXGroup;
 			children = (
+				9B853D522BE8901800ED1CE0 /* Resources */,
 				9B12BF212BD27BE80065DA76 /* Bridging-Header.h */,
 				9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */,
 				9B12BEED2BD2706D0065DA76 /* ContentView.swift */,
@@ -402,8 +409,17 @@
 				9B3939FE2BE750B900EF6AED /* EscPosCommond.swift */,
 				9B393A002BE75C4F00EF6AED /* PrinterOrder+Bluetooth.swift */,
 				9B393A022BE7613E00EF6AED /* PrinterOrder+Epson.swift */,
+				9B853D582BE8939B00ED1CE0 /* EscPosCommond+Image.swift */,
 			);
 			path = PrinterOrder;
+			sourceTree = "<group>";
+		};
+		9B853D522BE8901800ED1CE0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B853D532BE8903100ED1CE0 /* himawari.jpg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +444,7 @@
 				9B3939F52BE73F3000EF6AED /* ReSwiftSaga */,
 				9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */,
 				9B3939FB2BE73F4600EF6AED /* AlertToast */,
+				9B853D562BE8936800ED1CE0 /* Bitmap */,
 			);
 			productName = Calliope;
 			productReference = 9B12BEE82BD2706D0065DA76 /* Calliope.app */;
@@ -507,6 +524,7 @@
 				9B3939F42BE73F3000EF6AED /* XCRemoteSwiftPackageReference "ReSwift-Saga" */,
 				9B3939F72BE73F3C00EF6AED /* XCRemoteSwiftPackageReference "AsyncBluetooth" */,
 				9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */,
+				9B853D552BE8936800ED1CE0 /* XCRemoteSwiftPackageReference "Bitmap" */,
 			);
 			productRefGroup = 9B12BEE92BD2706D0065DA76 /* Products */;
 			projectDirPath = "";
@@ -525,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B12BEF32BD2706F0065DA76 /* Preview Assets.xcassets in Resources */,
+				9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */,
 				9B12BEF02BD2706F0065DA76 /* Assets.xcassets in Resources */,
 				9B12BFD92BE51D900065DA76 /* Localizable.xcstrings in Resources */,
 			);
@@ -563,6 +582,7 @@
 				9B3939E62BE628F400EF6AED /* BluetoothHandler.swift in Sources */,
 				9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */,
 				9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */,
+				9B853D592BE8939B00ED1CE0 /* EscPosCommond+Image.swift in Sources */,
 				9B3939F02BE676F800EF6AED /* DoPrintCell.swift in Sources */,
 				9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */,
 				9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */,
@@ -965,6 +985,14 @@
 				minimumVersion = 1.3.9;
 			};
 		};
+		9B853D552BE8936800ED1CE0 /* XCRemoteSwiftPackageReference "Bitmap" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dagronf/Bitmap";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -987,6 +1015,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
+		};
+		9B853D562BE8936800ED1CE0 /* Bitmap */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B853D552BE8936800ED1CE0 /* XCRemoteSwiftPackageReference "Bitmap" */;
+			productName = Bitmap;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

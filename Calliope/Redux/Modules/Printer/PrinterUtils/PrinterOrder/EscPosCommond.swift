@@ -20,6 +20,7 @@ extension PrinterOrder {
         static func feed() -> Data
         static func feed(count: Int) -> Data
         static func qrCode(text: String) -> Data
+        static func image(image: UIImage) -> Data
     }
 }
 
@@ -120,4 +121,138 @@ struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
         return result
     }
     
+    static func image(image: UIImage) -> Data {
+        var data = Data()
+        
+        let width: CGFloat = 100 //384 // 固定
+        let height: CGFloat = (image.size.height / image.size.width) * width
+        let size = CGSize(width: width, height: height.rounded(.up))
+        
+//        guard let bitmapData = EscPosCommond.convertToGrayscaleBitmap(image: image, size: size) else {
+//            print("Error converting image")
+//            return data
+//        }
+        
+        guard let bitmapData = image.makeBitmap(width: size.width) else {
+            print("Error converting image")
+            return data
+        }
+                
+        print("bitmapData: \(bitmapData)")
+        print("bitmapData.count: \(bitmapData.count)")
+        print("size: \(size), ")
+        
+        let byteCount2 = 256
+        let byteCount3 = 65536
+        let byteCount4 = 16777216
+        
+        let p1 = bitmapData.count % byteCount2
+        let p2 = (bitmapData.count / byteCount2) % byteCount2
+        let p3 = (bitmapData.count / byteCount3) % byteCount2
+        let p4 = (bitmapData.count / byteCount4) % byteCount2
+        
+        print("p1: \(p1), p2: \(p2), p3: \(p3), p4: \(p4), ")
+                
+        // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=99#gs_lparen_cl_fn112
+
+        let xL = Int(size.width) % 256
+        let xH = (Int(size.width) / 256 ) % 256
+        let yL = Int(size.height) % 256
+        let yH = (Int(size.height) / 256 ) % 256
+        
+        var command = Data()
+        
+        // 画像を一旦バッファーに格納する
+        // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=98
+        command.append(contentsOf: [0x1D, 0x28, 0x4C])
+        
+        // データの長さを計算して追加 (pL, pH)
+        let totalSize = bitmapData.count + 16  // ヘッダー + ビットマップデータの長さ
+        command.append(UInt8(totalSize % 256))
+        command.append(UInt8(totalSize / 256))
+        
+        // コマンドの設定
+        command.append(0x30) // fn (画像データの転送)
+        command.append(0x70) // m (通常の印刷モード)
+        command.append(48) // 00) // a データの階調 48 モノクロ (2階調)
+        command.append(0x01) // bx (横方向の拡大率)
+        command.append(0x01) // by (縦方向の拡大率)
+        command.append(49) // 01) // c (グラフィックスデータの色) 第1色
+        
+        // 画像の幅と高さ
+        command.append(contentsOf: [UInt8(xL), UInt8(xH), UInt8(yL), UInt8(yH)])
+        
+        print("commandData: \(command), ")
+        
+        command.append(contentsOf: bitmapData)
+        
+        // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=98
+        command.append(contentsOf: [0x1d, 0x28, 0x4c, 0x02, 0x00, 0x30, 50])
+        
+        command.append(0x0a)
+        
+        return command
+        
+//        // コマンドの設定
+//        let header: [UInt8] = [
+//            0x1d, 0x38, 0x4c,  // GS 8 L
+//            UInt8(p1), UInt8(p2), UInt8(p3), UInt8(p4), // p1, p2, p3, p4
+//            UInt8(48), UInt8(112), // m, fn
+//            UInt8(52), // a モノクロ48, 多階調52
+//            UInt8(1), UInt8(1), // bx, by 倍率
+//            UInt8(49), // c グラフィックスデータの色
+//            UInt8(xL), UInt8(xH), UInt8(yL), UInt8(yH),// xL xH yL yH
+//
+//        ]
+//        
+//        print("header: \(header), ")
+//        
+//        let k = (((xL * xH * 256) * 7) / 8) * (yL + yH * 256)
+//        print("k: \(k), ")
+//        // 画像データの送信
+//        data.append(Data(header))
+//        data.append(contentsOf: bitmapData)
+////        data.append(0x0a)
+//        
+//        return data
+    }
+}
+
+
+fileprivate extension UIImage {
+        
+    func convertToGrayscaleBitmap(size: CGSize) -> Data? {
+        
+        UIGraphicsBeginImageContext(size)
+//        let context = UIGraphicsGetCurrentContext()!
+
+        // モノクロカラースペース
+        let colorSpace = CGColorSpaceCreateDeviceGray()
+
+        // 1ビットのビットマップコンテキストを作成
+        guard
+            let context = CGContext(data: nil,
+                                            width: Int(size.width),
+                                            height: Int(size.height),
+                                            bitsPerComponent: 1,
+                                            bytesPerRow: 0,
+                                            space: colorSpace,
+                                          bitmapInfo: CGImageAlphaInfo.none.rawValue),
+            let cgImage = self.cgImage
+        else {
+            return nil
+        }
+
+        // UIImageをビットマップコンテキストに描画
+        context.draw(cgImage, in: CGRect(origin: .zero, size: size))
+        UIGraphicsEndImageContext()
+        
+        // ビットマップデータを取得
+        guard let data = context.data else { return nil }
+
+        // データオブジェクトを作成
+        let dataSize = context.height * context.bytesPerRow
+        return Data(bytes: data, count: dataSize)
+
+    }
 }
