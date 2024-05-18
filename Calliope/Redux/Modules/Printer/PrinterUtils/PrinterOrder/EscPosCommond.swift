@@ -122,20 +122,14 @@ struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
     }
     
     static func image(image: UIImage) -> Data {
-        var data = Data()
         
-        let width: CGFloat = 100 //384 // 固定
+        let width: CGFloat = 200 //384 // 固定
         let height: CGFloat = (image.size.height / image.size.width) * width
         let size = CGSize(width: width, height: height.rounded(.up))
-        
-//        guard let bitmapData = EscPosCommond.convertToGrayscaleBitmap(image: image, size: size) else {
-//            print("Error converting image")
-//            return data
-//        }
-        
+                
         guard let bitmapData = image.makeBitmap(width: size.width) else {
             print("Error converting image")
-            return data
+            return Data()
         }
                 
         print("bitmapData: \(bitmapData)")
@@ -192,67 +186,88 @@ struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
         command.append(0x0a)
         
         return command
-        
-//        // コマンドの設定
-//        let header: [UInt8] = [
-//            0x1d, 0x38, 0x4c,  // GS 8 L
-//            UInt8(p1), UInt8(p2), UInt8(p3), UInt8(p4), // p1, p2, p3, p4
-//            UInt8(48), UInt8(112), // m, fn
-//            UInt8(52), // a モノクロ48, 多階調52
-//            UInt8(1), UInt8(1), // bx, by 倍率
-//            UInt8(49), // c グラフィックスデータの色
-//            UInt8(xL), UInt8(xH), UInt8(yL), UInt8(yH),// xL xH yL yH
-//
-//        ]
-//        
-//        print("header: \(header), ")
-//        
-//        let k = (((xL * xH * 256) * 7) / 8) * (yL + yH * 256)
-//        print("k: \(k), ")
-//        // 画像データの送信
-//        data.append(Data(header))
-//        data.append(contentsOf: bitmapData)
-////        data.append(0x0a)
-//        
-//        return data
     }
+    
+
+    // sunmi 用
+    static func printImage(image: UIImage) -> Data {
+        
+        let width: Int = 200 //384 // 固定
+        let height: Int = Int((image.size.height / image.size.width) * CGFloat(width))
+        let targetSize = CGSize(width: width, height: height)
+        
+        guard let imageData = image.imageFileToEsc(targetSize: targetSize) else {
+            return Data()
+        }
+        return Data(imageData)
+    }
+
 }
 
 
 fileprivate extension UIImage {
+    
+    func imageFileToEsc(targetSize: CGSize) -> [UInt8]? {
         
-    func convertToGrayscaleBitmap(size: CGSize) -> Data? {
-        
+        // 画像をリサイズ
+        let size = targetSize
         UIGraphicsBeginImageContext(size)
-//        let context = UIGraphicsGetCurrentContext()!
-
-        // モノクロカラースペース
-        let colorSpace = CGColorSpaceCreateDeviceGray()
-
-        // 1ビットのビットマップコンテキストを作成
-        guard
-            let context = CGContext(data: nil,
-                                            width: Int(size.width),
-                                            height: Int(size.height),
-                                            bitsPerComponent: 1,
-                                            bytesPerRow: 0,
-                                            space: colorSpace,
-                                          bitmapInfo: CGImageAlphaInfo.none.rawValue),
-            let cgImage = self.cgImage
-        else {
-            return nil
-        }
-
-        // UIImageをビットマップコンテキストに描画
-        context.draw(cgImage, in: CGRect(origin: .zero, size: size))
+        self.draw(in: CGRect(origin: .zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        // ビットマップデータを取得
-        guard let data = context.data else { return nil }
+        guard let cgImage = resizedImage?.cgImage else { return nil }
+        
+        let width = Int(ceil(Double(cgImage.width) / 8.0) * 8.0 - 8.0)
+        let height = cgImage.height
+        
+        var data = [UInt8](repeating: 0, count: 8 + (width / 8) * height)
+        data[0] = 0x1D
+        data[1] = 0x76
+        data[2] = 0x30
+        data[3] = 0
+        data[4] = UInt8((width / 8) % 256)
+        data[5] = UInt8((width / 8) / 256)
+        data[6] = UInt8(height % 256)
+        data[7] = UInt8(height / 256)
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let rawData = calloc(height * width * 4, MemoryLayout<UInt8>.size)
+        let bytesPerPixel = 4
+        let bytesPerRow = bytesPerPixel * width
+        let bitsPerComponent = 8
+        
+        guard let context = CGContext(data: rawData, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else {
+            return nil
+        }
+        
+        context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+        
+        guard let rawData = rawData else { return nil }
+        let pixelData = rawData.bindMemory(to: UInt8.self, capacity: height * width * 4)
+        
+        var index = 8
+        for y in 0..<height {
+            for x in stride(from: 0, to: width, by: 8) {
+                var part = [UInt8](repeating: 0, count: 8)
+                for j in 0..<8 {
+                    let readWidth = x + j >= width ? width - 1 : x + j
+                    let pixelIndex = (y * width + readWidth) * 4
+                    let r = pixelData[pixelIndex]
+                    let g = pixelData[pixelIndex + 1]
+                    let b = pixelData[pixelIndex + 2]
+                    let gray = Int(Double(r) * 0.3 + Double(g) * 0.59 + Double(b) * 0.11)
+                    part[j] = gray > 127 ? 0 : 1
+                }
+                let temp = part[0] << 7 | part[1] << 6 | part[2] << 5 | part[3] << 4 | part[4] << 3 | part[5] << 2 | part[6] << 1 | part[7]
+                data[index] = temp
+                index += 1
+            }
+        }
 
-        // データオブジェクトを作成
-        let dataSize = context.height * context.bytesPerRow
-        return Data(bytes: data, count: dataSize)
-
+        free(rawData)
+        return data
     }
+    
+ 
 }

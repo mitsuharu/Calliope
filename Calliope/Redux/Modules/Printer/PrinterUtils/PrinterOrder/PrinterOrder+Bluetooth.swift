@@ -43,7 +43,9 @@ extension PrinterOrder {
             case .qrCode(let text):
                 return EscPosCommond.qrCode(text: text)
             case .image(let image):
-                return EscPosCommond.image(image: image)
+                print("bluetoothCommand#image")
+//                return EscPosCommond.image(image: image)
+                return EscPosCommond.printImage(image:image)
             }
         }
     }

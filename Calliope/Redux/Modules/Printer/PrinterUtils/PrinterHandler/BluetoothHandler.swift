@@ -48,11 +48,26 @@ final class BluetoothHandler: PrinterHandlerProtocol {
         
         let uuid = try await peripheral.fetchWritableUUID()
         let value = makeCommandData(transaction: transaction)
-        try await peripheral.writeValue(
-            value,
-            forCharacteristicWithUUID: uuid.characteristic,
-            ofServiceWithUUID: uuid.service
-        )
+        
+        let mtu = 100 // Maximum Transmission Unit size
+        var offset = 0
+        
+        while offset < value.count {
+            let chunkSize = min(mtu, value.count - offset)
+            let chunk = value.subdata(in: offset..<(offset + chunkSize))
+            try await peripheral.writeValue(
+                chunk,
+                forCharacteristicWithUUID: uuid.characteristic,
+                ofServiceWithUUID: uuid.service
+            )
+            offset += chunkSize
+        }
+        
+//        try await peripheral.writeValue(
+//            value,
+//            forCharacteristicWithUUID: uuid.characteristic,
+//            ofServiceWithUUID: uuid.service
+//        )
         
         try await disconnectBluetooth(peripheral: peripheral)
     }
@@ -124,6 +139,7 @@ extension BluetoothHandler {
         var result = EscPosCommond.initialize()
         
         transaction.forEach {
+            print("makeCommandData \($0)")
             result.append($0.bluetoothCommand)
         }
         

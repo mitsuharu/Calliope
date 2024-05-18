@@ -30,7 +30,8 @@ struct MainView: View {
                                 let orders: [PrinterOrder] = [
                                     .text(text: "ひまわり"),
                                     .feed(count: 1),
-                                    .image(image: image)]
+                                    .image(image: image),
+                                    .feed(count: 1),]
                                 appStore.dispatch(onMain: RunPrinterOrder(orders: orders))
                             }
                             
@@ -38,6 +39,7 @@ struct MainView: View {
 //                                .text(text: "hello"),
 //                                .text(text: "こんにちはコンニチワ今日わ"),
 //                                .feed(count: 1),
+//                                .text(text: "http://www.example.com"),
 //                                .qrCode(text: "http://www.example.com")]
 //                            appStore.dispatch(onMain: RunPrinterOrder(orders: orders))
                         }) {
