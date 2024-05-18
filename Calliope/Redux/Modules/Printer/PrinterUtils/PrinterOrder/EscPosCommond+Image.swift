@@ -22,8 +22,7 @@ extension EscPosCommond {
         do {
             let bitmap = try Bitmap(cgImage)
                 .scaling(scale: scale)
-                .grayscaling()
-            bitmap.bitmapData.rgbaBytes
+                .grayscaling()            
             print("bitmap.size: \(bitmap.size)")
             print("bitmap.rgbaBytes.count: \(bitmap.rgbaBytes.count)")
             return bitmap.rgbaBytes
