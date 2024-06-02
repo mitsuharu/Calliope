@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension PrinterOrder {
+extension Print.Instruction {
     /**
      ESC/POS コマンドのプロトコル（各社で方言があるのでメーカー別に作るかもでプロトコルにした）
      */
@@ -25,7 +25,8 @@ extension PrinterOrder {
 }
 
 
-struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
+
+struct EscPosCommond: Print.Instruction.EscPosCommondProtocol {
 
     private init() {}
     
@@ -42,7 +43,7 @@ struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
         return date
     }
     
-    static func textSize(size: PrinterOrder.TextSize) -> Data {
+    static func textSize(size: Print.Instruction.TextSize) -> Data {
         // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=34
         switch size {
         case .normal:
@@ -63,7 +64,7 @@ struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
         }
     }
     
-    static func textStyle(style: PrinterOrder.TextStyle) -> Data {
+    static func textStyle(style: Print.Instruction.TextStyle) -> Data {
         switch style {
         case .normal:
             return EscPosCommond.bold(isBold: false)

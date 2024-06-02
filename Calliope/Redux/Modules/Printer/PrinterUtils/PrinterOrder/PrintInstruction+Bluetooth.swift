@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension PrinterOrder {
+extension Print.Instruction {
     
     var bluetoothCommand: Data {
         get {

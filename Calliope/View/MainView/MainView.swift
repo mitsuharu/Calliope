@@ -27,7 +27,7 @@ struct MainView: View {
                         Button(action: {
                             
                             if let image = UIImage(named: "himawari.jpg") {
-                                let orders: [PrinterOrder] = [
+                                let orders: [Print.Instruction] = [
                                     .text(text: "ひまわり"),
                                     .feed(count: 1),
                                     .image(image: image),

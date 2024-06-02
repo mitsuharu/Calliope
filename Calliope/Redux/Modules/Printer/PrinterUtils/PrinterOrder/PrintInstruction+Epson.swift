@@ -9,7 +9,7 @@ import Foundation
 
 extension Epos2Printer {
     
-    func addPrinterOrder(order: PrinterOrder) {
+    func addPrinterOrder(order: Print.Instruction) {
         switch order {
         case .text(let text, let size, let style):
             
@@ -44,7 +44,7 @@ extension Epos2Printer {
         }
     }
     
-    private func setPrinterOrderTextStyle(style: PrinterOrder.TextStyle) {
+    private func setPrinterOrderTextStyle(style: Print.Instruction.TextStyle) {
         switch style {
         case .normal:
             self.setBold(isBold: false)
@@ -60,7 +60,7 @@ extension Epos2Printer {
                           color: EPOS2_COLOR_1.rawValue)
     }
     
-    private func addPrinterOrderTextSize(size: PrinterOrder.TextSize) {
+    private func addPrinterOrderTextSize(size: Print.Instruction.TextSize) {
         switch size {
         case .normal:
             self.addTextSize(1, height: 1)

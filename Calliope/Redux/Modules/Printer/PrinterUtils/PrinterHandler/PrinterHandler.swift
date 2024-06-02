@@ -10,7 +10,7 @@ import Foundation
 final class PrinterHandler: PrinterHandlerProtocol {
 
     let epson = EpsonHandler()
-    let bluetooth = BluetoothHandler()
+    let bluetooth = SunmiBluetoothHandler()
 
     static let shared = PrinterHandler()
     private init() {}
@@ -30,7 +30,7 @@ final class PrinterHandler: PrinterHandlerProtocol {
         try bluetooth.stopScan()
     }
     
-    func run(device: PrinterDeviceInfo, transaction: [PrinterOrder]) async throws {
+    func run(device: PrinterDeviceInfo, transaction: [Print.Instruction]) async throws {
         switch device.manufacturer {
         case .epson:
             try await epson.run(device: device, transaction: transaction)
