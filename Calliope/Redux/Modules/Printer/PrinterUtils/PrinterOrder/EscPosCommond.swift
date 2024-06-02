@@ -209,190 +209,21 @@ fileprivate extension UIImage {
     
     func imageFileToEsc(targetSize: CGSize) -> [UInt8]? {
         
-        // 画像をリサイズ
-        let size = targetSize
-        UIGraphicsBeginImageContext(size)
-        self.draw(in: CGRect(origin: .zero, size: size))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        guard let cgImage = resizedImage?.cgImage else { return nil }
-        
-        let width = Int(ceil(Double(cgImage.width) / 8.0) * 8.0 - 8.0)
-        let height = cgImage.height
-        
-        var data = [UInt8](repeating: 0, count: 8 + (width / 8) * height)
-        data[0] = 0x1D
-        data[1] = 0x76
-        data[2] = 0x30
-        data[3] = 0
-        data[4] = UInt8((width / 8) % 256)
-        data[5] = UInt8((width / 8) / 256)
-        data[6] = UInt8(height % 256)
-        data[7] = UInt8(height / 256)
-        
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let rawData = calloc(height * width * 4, MemoryLayout<UInt8>.size)
-        let bytesPerPixel = 4
-        let bytesPerRow = bytesPerPixel * width
-        let bitsPerComponent = 8
-        
-        guard let context = CGContext(data: rawData, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else {
+        guard let oneBitBitmap = self.convertOneBitBitmap(size: targetSize) else {
             return nil
         }
         
-        context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
-        
-        guard let rawData = rawData else { return nil }
-        let pixelData = rawData.bindMemory(to: UInt8.self, capacity: height * width * 4)
-        
-        var index = 8
-        for y in 0..<height {
-            for x in stride(from: 0, to: width, by: 8) {
-                var part = [UInt8](repeating: 0, count: 8)
-                for j in 0..<8 {
-                    let readWidth = x + j >= width ? width - 1 : x + j
-                    let pixelIndex = (y * width + readWidth) * 4
-                    let r = pixelData[pixelIndex]
-                    let g = pixelData[pixelIndex + 1]
-                    let b = pixelData[pixelIndex + 2]
-                    let gray = Int(Double(r) * 0.3 + Double(g) * 0.59 + Double(b) * 0.11)
-                    
-//                    part[j] = gray > 127 ? 0 : 1
-                    part[j] = gray > 140 ? 0 : 1
-                }
-                let temp = part[0] << 7 | part[1] << 6 | part[2] << 5 | part[3] << 4 | part[4] << 3 | part[5] << 2 | part[6] << 1 | part[7]
-                data[index] = temp
-                index += 1
-            }
-        }
+        var data = [UInt8]()
+        data.append(contentsOf: [0x1D, 0x76, 0x30])
+        data.append(contentsOf: [0])
 
-        free(rawData)
-        return data
-    }
-    
-    func imageFileToEsc2(targetSize: CGSize) -> [UInt8]? {
-        
-        // 画像をリサイズ
-        let size = targetSize
-        UIGraphicsBeginImageContext(size)
-        self.draw(in: CGRect(origin: .zero, size: size))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        guard let cgImage = resizedImage?.cgImage else { return nil }
-  
-        let width = Int(ceil(Double(targetSize.width) / 8.0) * 8.0 - 8.0)
-        let height = Int(targetSize.height)
-        
-        var data = [UInt8](repeating: 0, count: 8 + (width / 8) * height)
-        data[0] = 0x1D
-        data[1] = 0x76
-        data[2] = 0x30
-        data[3] = 0
-        data[4] = UInt8((width / 8) % 256)
-        data[5] = UInt8((width / 8) / 256)
-        data[6] = UInt8(height % 256)
-        data[7] = UInt8(height / 256)
-        
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bytesPerPixel = 4
-        let bytesPerRow = bytesPerPixel * width
-        let bitsPerComponent = 8
-        
-        var rawData = Data(count: height * width * bytesPerPixel)
-        
-        rawData.withUnsafeMutableBytes { (rawBufferPointer: UnsafeMutableRawBufferPointer) in
-            if let context = CGContext(data: rawBufferPointer.baseAddress, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
-                context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
-            }
-        }
-        
-        let pixelData = rawData.withUnsafeBytes {
-            $0.bindMemory(to: UInt8.self)
-        }
-        
-        var index = 8
-        for y in 0..<height {
-            for x in stride(from: 0, to: width, by: 8) {
-                var part = [UInt8](repeating: 0, count: 8)
-                for j in 0..<8 {
-                    let readWidth = x + j >= width ? width - 1 : x + j
-                    let pixelIndex = (y * width + readWidth) * bytesPerPixel
-                    let r = pixelData[pixelIndex]
-                    let g = pixelData[pixelIndex + 1]
-                    let b = pixelData[pixelIndex + 2]
-                    let gray = Int(Double(r) * 0.3 + Double(g) * 0.59 + Double(b) * 0.11)
-                    part[j] = gray > 127 ? 0 : 1
-                }
-                let temp = part[0] << 7 | part[1] << 6 | part[2] << 5 | part[3] << 4 | part[4] << 3 | part[5] << 2 | part[6] << 1 | part[7]
-                data[index] = temp
-                index += 1
-            }
-        }
-
-        return data
-    }
-    
-    func imageFileToEsc3(targetSize: CGSize) -> [UInt8]? {
-        
-        // 画像をリサイズ
-        let size = targetSize
-        UIGraphicsBeginImageContext(size)
-        self.draw(in: CGRect(origin: .zero, size: size))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        guard let cgImage = resizedImage?.cgImage else { return nil }
-  
-        let width = Int(ceil(Double(targetSize.width) / 8.0) * 8.0 - 8.0)
-        let height = Int(targetSize.height)
-        
-        var data = [UInt8](repeating: 0, count: 8 + (width / 8) * height)
-        data[0] = 0x1D
-        data[1] = 0x76
-        data[2] = 0x30
-        data[3] = 0
-        data[4] = UInt8((width / 8) % 256)
-        data[5] = UInt8((width / 8) / 256)
-        data[6] = UInt8(height % 256)
-        data[7] = UInt8(height / 256)
-        
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bytesPerPixel = 4
-        let bytesPerRow = bytesPerPixel * width
-        let bitsPerComponent = 8
-        
-        var rawData = Data(count: height * width * bytesPerPixel)
-        
-        rawData.withUnsafeMutableBytes { (rawBufferPointer: UnsafeMutableRawBufferPointer) in
-            if let context = CGContext(data: rawBufferPointer.baseAddress, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
-                context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
-            }
-        }
-        
-        let pixelData = rawData.withUnsafeBytes {
-            $0.bindMemory(to: UInt8.self)
-        }
-        
-        var index = 8
-        for y in 0..<height {
-            for x in stride(from: 0, to: width, by: 8) {
-                var part = [UInt8](repeating: 0, count: 8)
-                for j in 0..<8 {
-                    let readWidth = x + j >= width ? width - 1 : x + j
-                    let pixelIndex = (y * width + readWidth) * bytesPerPixel
-                    let r = pixelData[pixelIndex]
-                    let g = pixelData[pixelIndex + 1]
-                    let b = pixelData[pixelIndex + 2]
-                    let gray = Int(Double(r) * 0.3 + Double(g) * 0.59 + Double(b) * 0.11)
-                    part[j] = gray > 127 ? 0 : 1
-                }
-                let temp = part[0] << 7 | part[1] << 6 | part[2] << 5 | part[3] << 4 | part[4] << 3 | part[5] << 2 | part[6] << 1 | part[7]
-                data[index] = temp
-                index += 1
-            }
-        }
+        let xL = UInt8((oneBitBitmap.width / 8) % 256)
+        let xH = UInt8((oneBitBitmap.width / 8) / 256)
+        let yL = UInt8(oneBitBitmap.height % 256)
+        let yH = UInt8(oneBitBitmap.height / 256)
+        data.append(contentsOf: [xL, xH, yL, yH])
+                
+        data.append(contentsOf: oneBitBitmap.data)
 
         return data
     }

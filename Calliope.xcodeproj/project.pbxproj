@@ -60,6 +60,7 @@
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B853D572BE8936800ED1CE0 /* Bitmap in Frameworks */ = {isa = PBXBuildFile; productRef = 9B853D562BE8936800ED1CE0 /* Bitmap */; };
 		9B853D592BE8939B00ED1CE0 /* EscPosCommond+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B853D582BE8939B00ED1CE0 /* EscPosCommond+Image.swift */; };
+		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		9B393A022BE7613E00EF6AED /* PrinterOrder+Epson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrinterOrder+Epson.swift"; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B853D582BE8939B00ED1CE0 /* EscPosCommond+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EscPosCommond+Image.swift"; sourceTree = "<group>"; };
+		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +412,7 @@
 				9B393A002BE75C4F00EF6AED /* PrinterOrder+Bluetooth.swift */,
 				9B393A022BE7613E00EF6AED /* PrinterOrder+Epson.swift */,
 				9B853D582BE8939B00ED1CE0 /* EscPosCommond+Image.swift */,
+				9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */,
 			);
 			path = PrinterOrder;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				9B12BFB52BE509330065DA76 /* AppState.swift in Sources */,
 				9B12BEEC2BD2706D0065DA76 /* CalliopeApp.swift in Sources */,
 				9B12BFAC2BE509330065DA76 /* ToastAction.swift in Sources */,
+				9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */,
 				9B12BFE22BE523120065DA76 /* PrinterSelectors.swift in Sources */,
 				9B393A012BE75C4F00EF6AED /* PrinterOrder+Bluetooth.swift in Sources */,
 			);

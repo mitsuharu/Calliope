@@ -46,15 +46,24 @@ final class BluetoothHandler: PrinterHandlerProtocol {
         
         try await connectBluetooth(peripheral: peripheral)
         
-        let uuid = try await peripheral.fetchWritableUUID()
         let value = makeCommandData(transaction: transaction)
+       
+        try await send(peripheral: peripheral, data: value)
+        try await disconnectBluetooth(peripheral: peripheral)
+    }
+    
+    func send(peripheral: Peripheral, data: Data) async throws{
         
-        let mtu = 100 // Maximum Transmission Unit size
+        // サービスとキャラクタリスティックのUUIDを取得する
+        let uuid = try await peripheral.fetchWritableUUID()
+        
+        // MTUサイズの取得
+        let mtuSize = peripheral.maximumWriteValueLength(for: .withoutResponse)
+
         var offset = 0
-        
-        while offset < value.count {
-            let chunkSize = min(mtu, value.count - offset)
-            let chunk = value.subdata(in: offset..<(offset + chunkSize))
+        while offset < data.count {
+            let chunkSize = min(mtuSize, data.count - offset)
+            let chunk = data.subdata(in: offset..<(offset + chunkSize))
             try await peripheral.writeValue(
                 chunk,
                 forCharacteristicWithUUID: uuid.characteristic,
@@ -62,14 +71,6 @@ final class BluetoothHandler: PrinterHandlerProtocol {
             )
             offset += chunkSize
         }
-        
-//        try await peripheral.writeValue(
-//            value,
-//            forCharacteristicWithUUID: uuid.characteristic,
-//            ofServiceWithUUID: uuid.service
-//        )
-        
-        try await disconnectBluetooth(peripheral: peripheral)
     }
 }
 
