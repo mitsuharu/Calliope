@@ -135,9 +135,12 @@ extension SunmiBluetoothHandler {
         // サービスとキャラクタリスティックのUUIDを取得する
         let uuid = try await peripheral.fetchWritableUUID()
         
-        // MTUサイズの取得
-        let mtuSize = peripheral.maximumWriteValueLength(for: .withoutResponse)
+        // FIXME: MTUサイズの取得で、関数で取得すると値が大きく、印刷で失敗する
+        // let mtuSize = peripheral.maximumWriteValueLength(for: .withResponse)
 
+        // MTUサイズの取得
+        let mtuSize = 150
+        
         var offset = 0
         while offset < data.count {
             let chunkSize = min(mtuSize, data.count - offset)
