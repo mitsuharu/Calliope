@@ -21,6 +21,7 @@ enum Print {
      印刷命令
      */
     enum Instruction {
+        case initialize
         case text(text: String, size: TextSize? = nil, style: TextStyle? = nil)
         case textSize(size: TextSize)
         case textStyle(style: TextStyle)
@@ -50,10 +51,7 @@ extension Print.Instruction {
     
     enum TextSize {
         case normal
-        case widthDouble
-        case heightDouble
-        case double
-        
+
         /**
          width と height はともに 1 ~ 8 まで設定できます
          */

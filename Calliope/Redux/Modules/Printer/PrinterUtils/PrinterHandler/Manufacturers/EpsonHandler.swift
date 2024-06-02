@@ -25,13 +25,22 @@ final class EpsonHandler: NSObject, PrinterHandlerProtocol {
     }
         
     func run(device: PrinterDeviceInfo, transaction: [Print.Instruction]) async throws {
+        
+        print("run")
+        
         guard
             let printer = printer,
             let device = device.epson
         else {
             throw PrinterError.instanceFailed
         }
+        print("connectEpson printer: \(printer), device: \(device)")
+        
+        do {
+            
         try await connectEpson(printer: printer, device: device)
+        
+        print("connectEpson done")
         
         // transact 内の SDK のコマンドを使った例、一旦コメントアウト
         transaction.forEach {
@@ -39,10 +48,17 @@ final class EpsonHandler: NSObject, PrinterHandlerProtocol {
         }
         printer.addFeedLine(4)
         
-        do {
+        print("printer")
+
+        
+        
             try sendData(printer: printer)
-            try await disconnectEpson(printer: printer)
         } catch {
+            print(error.localizedDescription)
+            
+            try await disconnectEpson(printer: printer)
+            
+            throw error
         }
     }
 }

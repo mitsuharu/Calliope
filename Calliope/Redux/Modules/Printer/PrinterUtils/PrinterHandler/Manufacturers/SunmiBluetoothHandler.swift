@@ -117,15 +117,15 @@ extension SunmiBluetoothHandler {
     fileprivate func makeCommandData(transaction: [Print.Instruction]) -> Data {
         
         // 初期化 ESC @
-        var result = EscPosCommond.initialize()
+        var result = EpsonEscPosCommond.initialize()
         
         transaction.forEach {
             print("makeCommandData \($0)")
-            result.append($0.bluetoothCommand)
+            result.append($0.sunmiBluetoothCommand)
         }
         
         // 紙送り
-        result.append(EscPosCommond.feed())
+        result.append(EpsonEscPosCommond.feed())
         
         return result
     }
