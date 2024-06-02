@@ -1,5 +1,5 @@
 //
-//  BluetoothHandler.swift
+//  SunmiBluetoothHandler.swift
 //  Calliope
 //
 //  Created by Mitsuharu Emoto on 2024/05/04.
@@ -10,7 +10,7 @@ import Combine
 import AsyncBluetooth
 import CoreBluetooth
 
-final class BluetoothHandler: PrinterHandlerProtocol {
+final class SunmiBluetoothHandler: PrinterHandlerProtocol {
     
     private let centralManager = CentralManager()    
     private var cancellables: Set<AnyCancellable> = []
@@ -39,26 +39,22 @@ final class BluetoothHandler: PrinterHandlerProtocol {
         }
     }
     
-    func run(device: PrinterDeviceInfo, transaction: [PrinterOrder]) async throws {
+    func run(device: PrinterDeviceInfo, transaction: [Print.Instruction]) async throws {
         guard let peripheral = device.bluetooth else {
             throw PrinterError.instanceFailed
         }
         
         try await connectBluetooth(peripheral: peripheral)
         
-        let uuid = try await peripheral.fetchWritableUUID()
         let value = makeCommandData(transaction: transaction)
-        try await peripheral.writeValue(
-            value,
-            forCharacteristicWithUUID: uuid.characteristic,
-            ofServiceWithUUID: uuid.service
-        )
+        try await send(peripheral: peripheral, data: value)
         
         try await disconnectBluetooth(peripheral: peripheral)
     }
+    
 }
 
-extension BluetoothHandler {
+extension SunmiBluetoothHandler {
     
     fileprivate func prepareBluetooth() {
         AsyncBluetoothLogging.isEnabled = false
@@ -118,19 +114,41 @@ extension BluetoothHandler {
         }
     }
         
-    func makeCommandData(transaction: [PrinterOrder]) -> Data {
+    fileprivate func makeCommandData(transaction: [Print.Instruction]) -> Data {
         
         // 初期化 ESC @
-        var result = EscPosCommond.initialize()
+        var result = EpsonEscPosCommond.initialize()
         
         transaction.forEach {
-            result.append($0.bluetoothCommand)
+            print("makeCommandData \($0)")
+            result.append($0.sunmiBluetoothCommand)
         }
         
         // 紙送り
-        result.append(EscPosCommond.feed())
+        result.append(EpsonEscPosCommond.feed())
         
         return result
+    }
+    
+    fileprivate func send(peripheral: Peripheral, data: Data) async throws{
+        
+        // サービスとキャラクタリスティックのUUIDを取得する
+        let uuid = try await peripheral.fetchWritableUUID()
+        
+        // MTUサイズの取得
+        let mtuSize = peripheral.maximumWriteValueLength(for: .withoutResponse)
+
+        var offset = 0
+        while offset < data.count {
+            let chunkSize = min(mtuSize, data.count - offset)
+            let chunk = data.subdata(in: offset..<(offset + chunkSize))
+            try await peripheral.writeValue(
+                chunk,
+                forCharacteristicWithUUID: uuid.characteristic,
+                ofServiceWithUUID: uuid.service
+            )
+            offset += chunkSize
+        }
     }
     
 }

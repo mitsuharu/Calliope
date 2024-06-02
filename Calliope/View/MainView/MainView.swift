@@ -23,18 +23,12 @@ struct MainView: View {
             }.padding()
             ScrollView {
                 LazyVGrid(columns: columns) {
-                    ForEach((0..<8), id: \.self) { _ in
-                        Button(action: {
-                            let orders: [PrinterOrder] = [
-                                .text(text: "hello"),
-                                .text(text: "こんにちはコンニチワ今日わ"),
-                                .feed(count: 1),
-                                .qrCode(text: "http://www.example.com")]
-                            appStore.dispatch(onMain: RunPrinterOrder(orders: orders))
-                        }) {
-                            DoPrintCell()
-                        }
-                        .buttonStyle(PlainButtonStyle())
+                    ForEach(viewModel.sampleCommonds, id: \.uuid) { item in
+                        Button {
+                            item.action()
+                        } label: {
+                            DoPrintCell(title: item.title)
+                        }.buttonStyle(PlainButtonStyle())
                     }
                 }
             }

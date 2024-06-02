@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct DoPrintCell: View {
+    
+    let title: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(title)
             .font(.largeTitle)
             .padding()
             .background(Color.secondary, in: RoundedRectangle(cornerRadius: 16))
-            .padding()
+            .padding().aspectRatio(1.0, contentMode: .fill)
     }
 }
 
 #Preview {
-    DoPrintCell()
+    DoPrintCell(title: "タイトルです")
 }

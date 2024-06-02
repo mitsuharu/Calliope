@@ -1,33 +1,15 @@
 //
-//  EscPosCommond.swift
+//  SunmiEscPosCommond.swift
 //  Calliope
 //
-//  Created by Mitsuharu Emoto on 2024/05/05.
+//  Created by Mitsuharu Emoto on 2024/06/02.
 //
 
 import Foundation
 
-extension PrinterOrder {
-    /**
-     ESC/POS コマンドのプロトコル（各社で方言があるのでメーカー別に作るかもでプロトコルにした）
-     */
-    protocol EscPosCommondProtocol {
-        static func initialize() -> Data
-        static func text(text: String) -> Data
-        static func textSize(size: TextSize) -> Data
-        static func textStyle(style: TextStyle) -> Data
-        static func bold(isBold: Bool) -> Data
-        static func feed() -> Data
-        static func feed(count: Int) -> Data
-        static func qrCode(text: String) -> Data
-    }
-}
-
-
-struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
-
+struct SunmiEscPosCommond: EscPosCommondProtocol {
     private init() {}
-    
+        
     static func initialize() -> Data {
         Data([0x1b, 0x40])
     }
@@ -41,44 +23,34 @@ struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
         return date
     }
     
-    static func textSize(size: PrinterOrder.TextSize) -> Data {
+    static func textScale(scale: EscPosCommond.TextScale) -> Data {
         // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=34
-        switch size {
-        case .normal:
+        
+        let width = scale.width
+        let height = scale.height
+        
+        if width < 1 || 8 < width || height < 1 || 8 < height {
             return Data([0x1D, 0x21, 0x00])
-        case.double:
-            return Data([0x1D, 0x21, 0x11])
-        case.widthDouble:
-            return Data([0x1D, 0x21, 0x10])
-        case.heightDouble:
-            return Data([0x1D, 0x21, 0x01])
-        case .scale(let width, let height):
-            if width < 1 || 8 < width || height < 1 || 8 < height {
-                return textSize(size: .normal)
-            }
-            let w = UInt8(16 * (width - 1))
-            let h = UInt8(height - 1)
-            return Data([0x1D, 0x21, w+h])
         }
+        let widthScale = UInt8(16 * (width - 1))
+        let heightScale = UInt8(height - 1)
+        return Data([0x1D, 0x21, (widthScale + heightScale)])
     }
     
-    static func textStyle(style: PrinterOrder.TextStyle) -> Data {
+    static func textStyle(style: EscPosCommond.TextStyle) -> Data {
         switch style {
         case .normal:
-            return EscPosCommond.bold(isBold: false)
+            return SunmiEscPosCommond.bold(isBold: false)
         case .bold:
-            return EscPosCommond.bold(isBold: true)
+            return SunmiEscPosCommond.bold(isBold: true)
         }
     }
     
     static func bold(isBold: Bool) -> Data {
         // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=25
-        if isBold {
-            return Data([0x1b, 0x45, 0x01])
-        } else {
-            return Data([0x1b, 0x45, 0x00])
-        }
+        return Data([0x1b, 0x45, isBold ? 0x01 : 0x00])
     }
+    
     static func feed() -> Data {
         Data([0x1b, 0x64, UInt8(5)])
     }
@@ -91,6 +63,7 @@ struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
      EPSON では印刷できるが、SUNMIでは印刷できない
      */
     static func qrCode(text: String) -> Data {
+        // sunmi では動作未確認
         
         var result = Data()
         
@@ -119,5 +92,31 @@ struct EscPosCommond: PrinterOrder.EscPosCommondProtocol {
         
         return result
     }
+    
+    static func image(image: UIImage) -> Data {
+        
+        let width: Int = 200 //384 // 固定
+        let height: Int = Int((image.size.height / image.size.width) * CGFloat(width))
+        let targetSize = CGSize(width: width, height: height)
+        
+        guard let oneBitBitmap = image.convertOneBitBitmap(size: targetSize) else {
+            return Data()
+        }
+        
+        var data = Data()
+        data.append(contentsOf: [0x1D, 0x76, 0x30])
+        data.append(contentsOf: [0])
+
+        let xL = UInt8((oneBitBitmap.width / 8) % 256)
+        let xH = UInt8((oneBitBitmap.width / 8) / 256)
+        let yL = UInt8(oneBitBitmap.height % 256)
+        let yH = UInt8(oneBitBitmap.height / 256)
+        data.append(contentsOf: [xL, xH, yL, yH])
+                
+        data.append(contentsOf: oneBitBitmap.data)
+
+        return data
+    }
+
     
 }
