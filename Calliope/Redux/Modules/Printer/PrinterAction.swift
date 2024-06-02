@@ -28,6 +28,6 @@ struct StartScanDevices: PrinterAction {
 struct StopScanDevices: PrinterAction {
 }
 
-struct RunPrinterOrder: PrinterAction {
-    let orders: [PrinterOrder]
+struct RunPrintInstruction: PrinterAction {
+    let instructions: [Print.Instruction]
 }

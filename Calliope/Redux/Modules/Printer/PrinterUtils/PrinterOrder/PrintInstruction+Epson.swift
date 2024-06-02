@@ -9,8 +9,10 @@ import Foundation
 
 extension Epos2Printer {
     
-    func addPrinterOrder(order: PrinterOrder) {
+    func addPrinterOrder(order: Print.Instruction) {
         switch order {
+        case .initialize:
+            self.addCommand(EpsonEscPosCommond.initialize())
         case .text(let text, let size, let style):
             
             if let size = size {
@@ -19,7 +21,7 @@ extension Epos2Printer {
             if let style = style {
                 setPrinterOrderTextStyle(style: style)
             }
-
+            
             self.addText("\(text)\n")
             
             if let _ = size {
@@ -28,7 +30,7 @@ extension Epos2Printer {
             if let _ = style {
                 setPrinterOrderTextStyle(style: .normal)
             }
-
+            
         case .feed(let count):
             self.addFeedLine(count)
         case .escPosCommond(let data):
@@ -38,11 +40,34 @@ extension Epos2Printer {
         case .textStyle(style: let style):
             self.setPrinterOrderTextStyle(style: style)
         case .qrCode(let text):
-            self.addCommand(EscPosCommond.qrCode(text: text))
+            self.addCommand(EpsonEscPosCommond.qrCode(text: text))
+        case .image(let image):
+            
+            let width: Int = 200 //384 // 固定
+            let height: Int = Int( (image.size.height / image.size.width) * CGFloat(width))
+            let resizedImage = image.resize(width: CGFloat(width))
+            
+            self.add(
+                resizedImage,
+                x: 0,
+                y: 0,
+                width: width,
+                height: height,
+                color: EPOS2_PARAM_DEFAULT,
+                mode: EPOS2_MODE_MONO.rawValue,
+                halftone: EPOS2_PARAM_DEFAULT,
+                brightness: Double(EPOS2_PARAM_DEFAULT),
+                compress: EPOS2_PARAM_DEFAULT
+            )
+
+//            self.addCommand(EpsonEscPosCommond.image(image: image))
         }
     }
+}
+
+fileprivate extension Epos2Printer {
     
-    private func setPrinterOrderTextStyle(style: PrinterOrder.TextStyle) {
+    func setPrinterOrderTextStyle(style: Print.Instruction.TextStyle) {
         switch style {
         case .normal:
             self.setBold(isBold: false)
@@ -51,23 +76,17 @@ extension Epos2Printer {
         }
     }
     
-    private func setBold(isBold: Bool) {
+    func setBold(isBold: Bool) {
         self.addTextStyle(EPOS2_FALSE, 
                           ul: EPOS2_FALSE,
                           em: isBold ? EPOS2_TRUE : EPOS2_FALSE,
                           color: EPOS2_COLOR_1.rawValue)
     }
     
-    private func addPrinterOrderTextSize(size: PrinterOrder.TextSize) {
+    func addPrinterOrderTextSize(size: Print.Instruction.TextSize) {
         switch size {
         case .normal:
             self.addTextSize(1, height: 1)
-        case.double:
-            self.addTextSize(2, height: 2)
-        case.widthDouble:
-            self.addTextSize(2, height: 1)
-        case.heightDouble:
-            self.addTextSize(1, height: 2)
         case .scale(let width, let height):
             if width < 1 || 8 < width || height < 1 || 8 < height {
                 self.addTextSize(1, height: 1)
