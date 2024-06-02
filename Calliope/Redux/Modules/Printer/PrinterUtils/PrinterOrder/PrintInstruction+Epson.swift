@@ -45,26 +45,21 @@ extension Epos2Printer {
             
             let width: Int = 200 //384 // 固定
             let height: Int = Int( (image.size.height / image.size.width) * CGFloat(width))
-            
             let resizedImage = image.resize(width: CGFloat(width))
-                
+            
             self.add(
                 resizedImage,
                 x: 0,
                 y: 0,
-                width: 200,
+                width: width,
                 height: height,
-                color: -2,
-                mode: 0,
-                halftone: -2,
-                brightness: 1.0,
-                compress: -2
+                color: EPOS2_PARAM_DEFAULT,
+                mode: EPOS2_MODE_MONO.rawValue,
+                halftone: EPOS2_PARAM_DEFAULT,
+                brightness: Double(EPOS2_PARAM_DEFAULT),
+                compress: EPOS2_PARAM_DEFAULT
             )
-                
-            /*
-             - (int) addImage:(UIImage *)data x:(long)x y:(long)y width:(long)width height:(long)height color:(int)color mode:(int)mode halftone:(int)halftone brightness:(double)brightness compress:(int)compress;
-             */
-            
+
 //            self.addCommand(EpsonEscPosCommond.image(image: image))
         }
     }
