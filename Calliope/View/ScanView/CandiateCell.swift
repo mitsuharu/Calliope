@@ -27,8 +27,8 @@ extension CandiateCell {
         
         var body: some View {
             VStack(alignment: .leading) {
-                Text(manufacturer)
-                Spacer().frame(height: 10)
+//                Text(manufacturer)
+//                Spacer().frame(height: 10)
                 HStack(alignment: .center)  {
                     Text("name: ").frame(width: 50, alignment: .leading)
                     Text(name ?? "-")

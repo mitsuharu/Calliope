@@ -57,7 +57,7 @@ private let runPrintJobsSaga: Saga = { action async in
         return
     }
     
-    guard let device = selectPrinterDeviceInfo(stare: appStore.state) else {
+    guard let device = PrinterSelectors.selectPrinterDeviceInfo(stare: appStore.state) else {
         return
     }
     

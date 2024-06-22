@@ -8,16 +8,22 @@
 import Foundation
 import ReSwift
 
-final class ScanViewModel: ObservableObject, StoreSubscriber {
-    typealias StoreSubscriberStateType = [PrinterDeviceInfo]
+final class ScanViewModel: ObservableObject, StoreSubscriber {    
+    typealias StoreSubscriberStateType = (
+        hasCandiates: Bool,
+        manufacturerCandiates: [PrinterDeviceInfo.Manufacturer: [PrinterDeviceInfo]]
+    )
     
-    @Published var candiates: [PrinterDeviceInfo] = []
+    @Published var hasCandiates: Bool = false
+    @Published var manufacturerCandiates: [PrinterDeviceInfo.Manufacturer: [PrinterDeviceInfo]] = [:]
     
     init() {
         print("ScanViewModel init")
         appStore.subscribe(self) {
-            $0.select {
-                selectPrinterCandiates(stare: $0)
+            $0.select {(
+                PrinterSelectors.selectPrinterCandiatesExist(stare: $0),
+                PrinterSelectors.selectPrinterManufacturerCandiates(stare: $0)
+                )
             }
         }
         appStore.dispatch(onMain: StartScanDevices())
@@ -30,7 +36,8 @@ final class ScanViewModel: ObservableObject, StoreSubscriber {
     
     func newState(state: StoreSubscriberStateType) {
         Task { @MainActor in
-            self.candiates = state
+            self.hasCandiates = state.hasCandiates
+            self.manufacturerCandiates = state.manufacturerCandiates
         }
     }
     

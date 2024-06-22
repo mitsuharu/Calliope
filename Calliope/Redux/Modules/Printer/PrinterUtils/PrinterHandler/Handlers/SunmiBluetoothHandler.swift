@@ -15,6 +15,9 @@ final class SunmiBluetoothHandler: PrinterHandlerProtocol {
     private let centralManager = CentralManager()    
     private var cancellables: Set<AnyCancellable> = []
     
+    // スキャンする際に候補対象にする機器を名前で絞る
+    private let containedDeviceName = "CloudPrint"
+    
     init() {
     }
     
@@ -77,18 +80,16 @@ extension SunmiBluetoothHandler {
     
     fileprivate func startScanBluetooth() async throws {
         appStore.dispatch(onMain: AssignPrinterCandiates(candiates: []))
-        
+                
         do {
             try await centralManager.waitUntilReady()
             
             let stream = try await centralManager.scanForPeripherals(withServices: nil)
             for await scanData in stream {
-                if scanData.peripheral.name?.isEmpty ?? true {
-                    // 名前のない機器は無視する
-                    continue
+                if let name = scanData.peripheral.name, name.contains(containedDeviceName){
+                    let candiate = PrinterDeviceInfo(bluetooth: scanData.peripheral)
+                    appStore.dispatch(onMain: AppendPrinterCandiate(candiate: candiate))
                 }
-                let candiate = PrinterDeviceInfo(bluetooth: scanData.peripheral)
-                appStore.dispatch(onMain: AppendPrinterCandiate(candiate: candiate))
             }
         } catch {
             print(error)
