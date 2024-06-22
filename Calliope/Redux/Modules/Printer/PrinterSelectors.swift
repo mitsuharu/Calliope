@@ -7,44 +7,64 @@
 
 import Foundation
 
-func selectPrinterDeviceInfo(stare: AppState) -> PrinterDeviceInfo? {
-    stare.printer.deviceInfo
-}
-
-func selectPrinterCandiates(stare: AppState) -> [PrinterDeviceInfo] {
-    let candiates = (stare.printer.candiates ?? []).sorted { lhs, rhs in
-        let keyword = "CloudPrint" // TM-P20II
-        switch (lhs.name, rhs.name) {
-        case (let leftName?, let rightName?):
-            let left = leftName.contains(keyword)
-            let right = rightName.contains(keyword)
-            if left && !right {
-                return true
-            } else if !right {
-                return false
-            }
-            return leftName.lowercased() < rightName.lowercased()
-        case (nil, nil):
+enum PrinterSelectors {
+    
+    static func selectPrinterDeviceInfo(stare: AppState) -> PrinterDeviceInfo? {
+        stare.printer.deviceInfo
+    }
+    
+    static func selectPrinterCandiatesExist(stare: AppState) -> Bool {
+        guard let candiates = stare.printer.candiates else {
             return false
-        case (nil, _):
-            return false
-        case (_, nil):
-            return true
         }
+        return !candiates.isEmpty
     }
-    return candiates
+
+    static func selectPrinterCandiates(stare: AppState) -> [PrinterDeviceInfo] {
+        guard let candiates = stare.printer.candiates else {
+            return []
+        }
+        return Array(candiates)
+    }
+    
+    static func selectPrinterManufacturerCandiates(stare: AppState) -> [PrinterDeviceInfo.Manufacturer: [PrinterDeviceInfo]] {
+        guard let candiates = stare.printer.candiates else {
+            return [:]
+        }
+        return fetchManufacturerCandiates(candiates: candiates)
+    }
+
+    static func selectPrinterName(stare: AppState) -> String? {
+        guard let deviceInfo = selectPrinterDeviceInfo(stare: stare) else {
+            return nil
+        }
+        return deviceInfo.name
+    }
+
+    static func selectPrinterUUID(stare: AppState) -> String? {
+        guard let deviceInfo = selectPrinterDeviceInfo(stare: stare) else {
+            return nil
+        }
+        return deviceInfo.uuid
+    }
+
 }
 
-func selectPrinterName(stare: AppState) -> String? {
-    guard let deviceInfo = selectPrinterDeviceInfo(stare: stare) else {
-        return nil
+fileprivate extension PrinterSelectors {
+        
+    static func fetchManufacturerCandiates(candiates: Set<PrinterDeviceInfo>) -> [PrinterDeviceInfo.Manufacturer: [PrinterDeviceInfo]] {
+        var result: [PrinterDeviceInfo.Manufacturer: [PrinterDeviceInfo]] = [
+            .epson: [],
+            .bluetooth: []
+        ]
+        for candiate in candiates {
+            switch candiate.manufacturer {
+            case .epson:
+                result[.epson]?.append(candiate)
+            case .bluetooth:
+                result[.bluetooth]?.append(candiate)
+            }
+        }
+        return result
     }
-    return deviceInfo.name
-}
-
-func selectPrinterUUID(stare: AppState) -> String? {
-    guard let deviceInfo = selectPrinterDeviceInfo(stare: stare) else {
-        return nil
-    }
-    return deviceInfo.uuid
 }

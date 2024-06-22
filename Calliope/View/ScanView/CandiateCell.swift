@@ -11,11 +11,14 @@ struct CandiateCell: View {
     @Binding var deviceInfo: PrinterDeviceInfo
     
     var body: some View {
-        Component(
-            manufacturer: deviceInfo.manufacturer.name,
-            name: deviceInfo.name,
-            uuid: deviceInfo.uuid
-        )
+        HStack{
+            Component(
+                manufacturer: deviceInfo.manufacturer.name,
+                name: deviceInfo.name,
+                uuid: deviceInfo.uuid
+            )
+            Spacer()
+        }
     }
 }
 
@@ -27,8 +30,8 @@ extension CandiateCell {
         
         var body: some View {
             VStack(alignment: .leading) {
-                Text(manufacturer)
-                Spacer().frame(height: 10)
+//                Text(manufacturer)
+//                Spacer().frame(height: 10)
                 HStack(alignment: .center)  {
                     Text("name: ").frame(width: 50, alignment: .leading)
                     Text(name ?? "-")

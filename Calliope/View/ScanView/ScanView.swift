@@ -12,7 +12,7 @@ struct ScanView: View {
     @EnvironmentObject var router: NavigationRouter
     
     var body: some View {
-        if viewModel.candiates.count == 0 {
+        if viewModel.hasCandiates == false {
             VStack {
                 ProgressView()
                 Spacer().frame(height: 10)
@@ -22,15 +22,29 @@ struct ScanView: View {
                     Text("Back")
                 })
             }
-        }else {
+        } else {
             List {
-                ForEach($viewModel.candiates, id: \.self) { item in
-                    Button(action: {
-                        viewModel.selectCandiate(deviceInfo: item.wrappedValue)
-                    }) {
-                        CandiateCell(deviceInfo: item)
+                if $viewModel.epsonCandiates.count > 0 {
+                    Section(header: Text("EPSON")) {
+                        ForEach($viewModel.epsonCandiates, id: \.self) { item in
+                            Button(action: {
+                                viewModel.selectCandiate(deviceInfo: item.wrappedValue)
+                            }) {
+                                CandiateCell(deviceInfo: item)
+                            }
+                        }
                     }
-                    .buttonStyle(PlainButtonStyle())
+                }
+                if $viewModel.bluetoorhCandiates.count > 0 {
+                    Section(header: Text("Bluetooth devices (select SUNMI)")) {
+                        ForEach($viewModel.bluetoorhCandiates, id: \.self) { item in
+                            Button(action: {
+                                viewModel.selectCandiate(deviceInfo: item.wrappedValue)
+                            }) {
+                                CandiateCell(deviceInfo: item)
+                            }
+                        }
+                    }
                 }
             }
         }

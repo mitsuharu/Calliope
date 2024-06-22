@@ -21,10 +21,13 @@
     "Back" : {
 
     },
-    "name: " : {
+    "Bluetooth devices (select SUNMI)" : {
 
     },
-    "name: %@" : {
+    "EPSON" : {
+
+    },
+    "name: " : {
 
     },
     "scan" : {
@@ -47,7 +50,10 @@
     "uuid: " : {
 
     },
-    "uuid: %@" : {
+    "印刷コマンド" : {
+
+    },
+    "選択されたサーマルプリンター" : {
 
     }
   },
