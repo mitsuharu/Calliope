@@ -138,19 +138,16 @@ extension SunmiBluetoothHandler {
         // FIXME: MTUサイズの取得で、関数で取得すると値が大きく、印刷で失敗する
         // let mtuSize = peripheral.maximumWriteValueLength(for: .withResponse)
 
-        // MTUサイズの取得
+        // MTUサイズの取得（値はヒューリスティックに決めた）
         let mtuSize = 150
         
-        var offset = 0
-        while offset < data.count {
-            let chunkSize = min(mtuSize, data.count - offset)
-            let chunk = data.subdata(in: offset..<(offset + chunkSize))
+        // MTUサイズ単位で分割して、送信する
+        for chunk in data.chunk(size: mtuSize) {
             try await peripheral.writeValue(
                 chunk,
                 forCharacteristicWithUUID: uuid.characteristic,
                 ofServiceWithUUID: uuid.service
             )
-            offset += chunkSize
         }
     }
     
@@ -209,5 +206,25 @@ extension Peripheral {
         let result: PeripheralUUID = (service: serviceUUID,
                                       characteristic: characteristicUUID)
         return result
+    }
+}
+
+
+extension Data {
+    
+    /**
+     Data を size ごとに分割する
+     */
+    fileprivate func chunk(size: Int) -> [Data] {
+        let count = self.count
+        var chunks: [Data] = []
+        var offset = 0
+        while offset < count {
+            let chunkLength = Swift.min(size, count - offset)
+            let chunk = self.subdata(in: offset..<(offset + chunkLength))
+            chunks.append(chunk)
+            offset += chunkLength
+        }
+        return chunks
     }
 }

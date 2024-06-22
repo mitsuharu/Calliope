@@ -400,7 +400,7 @@
 		9B3939E52BE628F400EF6AED /* PrinterHandler */ = {
 			isa = PBXGroup;
 			children = (
-				9B9DD9E62C0C356200B5022A /* Manufacturers */,
+				9B9DD9E62C0C356200B5022A /* Handlers */,
 				9B3939E42BE628F400EF6AED /* PrinterHandlerProtocol.swift */,
 				9B3939E92BE62DAC00EF6AED /* PrinterHandler.swift */,
 			);
@@ -438,13 +438,13 @@
 			path = EscPosCommond;
 			sourceTree = "<group>";
 		};
-		9B9DD9E62C0C356200B5022A /* Manufacturers */ = {
+		9B9DD9E62C0C356200B5022A /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
 				9B3939E22BE628F400EF6AED /* SunmiBluetoothHandler.swift */,
 				9B3939E32BE628F400EF6AED /* EpsonHandler.swift */,
 			);
-			path = Manufacturers;
+			path = Handlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
