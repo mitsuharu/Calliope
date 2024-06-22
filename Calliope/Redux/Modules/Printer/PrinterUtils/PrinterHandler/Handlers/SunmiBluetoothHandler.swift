@@ -83,6 +83,10 @@ extension SunmiBluetoothHandler {
             
             let stream = try await centralManager.scanForPeripherals(withServices: nil)
             for await scanData in stream {
+                if scanData.peripheral.name?.isEmpty ?? true {
+                    // 名前のない機器は無視する
+                    continue
+                }
                 let candiate = PrinterDeviceInfo(bluetooth: scanData.peripheral)
                 appStore.dispatch(onMain: AppendPrinterCandiate(candiate: candiate))
             }
