@@ -53,26 +53,26 @@ extension MainViewModel {
         var commonds: [SampleCommond] = []
         
         let commond1 = SampleCommond(title: "テキストの印刷") {
-            let orders: [Print.Instruction] = [
+            let jobs: [Print.Job] = [
                 .text(text: "hello"),
                 .text(text: "こんにちはコンニチワ今日わ"),
                 .feed(count: 1),
                 .text(text: "http://www.example.com"),
                 .qrCode(text: "http://www.example.com")
             ]
-            appStore.dispatch(onMain: RunPrintInstruction(instructions: orders))
+            appStore.dispatch(onMain: RunPrintJobs(jobs: jobs))
         }
         commonds.append(commond1)
         
         if let image = UIImage(named: "himawari.jpg") {
             let commond2 = SampleCommond(title: "画像の印刷") {
-                let orders: [Print.Instruction] = [
+                let jobs: [Print.Job] = [
                     .text(text: "ひまわり"),
                     .feed(count: 1),
                     .image(image: image),
                     .feed(count: 1)
                 ]
-                appStore.dispatch(onMain: RunPrintInstruction(instructions: orders))
+                appStore.dispatch(onMain: RunPrintJobs(jobs: jobs))
             }
             commonds.append(commond2)
         }

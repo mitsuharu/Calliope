@@ -24,7 +24,7 @@ final class EpsonHandler: NSObject, PrinterHandlerProtocol {
         try stopScanEpson()
     }
         
-    func run(device: PrinterDeviceInfo, transaction: [Print.Instruction]) async throws {
+    func run(device: PrinterDeviceInfo, transaction: [Print.Job]) async throws {
         
         print("run")
         

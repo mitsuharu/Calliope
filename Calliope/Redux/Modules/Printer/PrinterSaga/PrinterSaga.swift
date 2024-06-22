@@ -14,7 +14,7 @@ let printerSaga: Saga = { _ in
     
     await takeEvery(StartScanDevices.self, saga: startScanSaga)
     await takeEvery(StopScanDevices.self, saga: stopScanSaga)
-    await takeEvery(RunPrintInstruction.self, saga: runPrintInstructionSaga)
+    await takeEvery(RunPrintJobs.self, saga: runPrintJobsSaga)
 }
 
 private let preparePrinterHandlerSaga: Saga = { action async in
@@ -52,8 +52,8 @@ private let stopScanSaga: Saga = { action async in
     }
 }
 
-private let runPrintInstructionSaga: Saga = { action async in
-    guard let action = action as? RunPrintInstruction else {
+private let runPrintJobsSaga: Saga = { action async in
+    guard let action = action as? RunPrintJobs else {
         return
     }
     
@@ -63,7 +63,7 @@ private let runPrintInstructionSaga: Saga = { action async in
     
     do {
         let handler = PrinterHandler.shared
-        try await handler.run(device: device, transaction: action.instructions)
+        try await handler.run(device: device, transaction: action.jobs)
     } catch {
         
     }

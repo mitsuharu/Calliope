@@ -39,7 +39,7 @@ final class SunmiBluetoothHandler: PrinterHandlerProtocol {
         }
     }
     
-    func run(device: PrinterDeviceInfo, transaction: [Print.Instruction]) async throws {
+    func run(device: PrinterDeviceInfo, transaction: [Print.Job]) async throws {
         guard let peripheral = device.bluetooth else {
             throw PrinterError.instanceFailed
         }
@@ -118,7 +118,7 @@ extension SunmiBluetoothHandler {
         }
     }
         
-    fileprivate func makeCommandData(transaction: [Print.Instruction]) -> Data {
+    fileprivate func makeCommandData(transaction: [Print.Job]) -> Data {
         
         // 初期化 ESC @
         var result = EpsonEscPosCommond.initialize()

@@ -1,5 +1,5 @@
 //
-//  PrintInstruction.swift
+//  Print.swift
 //  Calliope
 //
 //  Created by Mitsuharu Emoto on 2024/05/04.
@@ -20,7 +20,7 @@ enum Print {
     /**
      印刷命令
      */
-    enum Instruction {
+    enum Job {
         case initialize
         case text(text: String, size: TextSize? = nil, style: TextStyle? = nil)
         case textSize(size: TextSize)
@@ -32,17 +32,7 @@ enum Print {
     }
 }
 
-//enum PrinterOrder {
-//    case text(text: String, size: TextSize? = nil, style: TextStyle? = nil)
-//    case textSize(size: TextSize)
-//    case textStyle(style: TextStyle)
-//    case feed(count: Int)
-//    case qrCode(text: String)
-//    case escPosCommond(data: Data)
-//    case image(image: UIImage)
-//}
-
-extension Print.Instruction {
+extension Print.Job {
     
     enum TextStyle {
         case normal

@@ -1,5 +1,5 @@
 //
-//  PrinterOrder+Epson.swift
+//  PrintJob+Epson.swift
 //  Calliope
 //
 //  Created by Mitsuharu Emoto on 2024/05/05.
@@ -9,7 +9,7 @@ import Foundation
 
 extension Epos2Printer {
     
-    func addPrinterOrder(order: Print.Instruction) {
+    func addPrinterOrder(order: Print.Job) {
         switch order {
         case .initialize:
             self.addCommand(EpsonEscPosCommond.initialize())
@@ -67,7 +67,7 @@ extension Epos2Printer {
 
 fileprivate extension Epos2Printer {
     
-    func setPrinterOrderTextStyle(style: Print.Instruction.TextStyle) {
+    func setPrinterOrderTextStyle(style: Print.Job.TextStyle) {
         switch style {
         case .normal:
             self.setBold(isBold: false)
@@ -83,7 +83,7 @@ fileprivate extension Epos2Printer {
                           color: EPOS2_COLOR_1.rawValue)
     }
     
-    func addPrinterOrderTextSize(size: Print.Instruction.TextSize) {
+    func addPrinterOrderTextSize(size: Print.Job.TextSize) {
         switch size {
         case .normal:
             self.addTextSize(1, height: 1)
