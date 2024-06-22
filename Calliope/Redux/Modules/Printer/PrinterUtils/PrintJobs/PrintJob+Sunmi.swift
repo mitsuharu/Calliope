@@ -36,7 +36,7 @@ extension Print.Job {
                 return data
             case .feed(let count):
                 return SunmiEscPosCommond.feed(count: count)
-            case .escPosCommond(let data):
+            case .rawCommond(let data):
                 return data
             case .textSize(size: let size):
                 return scaleCommond(size)
@@ -44,8 +44,8 @@ extension Print.Job {
                 return styleCommond(style)
             case .qrCode(let text):
                 return SunmiEscPosCommond.qrCode(text: text)
-            case .image(let image):
-                return SunmiEscPosCommond.image(image:image)
+            case .image(let image, let imageWidth):
+                return SunmiEscPosCommond.image(image:image, imageWidth: imageWidth.rawValue)
             }
         }
     }

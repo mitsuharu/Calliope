@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ SUNMI向けのESC/POSコマンド
+ */
 struct SunmiEscPosCommond: EscPosCommondProtocol {
     private init() {}
         
@@ -93,9 +96,9 @@ struct SunmiEscPosCommond: EscPosCommondProtocol {
         return result
     }
     
-    static func image(image: UIImage) -> Data {
+    static func image(image: UIImage, imageWidth: Int) -> Data {
         
-        let width: Int = 200 //384 // 固定
+        let width: Int = imageWidth
         let height: Int = Int((image.size.height / image.size.width) * CGFloat(width))
         let targetSize = CGSize(width: width, height: height)
         

@@ -15,20 +15,23 @@ extension UIImage {
         let height: Int
     }
     
+    func resized(size: CGSize) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image {
+            _ in draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
+    
     func convertOneBitBitmap(size: CGSize) -> OneBitBitmap? {
         
         // 幅を8倍に調整する
         let width = Int(ceil(Double(size.width) / 8.0) * 8.0)
         let height = Int(size.height)
-        let targetSize = CGSize(width: width, height: height)
         
         // 画像をリサイズ
-        UIGraphicsBeginImageContext(targetSize)
-        self.draw(in: CGRect(origin: .zero, size: targetSize))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+        let resizedImage = self.resized(size: CGSize(width: width, height: height))
         
-        guard let cgImage = resizedImage?.cgImage else { return nil }
+        guard let cgImage = resizedImage.cgImage else { return nil }
 
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let rawData = calloc(height * width * 4, MemoryLayout<UInt8>.size)

@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ エプソン向けのESC/POSコマンド
+ */
 struct EpsonEscPosCommond: EscPosCommondProtocol {
     private init() {}
     
@@ -96,9 +99,9 @@ struct EpsonEscPosCommond: EscPosCommondProtocol {
         return result
     }
     
-    static func image(image: UIImage) -> Data {
+    static func image(image: UIImage, imageWidth: Int) -> Data {
         
-        let width: CGFloat = 200 //384 // 固定
+        let width: CGFloat = CGFloat(imageWidth)
         let height: CGFloat = (image.size.height / image.size.width) * width
         let size = CGSize(width: width, height: height.rounded(.up))
                 
@@ -132,7 +135,7 @@ struct EpsonEscPosCommond: EscPosCommondProtocol {
         var command = Data()
         
         // 画像を一旦バッファーに格納する
-        // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=98
+        // https://download4.epson.biz/sec_pubs/pos/reference_ja/escpos/gs_lparen_cl_fn112.html
         command.append(contentsOf: [0x1D, 0x28, 0x4C])
         
         // データの長さを計算して追加 (pL, pH)
@@ -155,7 +158,7 @@ struct EpsonEscPosCommond: EscPosCommondProtocol {
         
         command.append(contentsOf: bitmapData)
         
-        // https://www.epson-biz.com/modules/ref_escpos_ja/index.php?content_id=98
+        // https://download4.epson.biz/sec_pubs/pos/reference_ja/escpos/gs_lparen_cl_fn50.html
         command.append(contentsOf: [0x1d, 0x28, 0x4c, 0x02, 0x00, 0x30, 50])
         
         command.append(0x0a)

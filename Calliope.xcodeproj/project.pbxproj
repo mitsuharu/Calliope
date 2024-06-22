@@ -412,8 +412,8 @@
 			children = (
 				9B9DD9E52C0C34A600B5022A /* EscPosCommond */,
 				9B12BFF12BE61B4B0065DA76 /* Print.swift */,
-				9B393A002BE75C4F00EF6AED /* PrintJob+Sunmi.swift */,
 				9B393A022BE7613E00EF6AED /* PrintJob+Epson.swift */,
+				9B393A002BE75C4F00EF6AED /* PrintJob+Sunmi.swift */,
 			);
 			path = PrintJobs;
 			sourceTree = "<group>";

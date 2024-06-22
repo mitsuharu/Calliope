@@ -21,31 +21,42 @@ enum Print {
      印刷命令
      */
     enum Job {
+        
         case initialize
         case text(text: String, size: TextSize? = nil, style: TextStyle? = nil)
         case textSize(size: TextSize)
         case textStyle(style: TextStyle)
         case feed(count: Int)
         case qrCode(text: String)
-        case escPosCommond(data: Data)
-        case image(image: UIImage)
-    }
-}
-
-extension Print.Job {
-    
-    enum TextStyle {
-        case normal
-        case bold
-    }
-    
-    enum TextSize {
-        case normal
-
+        case rawCommond(data: Data)
+        case image(image: UIImage, imageWidth: ImageWidth = .standard)
+        
         /**
-         width と height はともに 1 ~ 8 まで設定できます
+         テキストスタイル
          */
-        case scale(width: Int, height: Int)
+        enum TextStyle {
+            case normal
+            case bold
+        }
+        
+        /**
+         テキストサイズ
+         */
+        enum TextSize {
+            case normal
+
+            /**
+             width と height はともに 1 ~ 8 まで設定できます
+             */
+            case scale(width: Int, height: Int)
+        }
+        
+        enum ImageWidth: Int {
+            case standard = 200
+            case fiftyEight = 384
+            case eighty = 640
+        }
     }
-    
 }
+
+

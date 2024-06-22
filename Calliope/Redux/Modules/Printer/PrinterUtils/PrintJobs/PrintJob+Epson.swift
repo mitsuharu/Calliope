@@ -33,7 +33,7 @@ extension Epos2Printer {
             
         case .feed(let count):
             self.addFeedLine(count)
-        case .escPosCommond(let data):
+        case .rawCommond(let data):
             self.addCommand(data)
         case .textSize(size: let size):
             self.addPrinterOrderTextSize(size: size)
@@ -41,18 +41,21 @@ extension Epos2Printer {
             self.setPrinterOrderTextStyle(style: style)
         case .qrCode(let text):
             self.addCommand(EpsonEscPosCommond.qrCode(text: text))
-        case .image(let image):
+        case .image(let image, let imageWidth):
             
-            let width: Int = 200 //384 // 固定
-            let height: Int = Int( (image.size.height / image.size.width) * CGFloat(width))
-            let resizedImage = image.resize(width: CGFloat(width))
+            let width = CGFloat(imageWidth.rawValue)
+            let size = CGSize(
+                width: width,
+                height: ((image.size.height / image.size.width) * width).rounded()
+            )
+            let resizedImage = image.resized(size: size)
             
             self.add(
                 resizedImage,
                 x: 0,
                 y: 0,
-                width: width,
-                height: height,
+                width: Int(size.width),
+                height: Int(size.height),
                 color: EPOS2_PARAM_DEFAULT,
                 mode: EPOS2_MODE_MONO.rawValue,
                 halftone: EPOS2_PARAM_DEFAULT,
