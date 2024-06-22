@@ -30,9 +30,6 @@
     "name: " : {
 
     },
-    "name: %@" : {
-
-    },
     "scan" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -53,7 +50,10 @@
     "uuid: " : {
 
     },
-    "uuid: %@" : {
+    "印刷コマンド" : {
+
+    },
+    "選択されたサーマルプリンター" : {
 
     }
   },

@@ -32,7 +32,6 @@ struct ScanView: View {
                             }) {
                                 CandiateCell(deviceInfo: item)
                             }
-                            .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
@@ -44,7 +43,6 @@ struct ScanView: View {
                             }) {
                                 CandiateCell(deviceInfo: item)
                             }
-                            .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
