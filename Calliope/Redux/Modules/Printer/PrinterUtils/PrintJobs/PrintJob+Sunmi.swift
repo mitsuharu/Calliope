@@ -1,5 +1,5 @@
 //
-//  PrintInstruction+Sunmi.swift
+//  PrintJob+Sunmi.swift
 //  Calliope
 //
 //  Created by Mitsuharu Emoto on 2024/05/05.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Print.Instruction {
+extension Print.Job {
     
     var sunmiBluetoothCommand: Data {
         get {
@@ -36,7 +36,7 @@ extension Print.Instruction {
                 return data
             case .feed(let count):
                 return SunmiEscPosCommond.feed(count: count)
-            case .escPosCommond(let data):
+            case .rawCommond(let data):
                 return data
             case .textSize(size: let size):
                 return scaleCommond(size)
@@ -44,17 +44,17 @@ extension Print.Instruction {
                 return styleCommond(style)
             case .qrCode(let text):
                 return SunmiEscPosCommond.qrCode(text: text)
-            case .image(let image):
-                return SunmiEscPosCommond.image(image:image)
+            case .image(let image, let imageWidth):
+                return SunmiEscPosCommond.image(image:image, imageWidth: imageWidth.rawValue)
             }
         }
     }
     
 }
 
-fileprivate extension Print.Instruction {
+fileprivate extension Print.Job {
     
-    private func scaleCommond(_ size: Print.Instruction.TextSize) -> Data {
+    private func scaleCommond(_ size: Print.Job.TextSize) -> Data {
         switch size {
         case .normal:
             let scale = EscPosCommond.TextScale(width: 1, height: 1)
@@ -65,7 +65,7 @@ fileprivate extension Print.Instruction {
         }
     }
     
-    private func styleCommond(_ style: Print.Instruction.TextStyle) -> Data {
+    private func styleCommond(_ style: Print.Job.TextStyle) -> Data {
         switch style {
         case .normal:
             return SunmiEscPosCommond.textStyle(style: .normal)

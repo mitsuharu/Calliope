@@ -8,11 +8,18 @@
 import Foundation
 
 extension UIImage {
-    
+        
     struct OneBitBitmap {
         let data: [UInt8]
         let width: Int
         let height: Int
+    }
+    
+    func resized(size: CGSize) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image {
+            _ in draw(in: CGRect(origin: .zero, size: size))
+        }
     }
     
     func convertOneBitBitmap(size: CGSize) -> OneBitBitmap? {
@@ -20,15 +27,11 @@ extension UIImage {
         // 幅を8倍に調整する
         let width = Int(ceil(Double(size.width) / 8.0) * 8.0)
         let height = Int(size.height)
-        let targetSize = CGSize(width: width, height: height)
         
         // 画像をリサイズ
-        UIGraphicsBeginImageContext(targetSize)
-        self.draw(in: CGRect(origin: .zero, size: targetSize))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+        let resizedImage = self.resized(size: CGSize(width: width, height: height))
         
-        guard let cgImage = resizedImage?.cgImage else { return nil }
+        guard let cgImage = resizedImage.cgImage else { return nil }
 
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let rawData = calloc(height * width * 4, MemoryLayout<UInt8>.size)
@@ -54,8 +57,10 @@ extension UIImage {
         guard let rawData = rawData else { return nil }
         let pixelData = rawData.bindMemory(to: UInt8.self, capacity: height * width * 4)
         
+        // 閾値 127
+        let threshold = 140
+        
         var data = [UInt8]()
-        let threshold = 140 // 127
         for y in 0..<height {
             for x in stride(from: 0, to: width, by: 8) {
                 var part = [UInt8](repeating: 0, count: 8)

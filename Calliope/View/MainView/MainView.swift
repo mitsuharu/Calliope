@@ -9,26 +9,19 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject private var viewModel = MainViewModel()
-//    let printerUseCase = PrinterUseCase()
-    
-    private let columns: [GridItem] = Array(repeating: .init(.flexible()),
-                                            count: 2)
     
     var body: some View {
-        VStack {
-            VStack{
-                Text("name: \(viewModel.name ?? "-")")
-                Spacer().frame(height: 10)
-                Text("uuid: \(viewModel.uuid ?? "-")")
-            }.padding()
-            ScrollView {
-                LazyVGrid(columns: columns) {
-                    ForEach(viewModel.sampleCommonds, id: \.uuid) { item in
-                        Button {
-                            item.action()
-                        } label: {
-                            DoPrintCell(title: item.title)
-                        }.buttonStyle(PlainButtonStyle())
+        List {
+            Section("選択されたサーマルプリンター") {
+                PrinterInfoCell(title: "NAME", detail: viewModel.name)
+                PrinterInfoCell(title: "UUID", detail: viewModel.uuid)
+            }
+            Section("印刷コマンド") {
+                ForEach(viewModel.sampleCommonds, id: \.uuid) { item in
+                    Button {
+                        viewModel.run(jobs: item.jobs)
+                    } label: {
+                        PrintCell(title: item.title)
                     }
                 }
             }
