@@ -8,7 +8,7 @@
 import Foundation
 
 extension UIImage {
-    
+        
     struct OneBitBitmap {
         let data: [UInt8]
         let width: Int
@@ -57,8 +57,10 @@ extension UIImage {
         guard let rawData = rawData else { return nil }
         let pixelData = rawData.bindMemory(to: UInt8.self, capacity: height * width * 4)
         
+        // 閾値 127
+        let threshold = 140
+        
         var data = [UInt8]()
-        let threshold = 140 // 127
         for y in 0..<height {
             for x in stride(from: 0, to: width, by: 8) {
                 var part = [UInt8](repeating: 0, count: 8)
