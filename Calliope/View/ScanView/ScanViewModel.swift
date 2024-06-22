@@ -15,10 +15,10 @@ final class ScanViewModel: ObservableObject, StoreSubscriber {
     )
     
     @Published var hasCandiates: Bool = false
-    @Published var manufacturerCandiates: [PrinterDeviceInfo.Manufacturer: [PrinterDeviceInfo]] = [:]
+    @Published var epsonCandiates: [PrinterDeviceInfo] = []
+    @Published var bluetoorhCandiates: [PrinterDeviceInfo] = []
     
     init() {
-        print("ScanViewModel init")
         appStore.subscribe(self) {
             $0.select {(
                 PrinterSelectors.selectPrinterCandiatesExist(stare: $0),
@@ -37,7 +37,8 @@ final class ScanViewModel: ObservableObject, StoreSubscriber {
     func newState(state: StoreSubscriberStateType) {
         Task { @MainActor in
             self.hasCandiates = state.hasCandiates
-            self.manufacturerCandiates = state.manufacturerCandiates
+            self.epsonCandiates = state.manufacturerCandiates[.epson] ?? []
+            self.bluetoorhCandiates = state.manufacturerCandiates[.bluetooth] ?? []
         }
     }
     

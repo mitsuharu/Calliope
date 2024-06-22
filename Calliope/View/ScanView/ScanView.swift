@@ -24,12 +24,9 @@ struct ScanView: View {
             }
         } else {
             List {
-                if 
-                    let candiates = Binding($viewModel.manufacturerCandiates[.epson]),
-                    candiates.count > 0
-                {
+                if $viewModel.epsonCandiates.count > 0 {
                     Section(header: Text("EPSON")) {
-                        ForEach(candiates, id: \.self) { item in
+                        ForEach($viewModel.epsonCandiates, id: \.self) { item in
                             Button(action: {
                                 viewModel.selectCandiate(deviceInfo: item.wrappedValue)
                             }) {
@@ -39,12 +36,9 @@ struct ScanView: View {
                         }
                     }
                 }
-                if
-                    let candiates = Binding($viewModel.manufacturerCandiates[.bluetooth]),
-                    candiates.count > 0
-                {
+                if $viewModel.bluetoorhCandiates.count > 0 {
                     Section(header: Text("Bluetooth devices (select SUNMI)")) {
-                        ForEach(candiates, id: \.self) { item in
+                        ForEach($viewModel.bluetoorhCandiates, id: \.self) { item in
                             Button(action: {
                                 viewModel.selectCandiate(deviceInfo: item.wrappedValue)
                             }) {
