@@ -24,6 +24,18 @@
     "Bluetooth devices (select SUNMI)" : {
 
     },
+    "build" : {
+
+    },
+    "Build" : {
+
+    },
+    "BuildView" : {
+
+    },
+    "Delete" : {
+
+    },
     "EPSON" : {
 
     },
@@ -50,7 +62,7 @@
     "uuid: " : {
 
     },
-    "印刷コマンド" : {
+    "プリセットされた印刷コマンド" : {
 
     },
     "選択されたサーマルプリンター" : {

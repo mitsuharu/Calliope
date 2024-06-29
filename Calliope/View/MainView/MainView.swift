@@ -16,15 +16,26 @@ struct MainView: View {
                 PrinterInfoCell(title: "NAME", detail: viewModel.name)
                 PrinterInfoCell(title: "UUID", detail: viewModel.uuid)
             }
-            Section("印刷コマンド") {
+            Section("プリセットされた印刷コマンド") {
                 ForEach(viewModel.sampleCommonds, id: \.uuid) { item in
-                    Button {
+                    ListCell(title: item.title) {
                         viewModel.run(jobs: item.jobs)
-                    } label: {
-                        PrintCell(title: item.title)
                     }
                 }
             }
+            Section("印刷コマンドをビルドする") {
+                ListCell(title: "Build", accessory: .disclosureIndicator) {
+                    NavigationRouter.shared.navigate(.build)
+                }
+            }
+//            Section {
+//                // build 済みの印刷コマンドを一覧する。印刷＆削除
+//                ListCell(title: "Build 1") {
+//                    NavigationRouter.shared.navigate(.build)
+//                } deleteSwipeAction: {
+//                    print("delete")
+//                }
+//            }
         }
     }
 }

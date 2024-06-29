@@ -18,6 +18,8 @@ struct NavigationModifier: ViewModifier {
                 switch $0 {
                 case .scan:
                     ScanView().navigationTitle("scan")
+                case .build:
+                    BuildView().navigationTitle("build")
                 }
             }
     }

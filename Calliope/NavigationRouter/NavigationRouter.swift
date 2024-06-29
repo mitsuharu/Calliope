@@ -17,7 +17,8 @@ final class NavigationRouter: ObservableObject {
     private init() {}
     
     enum Item: Hashable {
-      case scan
+        case scan
+        case build
     }
     
     func navigate(_ item: Item){
