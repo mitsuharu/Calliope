@@ -79,7 +79,7 @@ extension SunmiBluetoothHandler {
     }
     
     fileprivate func startScanBluetooth() async throws {
-        appStore.dispatch(onMain: AssignPrinterCandiates(candiates: []))
+        appStore.dispatch(onMain: PrinterActions.AssignPrinterCandiates(candiates: []))
                 
         do {
             try await centralManager.waitUntilReady()
@@ -88,7 +88,7 @@ extension SunmiBluetoothHandler {
             for await scanData in stream {
                 if let name = scanData.peripheral.name, name.contains(containedDeviceName){
                     let candiate = PrinterDeviceInfo(bluetooth: scanData.peripheral)
-                    appStore.dispatch(onMain: AppendPrinterCandiate(candiate: candiate))
+                    appStore.dispatch(onMain: PrinterActions.AppendPrinterCandiate(candiate: candiate))
                 }
             }
         } catch {

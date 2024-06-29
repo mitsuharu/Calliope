@@ -10,24 +10,32 @@ import ReSwift
 
 protocol PrinterAction: Action {}
 
-struct AssignPrinterDeviceInfo: PrinterAction {
-    let deviceInfo: PrinterDeviceInfo
-}
-
-struct AssignPrinterCandiates: PrinterAction {
-    let candiates: Set<PrinterDeviceInfo>
-}
-
-struct AppendPrinterCandiate: PrinterAction {
-    let candiate: PrinterDeviceInfo
-}
-
-struct StartScanDevices: PrinterAction {
-}
-
-struct StopScanDevices: PrinterAction {
-}
-
-struct RunPrintJobs: PrinterAction {
-    let jobs: [Print.Job]
+enum PrinterActions {
+    
+    struct AssignPrinterDeviceInfo: PrinterAction {
+        let deviceInfo: PrinterDeviceInfo
+    }
+    
+    struct AssignPrinterCandiates: PrinterAction {
+        let candiates: Set<PrinterDeviceInfo>
+    }
+    
+    struct AppendPrinterCandiate: PrinterAction {
+        let candiate: PrinterDeviceInfo
+    }
+    
+    struct StartScanDevices: PrinterAction {
+    }
+    
+    struct StopScanDevices: PrinterAction {
+    }
+    
+    struct RunPrintJobs: PrinterAction {
+        let jobs: [Print.Job]
+    }
+    
+    struct AppendBuildJobs: PrinterAction {
+        let buildJob: PrinterState.BuildJob
+    }
+    
 }

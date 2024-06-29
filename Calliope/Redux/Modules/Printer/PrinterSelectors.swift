@@ -47,6 +47,10 @@ enum PrinterSelectors {
         }
         return deviceInfo.uuid
     }
+    
+    static func selectBuildJobs(stare: AppState) -> [PrinterState.BuildJob] {
+        return stare.printer.buildJobs
+    }
 
 }
 

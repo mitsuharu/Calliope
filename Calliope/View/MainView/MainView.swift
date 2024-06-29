@@ -16,13 +16,27 @@ struct MainView: View {
                 PrinterInfoCell(title: "NAME", detail: viewModel.name)
                 PrinterInfoCell(title: "UUID", detail: viewModel.uuid)
             }
-            Section("印刷コマンド") {
+            Section("プリセットされた印刷コマンド") {
                 ForEach(viewModel.sampleCommonds, id: \.uuid) { item in
-                    Button {
+                    ListCell(title: item.title) {
                         viewModel.run(jobs: item.jobs)
-                    } label: {
-                        PrintCell(title: item.title)
                     }
+                }
+            }
+            Section("印刷コマンドをビルドする") {
+                ListCell(title: "ビルド画面に遷移する", accessory: .disclosureIndicator) {
+                    NavigationRouter.shared.navigate(.build)
+                }
+            }
+            Section {
+                ForEach(viewModel.buildJobs, id: \.id) { buildJob in
+                    ListCell(title: buildJob.title) {
+                        viewModel.runBuildJobs(buildJob: buildJob)
+                    }
+                }
+            } header: {
+                if viewModel.buildJobs.isEmpty == false {
+                    Text("ビルドした印刷コマンド")
                 }
             }
         }
