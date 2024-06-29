@@ -9,6 +9,7 @@ import Foundation
 
 class BuildViewModel: ObservableObject {
     @Published var items: [BuildItem] = []
+    @Published var title: String = ""
     @Published var showBuildItemSelection = false
         
     func move(from source: IndexSet, to destination: Int) {
@@ -41,8 +42,6 @@ class BuildViewModel: ObservableObject {
     }
     
     func save(){
-        // TODO: saga を呼んで、PrintJobs形式にして保存する
-        
         let jobs: [Print.Job] = items.compactMap { item in
             if case .text(let object) = item.object, let text = object {
                 return Print.Job.text(text: text, size: .normal, style: .normal)
@@ -57,8 +56,14 @@ class BuildViewModel: ObservableObject {
             return
         }
         
+        let title = if title.isEmpty == false {
+            title
+        } else {
+            curretDateString()
+        }
+        
         let buildJobs = PrinterState.BuildJob(
-            title: curretDateString(),
+            title: title,
             jobs: jobs
         )
         appStore.dispatch(onMain: PrinterActions.AppendBuildJobs(buildJob: buildJobs))
@@ -66,22 +71,11 @@ class BuildViewModel: ObservableObject {
     
     
     func curretDateString() -> String {
-        // 現在の日付と時間を取得
-        let currentDate = Date()
-
-        // DateFormatterを作成
         let dateFormatter = DateFormatter()
-
-        // カレンダーをグレゴリオ暦に設定
         dateFormatter.calendar = Calendar(identifier: .gregorian)
-
-        // フォーマットを設定
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-        // 日付を文字列に変換
-        let dateString = dateFormatter.string(from: currentDate)
-
-        // 結果を出力
+        let dateString = dateFormatter.string(from: Date())
         return dateString
     }
     

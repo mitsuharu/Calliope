@@ -37,7 +37,7 @@ extension BuildItemCell {
         var body: some View {
             VStack{
                 HStack {
-                    Text(item.object.description)
+                    Text(item.object.description).font(.system(.caption))
                     Spacer()
                 }
                 HStack{

@@ -20,25 +20,35 @@ struct BuildView: View {
     // BuildView関連でenvironmentObjectで渡す
     @ObservedObject var viewModel = BuildViewModel()
 
+    @State private var inputText: String = ""
     
     var body: some View {
         List {
-            if viewModel.items.isEmpty {
-                Section {
-                    Text("右上の追加ボタンから印刷コマンドを追加してください")
-                }
-            }
-            
-            ForEach(viewModel.items, id: \.id) { item in
-                BuildItemCell(item: item) {
-                    viewModel.delete(item: item)
-                }
-            }
-            .onMove(perform: move)
-            
             if !viewModel.items.isEmpty {
                 Section {
-                    ListCell(title: "保存する") {
+                    TextField("印刷コマンドの名前の入力してください", text: $viewModel.title)
+                } header: {
+                    Text("印刷コマンドの名前（任意）")
+                }
+            }
+            
+            Section {
+                ForEach(viewModel.items, id: \.id) { item in
+                    BuildItemCell(item: item) {
+                        viewModel.delete(item: item)
+                    }
+                }.onMove(perform: move)
+            } header: {
+                if viewModel.items.isEmpty {
+                    Text("右上の追加ボタンから印刷コマンドを追加してください")
+                } else {
+                    Text("印刷コマンド")
+                }
+            }
+            
+            Section {
+                if !viewModel.items.isEmpty {
+                    ListCell(title: String(localized: "save")) {
                         viewModel.save()
                         NavigationRouter.shared.goBack()
                     }

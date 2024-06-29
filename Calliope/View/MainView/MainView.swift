@@ -24,7 +24,7 @@ struct MainView: View {
                 }
             }
             Section("印刷コマンドをビルドする") {
-                ListCell(title: "Build", accessory: .disclosureIndicator) {
+                ListCell(title: "ビルド画面に遷移する", accessory: .disclosureIndicator) {
                     NavigationRouter.shared.navigate(.build)
                 }
             }
@@ -33,6 +33,10 @@ struct MainView: View {
                     ListCell(title: buildJob.title) {
                         viewModel.runBuildJobs(buildJob: buildJob)
                     }
+                }
+            } header: {
+                if viewModel.buildJobs.isEmpty == false {
+                    Text("ビルドした印刷コマンド")
                 }
             }
         }
