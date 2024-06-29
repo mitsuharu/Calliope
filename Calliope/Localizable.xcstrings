@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "App_Home" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19,22 +22,37 @@
       }
     },
     "Back" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "戻る"
+          }
+        }
+      }
     },
     "Bluetooth devices (select SUNMI)" : {
 
     },
-    "build" : {
-
-    },
-    "Build" : {
-
-    },
-    "BuildView" : {
-
+    "build print jobs" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印刷コマンドをビルドする"
+          }
+        }
+      }
     },
     "Delete" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        }
+      }
     },
     "EPSON" : {
 
@@ -59,10 +77,31 @@
         }
       }
     },
+    "Select BuildItem" : {
+
+    },
+    "Select Image" : {
+
+    },
     "uuid: " : {
 
     },
+    "Write text" : {
+
+    },
     "プリセットされた印刷コマンド" : {
+
+    },
+    "印刷コマンドをビルドする" : {
+
+    },
+    "右上の追加ボタンから印刷コマンドを追加してください" : {
+
+    },
+    "未設定です" : {
+
+    },
+    "追加" : {
 
     },
     "選択されたサーマルプリンター" : {

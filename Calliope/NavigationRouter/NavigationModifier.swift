@@ -19,7 +19,7 @@ struct NavigationModifier: ViewModifier {
                 case .scan:
                     ScanView().navigationTitle("scan")
                 case .build:
-                    BuildView().navigationTitle("build")
+                    BuildView().navigationTitle("build print jobs")
                 }
             }
     }

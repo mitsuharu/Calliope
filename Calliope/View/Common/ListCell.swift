@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ListCell: View {
     let title: String
-    let accessory: Accessory?
+    let accessory: PlainCellAccessory?
     let action: (() -> Void)?
     let deleteSwipeAction: (() -> Void)?
     
-    init(title: String, accessory: Accessory? = nil, action: ( () -> Void)?, deleteSwipeAction: ( () -> Void)? = nil) {
+    init(title: String, accessory: PlainCellAccessory? = nil, action: ( () -> Void)?, deleteSwipeAction: ( () -> Void)? = nil) {
         self.title = title
         self.accessory = accessory
         self.action = action
@@ -21,75 +21,17 @@ struct ListCell: View {
     }
         
     var body: some View {
-        Button {
-            action?()
-        } label: {
-            HStack{
-                Text(title).tint(.black)
-                Spacer()
-                AccessoryView(accessory: accessory)
-            }
-            .contentShape(Rectangle())
-        }
-        .modifier(SwipeActionsModifier(type: .delete, action: deleteSwipeAction))
+        PlainCell(
+            label: {
+                Text(title)
+            },
+            accessory: accessory,
+            action: action,
+            deleteSwipeAction: deleteSwipeAction
+        )
     }
 }
 
-extension ListCell {
-    
-    enum Accessory {
-        case disclosureIndicator
-    }
-    
-    fileprivate struct AccessoryView: View {
-        let accessory: Accessory?
-        var body: some View {
-            switch accessory {
-            case .disclosureIndicator:
-                Image(systemName: "chevron.right").tint(.gray)
-            default:
-                EmptyView()
-            }
-        }
-    }
-}
 
-extension ListCell {
-    
-    enum SwipeActionType {
-        case delete
-    }
-    
-    fileprivate struct SwipeActionsModifier: ViewModifier {
-        let type: SwipeActionType?
-        let action: (() -> Void)?
-        
-        func body(content: Content) -> some View {
-            if let type, let action {
-                content
-                    .swipeActions {
-                        Button(role: .destructive) {
-                            action()
-                        } label: {
-                            switch type {
-                            case .delete:
-                                Label("Delete", systemImage: "trash")
-                            }
-                        }
-                    }
-            } else {
-                content
-            }
-        }
-    }
-    
-}
 
-#Preview {
-    ListCell(title: "title", accessory: nil) {
-        print("tap")
-    } deleteSwipeAction: {
-        print("delete")
-    }
-
-}
+//V
