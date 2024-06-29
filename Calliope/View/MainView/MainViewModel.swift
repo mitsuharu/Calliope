@@ -22,7 +22,6 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
     var sampleCommonds: [SampleCommond] = []
     
     init() {
-        print("MainViewModel#init")
         appStore.subscribe(self) {
             $0.select { (
                 PrinterSelectors.selectPrinterName(stare: $0),
@@ -35,7 +34,6 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
     }
     
     deinit {
-        print("MainViewModel#deinit")
         appStore.unsubscribe(self)
     }
     

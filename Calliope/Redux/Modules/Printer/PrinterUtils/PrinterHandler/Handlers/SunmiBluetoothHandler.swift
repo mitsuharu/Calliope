@@ -64,7 +64,6 @@ extension SunmiBluetoothHandler {
         case .didUpdateState(let state):
             self.showToastForCBManagerState(state: state)
         case .willRestoreState(let state):
-            print("willRestoreState \(state)")
             let message = "状態を復元しています"
             let subMessage = state.map({ (key: String, value: Any) in
                 "\(key):\(value)"
@@ -169,7 +168,6 @@ extension SunmiBluetoothHandler {
         var result = EpsonEscPosCommond.initialize()
         
         transaction.forEach {
-            print("makeCommandData \($0)")
             result.append($0.sunmiBluetoothCommand)
         }
         
