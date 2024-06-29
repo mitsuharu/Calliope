@@ -19,8 +19,6 @@ struct BuildView: View {
     
     // BuildView関連でenvironmentObjectで渡す
     @ObservedObject var viewModel = BuildViewModel()
-
-    @State private var inputText: String = ""
     
     var body: some View {
         List {
@@ -62,7 +60,7 @@ struct BuildView: View {
                     Button(action: {
                         showAddBuildItemView.toggle()
                     }) {
-                        Text("追加")
+                        Text("Add")
                     }
                 }
             }

@@ -1,8 +1,15 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
+    "Add" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加"
+          }
+        }
+      }
     },
     "Add BuildItem" : {
 
@@ -91,28 +98,8 @@
         }
       }
     },
-    "Select Image" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "画像を選択してください"
-          }
-        }
-      }
-    },
     "uuid: " : {
 
-    },
-    "Write text" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テキストを入力してください"
-          }
-        }
-      }
     },
     "ビルドした印刷コマンド" : {
 
@@ -136,9 +123,6 @@
 
     },
     "未設定です" : {
-
-    },
-    "追加" : {
 
     },
     "選択されたサーマルプリンター" : {

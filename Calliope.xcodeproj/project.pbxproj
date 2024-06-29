@@ -59,7 +59,6 @@
 		9B396DA32C26C5C0002263FF /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B396DA22C26C5C0002263FF /* ListCell.swift */; };
 		9B396DA52C26E787002263FF /* PrinterInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B396DA42C26E787002263FF /* PrinterInfoCell.swift */; };
 		9B540CE02C2F8745001CEE8B /* BuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CDF2C2F8745001CEE8B /* BuildView.swift */; };
-		9B540CE32C2FAA65001CEE8B /* EditBuildItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CE22C2FAA65001CEE8B /* EditBuildItemView.swift */; };
 		9B540CE52C2FACD1001CEE8B /* PlainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CE42C2FACD1001CEE8B /* PlainCell.swift */; };
 		9B540CE82C2FB3CF001CEE8B /* BuildItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CE72C2FB3CF001CEE8B /* BuildItemCell.swift */; };
 		9B540CEE2C2FDF6F001CEE8B /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CED2C2FDF6F001CEE8B /* ImagePickerView.swift */; };
@@ -156,7 +155,6 @@
 		9B396DA22C26C5C0002263FF /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		9B396DA42C26E787002263FF /* PrinterInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterInfoCell.swift; sourceTree = "<group>"; };
 		9B540CDF2C2F8745001CEE8B /* BuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildView.swift; sourceTree = "<group>"; };
-		9B540CE22C2FAA65001CEE8B /* EditBuildItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBuildItemView.swift; sourceTree = "<group>"; };
 		9B540CE42C2FACD1001CEE8B /* PlainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainCell.swift; sourceTree = "<group>"; };
 		9B540CE72C2FB3CF001CEE8B /* BuildItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildItemCell.swift; sourceTree = "<group>"; };
 		9B540CED2C2FDF6F001CEE8B /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -442,7 +440,6 @@
 				9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */,
 				9B540CDF2C2F8745001CEE8B /* BuildView.swift */,
 				9B540CE72C2FB3CF001CEE8B /* BuildItemCell.swift */,
-				9B540CE22C2FAA65001CEE8B /* EditBuildItemView.swift */,
 				9B540CED2C2FDF6F001CEE8B /* ImagePickerView.swift */,
 				9B540CEF2C2FE52F001CEE8B /* BuildItem.swift */,
 				9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */,
@@ -677,7 +674,6 @@
 				9B396DA52C26E787002263FF /* PrinterInfoCell.swift in Sources */,
 				9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */,
 				9B9DD9E42C0C2EFF00B5022A /* EpsonEscPosCommond.swift in Sources */,
-				9B540CE32C2FAA65001CEE8B /* EditBuildItemView.swift in Sources */,
 				9B12BFE22BE523120065DA76 /* PrinterSelectors.swift in Sources */,
 				9B393A012BE75C4F00EF6AED /* PrintJob+Sunmi.swift in Sources */,
 			);
