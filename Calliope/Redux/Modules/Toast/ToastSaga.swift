@@ -9,11 +9,11 @@ import Foundation
 import ReSwiftSaga
 
 let toastSaga: Saga = { _ in
-    await takeEvery(ShowToast.self, saga: showToastSaga)
+    await takeEvery(ToastActions.ShowToast.self, saga: showToastSaga)
 }
 
 let showToastSaga: Saga = { action async in
-    guard let action = action as? ShowToast else {
+    guard let action = action as? ToastActions.ShowToast else {
         return
     }
     

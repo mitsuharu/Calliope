@@ -56,8 +56,15 @@
 		9B3939FF2BE750B900EF6AED /* EscPosCommondProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939FE2BE750B900EF6AED /* EscPosCommondProtocol.swift */; };
 		9B393A012BE75C4F00EF6AED /* PrintJob+Sunmi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B393A002BE75C4F00EF6AED /* PrintJob+Sunmi.swift */; };
 		9B393A032BE7613E00EF6AED /* PrintJob+Epson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B393A022BE7613E00EF6AED /* PrintJob+Epson.swift */; };
-		9B396DA32C26C5C0002263FF /* PrintCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B396DA22C26C5C0002263FF /* PrintCell.swift */; };
+		9B396DA32C26C5C0002263FF /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B396DA22C26C5C0002263FF /* ListCell.swift */; };
 		9B396DA52C26E787002263FF /* PrinterInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B396DA42C26E787002263FF /* PrinterInfoCell.swift */; };
+		9B540CE02C2F8745001CEE8B /* BuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CDF2C2F8745001CEE8B /* BuildView.swift */; };
+		9B540CE52C2FACD1001CEE8B /* PlainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CE42C2FACD1001CEE8B /* PlainCell.swift */; };
+		9B540CE82C2FB3CF001CEE8B /* BuildItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CE72C2FB3CF001CEE8B /* BuildItemCell.swift */; };
+		9B540CEE2C2FDF6F001CEE8B /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CED2C2FDF6F001CEE8B /* ImagePickerView.swift */; };
+		9B540CF02C2FE52F001CEE8B /* BuildItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CEF2C2FE52F001CEE8B /* BuildItem.swift */; };
+		9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */; };
+		9B540CF62C2FE5A6001CEE8B /* BuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B853D572BE8936800ED1CE0 /* Bitmap in Frameworks */ = {isa = PBXBuildFile; productRef = 9B853D562BE8936800ED1CE0 /* Bitmap */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
@@ -145,8 +152,15 @@
 		9B3939FE2BE750B900EF6AED /* EscPosCommondProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscPosCommondProtocol.swift; sourceTree = "<group>"; };
 		9B393A002BE75C4F00EF6AED /* PrintJob+Sunmi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrintJob+Sunmi.swift"; sourceTree = "<group>"; };
 		9B393A022BE7613E00EF6AED /* PrintJob+Epson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrintJob+Epson.swift"; sourceTree = "<group>"; };
-		9B396DA22C26C5C0002263FF /* PrintCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintCell.swift; sourceTree = "<group>"; };
+		9B396DA22C26C5C0002263FF /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		9B396DA42C26E787002263FF /* PrinterInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterInfoCell.swift; sourceTree = "<group>"; };
+		9B540CDF2C2F8745001CEE8B /* BuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildView.swift; sourceTree = "<group>"; };
+		9B540CE42C2FACD1001CEE8B /* PlainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainCell.swift; sourceTree = "<group>"; };
+		9B540CE72C2FB3CF001CEE8B /* BuildItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildItemCell.swift; sourceTree = "<group>"; };
+		9B540CED2C2FDF6F001CEE8B /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		9B540CEF2C2FE52F001CEE8B /* BuildItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildItem.swift; sourceTree = "<group>"; };
+		9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuildItemView.swift; sourceTree = "<group>"; };
+		9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildViewModel.swift; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
@@ -313,6 +327,8 @@
 		9B12BFC02BE50BDB0065DA76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9B540CE12C2F8F3D001CEE8B /* Common */,
+				9B540CDE2C2F8720001CEE8B /* BuildView */,
 				9B12BFC22BE50CD70065DA76 /* MainView */,
 				9B12BFC12BE50CD70065DA76 /* ScanView */,
 			);
@@ -335,7 +351,6 @@
 				9B12BFC32BE50CE50065DA76 /* MainView.swift */,
 				9B12BFE52BE536C40065DA76 /* MainViewModel.swift */,
 				9B396DA42C26E787002263FF /* PrinterInfoCell.swift */,
-				9B396DA22C26C5C0002263FF /* PrintCell.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -417,6 +432,28 @@
 				9B393A002BE75C4F00EF6AED /* PrintJob+Sunmi.swift */,
 			);
 			path = PrintJobs;
+			sourceTree = "<group>";
+		};
+		9B540CDE2C2F8720001CEE8B /* BuildView */ = {
+			isa = PBXGroup;
+			children = (
+				9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */,
+				9B540CDF2C2F8745001CEE8B /* BuildView.swift */,
+				9B540CE72C2FB3CF001CEE8B /* BuildItemCell.swift */,
+				9B540CED2C2FDF6F001CEE8B /* ImagePickerView.swift */,
+				9B540CEF2C2FE52F001CEE8B /* BuildItem.swift */,
+				9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */,
+			);
+			path = BuildView;
+			sourceTree = "<group>";
+		};
+		9B540CE12C2F8F3D001CEE8B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9B396DA22C26C5C0002263FF /* ListCell.swift */,
+				9B540CE42C2FACD1001CEE8B /* PlainCell.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9B853D522BE8901800ED1CE0 /* Resources */ = {
@@ -598,6 +635,8 @@
 				9B3939EE2BE6406C00EF6AED /* CandiateCell.swift in Sources */,
 				9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */,
 				9B3939E82BE628F400EF6AED /* PrinterHandlerProtocol.swift in Sources */,
+				9B540CF62C2FE5A6001CEE8B /* BuildViewModel.swift in Sources */,
+				9B540CEE2C2FDF6F001CEE8B /* ImagePickerView.swift in Sources */,
 				9B12BEEE2BD2706D0065DA76 /* ContentView.swift in Sources */,
 				9B12BFF22BE61B4B0065DA76 /* Print.swift in Sources */,
 				9B12BFE42BE5231D0065DA76 /* PrinterState.swift in Sources */,
@@ -606,16 +645,21 @@
 				9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */,
 				9B12BFE62BE536C40065DA76 /* MainViewModel.swift in Sources */,
 				9B3939E62BE628F400EF6AED /* SunmiBluetoothHandler.swift in Sources */,
+				9B540CE82C2FB3CF001CEE8B /* BuildItemCell.swift in Sources */,
 				9B12BFAD2BE509330065DA76 /* ToastSaga.swift in Sources */,
 				9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */,
+				9B540CE02C2F8745001CEE8B /* BuildView.swift in Sources */,
 				9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */,
 				9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */,
 				9B3939E72BE628F400EF6AED /* EpsonHandler.swift in Sources */,
 				9B12BFDC2BE522E10065DA76 /* PrinterAction.swift in Sources */,
 				9B3939FF2BE750B900EF6AED /* EscPosCommondProtocol.swift in Sources */,
 				9B3939EA2BE62DAC00EF6AED /* PrinterHandler.swift in Sources */,
+				9B540CF02C2FE52F001CEE8B /* BuildItem.swift in Sources */,
+				9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */,
 				9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */,
-				9B396DA32C26C5C0002263FF /* PrintCell.swift in Sources */,
+				9B396DA32C26C5C0002263FF /* ListCell.swift in Sources */,
+				9B540CE52C2FACD1001CEE8B /* PlainCell.swift in Sources */,
 				9B12BFCC2BE51A090065DA76 /* NavigationModifier.swift in Sources */,
 				9B12BFEF2BE610A70065DA76 /* PrinterDeviceInfo.swift in Sources */,
 				9B12BFB42BE509330065DA76 /* AppSaga.swift in Sources */,
@@ -807,7 +851,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -844,7 +888,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -872,7 +916,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X2E52A945M;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.CalliopeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -892,7 +936,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X2E52A945M;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.CalliopeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -911,6 +955,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X2E52A945M;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.CalliopeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -929,6 +974,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X2E52A945M;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.mituwa.CalliopeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

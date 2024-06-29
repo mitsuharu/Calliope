@@ -1,6 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Add" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加"
+          }
+        }
+      }
+    },
+    "Add BuildItem" : {
+
+    },
     "App_Home" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -13,22 +26,60 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "印刷アプリ"
+            "value" : "サーマルプリンター印刷アプリ"
           }
         }
       }
     },
     "Back" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "戻る"
+          }
+        }
+      }
     },
     "Bluetooth devices (select SUNMI)" : {
 
+    },
+    "build print jobs" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印刷コマンドをビルドする"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        }
+      }
     },
     "EPSON" : {
 
     },
     "name: " : {
 
+    },
+    "save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存する"
+          }
+        }
+      }
     },
     "scan" : {
       "extractionState" : "manual",
@@ -50,7 +101,28 @@
     "uuid: " : {
 
     },
+    "ビルドした印刷コマンド" : {
+
+    },
+    "プリセットされた印刷コマンド" : {
+
+    },
     "印刷コマンド" : {
+
+    },
+    "印刷コマンドの名前（任意）" : {
+
+    },
+    "印刷コマンドの名前の入力してください" : {
+
+    },
+    "印刷コマンドをビルドする" : {
+
+    },
+    "右上の追加ボタンから印刷コマンドを追加してください" : {
+
+    },
+    "未設定です" : {
 
     },
     "選択されたサーマルプリンター" : {

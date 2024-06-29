@@ -16,8 +16,9 @@ final class NavigationRouter: ObservableObject {
     static let shared = NavigationRouter()
     private init() {}
     
-    enum Item: Hashable {
-      case scan
+    enum Item: Hashable {        
+        case scan
+        case build
     }
     
     func navigate(_ item: Item){

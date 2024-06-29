@@ -81,7 +81,7 @@ extension EpsonHandler {
     }
         
     private func startScanEpson() throws {
-        appStore.dispatch(onMain: AssignPrinterCandiates(candiates: []))
+        appStore.dispatch(onMain: PrinterActions.AssignPrinterCandiates(candiates: []))
         
         let filterOption: Epos2FilterOption = Epos2FilterOption()
         
@@ -154,7 +154,7 @@ extension EpsonHandler {
 extension EpsonHandler: Epos2DiscoveryDelegate {
     func onDiscovery(_ deviceInfo: Epos2DeviceInfo) {
         let candiate = PrinterDeviceInfo(epson: deviceInfo)
-        appStore.dispatch(onMain: AppendPrinterCandiate(candiate: candiate))
+        appStore.dispatch(onMain: PrinterActions.AppendPrinterCandiate(candiate: candiate))
     }
 }
 

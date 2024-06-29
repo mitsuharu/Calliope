@@ -12,9 +12,9 @@ let printerSaga: Saga = { _ in
     
     try? await fork(preparePrinterHandlerSaga)
     
-    await takeEvery(StartScanDevices.self, saga: startScanSaga)
-    await takeEvery(StopScanDevices.self, saga: stopScanSaga)
-    await takeEvery(RunPrintJobs.self, saga: runPrintJobsSaga)
+    await takeEvery(PrinterActions.StartScanDevices.self, saga: startScanSaga)
+    await takeEvery(PrinterActions.StopScanDevices.self, saga: stopScanSaga)
+    await takeEvery(PrinterActions.RunPrintJobs.self, saga: runPrintJobsSaga)
 }
 
 private let preparePrinterHandlerSaga: Saga = { action async in
@@ -27,7 +27,7 @@ private let preparePrinterHandlerSaga: Saga = { action async in
 }
 
 private let startScanSaga: Saga = { action async in
-    guard let action = action as? StartScanDevices else {
+    guard let action = action as? PrinterActions.StartScanDevices else {
         return
     }
     
@@ -40,7 +40,7 @@ private let startScanSaga: Saga = { action async in
 }
 
 private let stopScanSaga: Saga = { action async in
-    guard let action = action as? StopScanDevices else {
+    guard let action = action as? PrinterActions.StopScanDevices else {
         return
     }
     
@@ -53,7 +53,7 @@ private let stopScanSaga: Saga = { action async in
 }
 
 private let runPrintJobsSaga: Saga = { action async in
-    guard let action = action as? RunPrintJobs else {
+    guard let action = action as? PrinterActions.RunPrintJobs else {
         return
     }
     
