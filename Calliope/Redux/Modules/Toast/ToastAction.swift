@@ -13,5 +13,13 @@ protocol ToastAction: Action {}
 enum ToastActions {
     struct ShowToast: ToastAction {
         let message: String
+        let subMessage: String?
+        let type: ToastViewModel.ToastType
+        
+        init(message: String, subMessage: String? = nil, type: ToastViewModel.ToastType = .regular) {
+            self.message = message
+            self.subMessage = subMessage
+            self.type = type
+        }
     }
 }

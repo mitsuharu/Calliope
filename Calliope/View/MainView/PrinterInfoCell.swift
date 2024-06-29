@@ -16,8 +16,9 @@ struct PrinterInfoCell: View {
             Text(title)
                 .font(.system(.caption))
             Spacer().frame(height: 4)
-            Text(detail ?? "-")
+            Text(detail ?? "未選択です")
                 .font(.system(.body))
+                .foregroundStyle((detail == nil) ? .secondary : .primary)
         }
     }
 }

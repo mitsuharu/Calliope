@@ -13,12 +13,21 @@ final class ToastViewModel: ObservableObject {
     
     private init() { }
     
+    enum ToastType {
+        case regular
+        case error
+    }
+    
     @Published var showToast: Bool = false
+    private(set) var type: ToastType = .regular
     private(set) var message: String = ""
+    private(set) var subMessage: String? = nil
 
     @MainActor
-    func showToast(message: String) {
+    func showToast(message: String, subMessage: String?, type: ToastType) {
         self.showToast = true
         self.message = message
+        self.subMessage = subMessage
+        self.type = type
     }
 }

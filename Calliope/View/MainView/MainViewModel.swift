@@ -49,6 +49,7 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
     
     func run(jobs: [Print.Job]) {
         if (uuid?.isEmpty ?? true) == true {
+            appStore.dispatch(onMain: ToastActions.ShowToast(message: "プリンターが選択されていません"))
             return
         }
         appStore.dispatch(onMain: PrinterActions.RunPrintJobs(jobs: jobs))

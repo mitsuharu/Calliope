@@ -18,5 +18,9 @@ let showToastSaga: Saga = { action async in
     }
     
     let toastViewModel = ToastViewModel.shared
-    await toastViewModel.showToast(message: action.message)
+    await toastViewModel.showToast(
+        message: action.message,
+        subMessage: action.subMessage,
+        type: action.type
+    )
 }

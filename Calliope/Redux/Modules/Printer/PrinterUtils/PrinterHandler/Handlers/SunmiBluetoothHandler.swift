@@ -59,21 +59,65 @@ final class SunmiBluetoothHandler: PrinterHandlerProtocol {
 
 extension SunmiBluetoothHandler {
     
+    fileprivate func showToastForCentralManagerEvent(state: CentralManagerEvent) {
+        switch state {
+        case .didUpdateState(let state):
+            self.showToastForCBManagerState(state: state)
+        case .willRestoreState(let state):
+            print("willRestoreState \(state)")
+            let message = "状態を復元しています"
+            let subMessage = state.map({ (key: String, value: Any) in
+                "\(key):\(value)"
+            }).joined(separator: ", ")
+            showToast(message: message, subMessage: subMessage, type: .error)
+        case .didConnectPeripheral(_):
+            break
+//            let message = "\(peripheral.name ?? peripheral.identifier.uuidString)と接続しました"
+//            showToast(message: message, subMessage: nil, type: .regular)
+        case .didDisconnectPeripheral(let peripheral, _, let error):
+            if let error {
+                let message = "\(peripheral.name ?? "Bluetooth機器")と接続が切れました。"
+                let subMessage = "エラー：\(error.localizedDescription)"
+                showToast(message: message, subMessage: subMessage.isEmpty ? nil : subMessage, type: .error)
+            }
+        }
+    }
+    
+    fileprivate func showToastForCBManagerState(state: CBManagerState) {
+        let message: String? = switch state {
+        case .unknown: "Bluetoothの状態が不明です"
+        case .resetting: "Bluetoothがリセットされています"
+        case .unsupported: "Bluetoothをサポートしていません"
+        case .unauthorized: "このアプリはBluetoothの使用を許可されていません。設定から許可してください。"
+        case .poweredOff: "Bluetoothがオフになっています。設定でBluetoothを有効にしてください。"
+//        case .poweredOn: "Bluetoothは電源オンで準備完了です"
+        default: nil
+        }
+        let type: ToastViewModel.ToastType = switch state {
+        case .unknown, .unsupported, .resetting, .unauthorized, .poweredOff: .error
+        default: .regular
+        }
+        showToast(message: message, subMessage: nil, type: type)
+    }
+    
+    fileprivate func showToast(message: String?, subMessage: String?, type: ToastViewModel.ToastType) {
+        if let message {
+            appStore.dispatch(onMain: ToastActions.ShowToast(
+                message: message,
+                subMessage: subMessage,
+                type: type
+            ))
+        }
+    }
+    
+    
+    
     fileprivate func prepareBluetooth() {
         AsyncBluetoothLogging.isEnabled = false
         
         centralManager.eventPublisher
             .sink {
-                switch $0 {
-                case .didUpdateState(let state):
-                    print("update State \(state)")
-                case .willRestoreState(let state):
-                    print("willRestoreState \(state)")
-                case .didConnectPeripheral(let peripheral):
-                    print("connected \(peripheral.identifier)")
-                case .didDisconnectPeripheral(let peripheral, let isReconnecting, let error):
-                    print("disconnected \(peripheral.identifier), isReconnecting: \(isReconnecting), error: \(error?.localizedDescription ?? "none")")
-                }
+                self.showToastForCentralManagerEvent(state: $0)
             }
             .store(in: &cancellables)
     }

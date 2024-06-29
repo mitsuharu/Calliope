@@ -12,20 +12,29 @@ struct ToastModifier: ViewModifier {
     
     @ObservedObject private var viewModel = ToastViewModel.shared
  
+    private var isRegular: Bool {
+        if case .regular = viewModel.type {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func body(content: Content) -> some View {
         content
-            .toast(isPresenting: $viewModel.showToast, duration: 3.0, tapToDismiss: true) {
+            .toast(isPresenting: $viewModel.showToast, duration: isRegular ? 3.0 : 4.0, tapToDismiss: true) {
                 let style = AlertToast.AlertStyle.style(
-                    backgroundColor: .secondary,
-                    titleColor: .primary,
+                    backgroundColor: isRegular ? .gray : .red,
+                    titleColor: .white,
                     subTitleColor: nil,
                     titleFont: nil,
                     subTitleFont: nil
                 )
                 let alert = AlertToast(
-                    displayMode:.banner(.pop),
+                    displayMode: .alert, // .banner(.pop),
                     type: .regular,
                     title: viewModel.message,
+                    subTitle: viewModel.subMessage,
                     style: style
                 )
                 return alert
