@@ -16,9 +16,10 @@ final class NavigationRouter: ObservableObject {
     static let shared = NavigationRouter()
     private init() {}
     
-    enum Item: Hashable {
+    enum Item: Hashable {        
         case scan
         case build
+        case editItem(item: BuildItem)
     }
     
     func navigate(_ item: Item){
