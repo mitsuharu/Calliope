@@ -34,9 +34,9 @@ struct PlainCell<Content: View>: View {
             action?()
         } label: {
             HStack{
-                label().tint(.black)
+                label().tint(.primary)
                 Spacer()
-                AccessoryView(accessory: accessory)
+                AccessoryView(accessory: accessory).tint(.secondary)
             }
             .contentShape(Rectangle())
         }
@@ -50,7 +50,7 @@ fileprivate struct AccessoryView: View {
     var body: some View {
         switch accessory {
         case .disclosureIndicator:
-            Image(systemName: "chevron.right").tint(.gray)
+            Image(systemName: "chevron.right")
         default:
             EmptyView()
         }

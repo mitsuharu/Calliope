@@ -29,10 +29,5 @@ struct ListCell: View {
             action: action,
             deleteSwipeAction: deleteSwipeAction
         )
-        .foregroundStyle(.primary)
     }
 }
-
-
-
-//V
