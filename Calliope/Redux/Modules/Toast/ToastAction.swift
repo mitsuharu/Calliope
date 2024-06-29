@@ -10,6 +10,8 @@ import ReSwift
 
 protocol ToastAction: Action {}
 
-struct ShowToast: ToastAction {
-    let message: String
+enum ToastActions {
+    struct ShowToast: ToastAction {
+        let message: String
+    }
 }

@@ -11,11 +11,13 @@ import ReSwift
 final class MainViewModel: ObservableObject, StoreSubscriber {
     typealias StoreSubscriberStateType = (
         name: String?,
-        uuid: String?
+        uuid: String?,
+        buildJobs: [PrinterState.BuildJob]
     )
     
     @Published var name: String? = nil
     @Published var uuid: String? = nil
+    @Published var buildJobs: [PrinterState.BuildJob] = []
     
     var sampleCommonds: [SampleCommond] = []
     
@@ -24,7 +26,8 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
         appStore.subscribe(self) {
             $0.select { (
                 PrinterSelectors.selectPrinterName(stare: $0),
-                PrinterSelectors.selectPrinterUUID(stare: $0)
+                PrinterSelectors.selectPrinterUUID(stare: $0),
+                PrinterSelectors.selectBuildJobs(stare: $0)
             ) }
         }
         
@@ -40,6 +43,7 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
         Task { @MainActor in
             self.name = state.name
             self.uuid = state.uuid
+            self.buildJobs = state.buildJobs
         }
     }
     
@@ -47,7 +51,11 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
         if (uuid?.isEmpty ?? true) == true {
             return
         }
-        appStore.dispatch(onMain: RunPrintJobs(jobs: jobs))
+        appStore.dispatch(onMain: PrinterActions.RunPrintJobs(jobs: jobs))
+    }
+    
+    func runBuildJobs(buildJob: PrinterState.BuildJob) {
+        run(jobs: buildJob.jobs)
     }
 }
 

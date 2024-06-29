@@ -26,12 +26,12 @@ final class ScanViewModel: ObservableObject, StoreSubscriber {
                 )
             }
         }
-        appStore.dispatch(onMain: StartScanDevices())
+        appStore.dispatch(onMain: PrinterActions.StartScanDevices())
     }
     
     deinit {
         appStore.unsubscribe(self)
-        appStore.dispatch(onMain: StopScanDevices())
+        appStore.dispatch(onMain: PrinterActions.StopScanDevices())
     }
     
     func newState(state: StoreSubscriberStateType) {
@@ -43,7 +43,7 @@ final class ScanViewModel: ObservableObject, StoreSubscriber {
     }
     
     func selectCandiate(deviceInfo: PrinterDeviceInfo) {
-        appStore.dispatch(onMain: AssignPrinterDeviceInfo(deviceInfo: deviceInfo))
+        appStore.dispatch(onMain: PrinterActions.AssignPrinterDeviceInfo(deviceInfo: deviceInfo))
         NavigationRouter.shared.goBack()
     }
 }

@@ -39,7 +39,8 @@ struct BuildView: View {
             if !viewModel.items.isEmpty {
                 Section {
                     ListCell(title: "保存する") {
-                        print("保存する")
+                        viewModel.save()
+                        NavigationRouter.shared.goBack()
                     }
                 }
             }

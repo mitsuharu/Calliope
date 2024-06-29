@@ -28,14 +28,13 @@ struct MainView: View {
                     NavigationRouter.shared.navigate(.build)
                 }
             }
-//            Section {
-//                // build 済みの印刷コマンドを一覧する。印刷＆削除
-//                ListCell(title: "Build 1") {
-//                    NavigationRouter.shared.navigate(.build)
-//                } deleteSwipeAction: {
-//                    print("delete")
-//                }
-//            }
+            Section {
+                ForEach(viewModel.buildJobs, id: \.id) { buildJob in
+                    ListCell(title: buildJob.title) {
+                        viewModel.runBuildJobs(buildJob: buildJob)
+                    }
+                }
+            }
         }
     }
 }
