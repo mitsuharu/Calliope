@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = BuildViewModel()
     @ObservedObject var router = NavigationRouter.shared
     
     var body: some View {
@@ -29,7 +28,6 @@ struct ContentView: View {
                 .modifier(ToastModifier())
         }
         .environmentObject(router)
-        .environmentObject(viewModel)
     }
 }
 

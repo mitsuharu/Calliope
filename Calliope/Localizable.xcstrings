@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "Add BuildItem" : {
+
+    },
     "App_Home" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -76,9 +79,6 @@
           }
         }
       }
-    },
-    "Select BuildItem" : {
-
     },
     "Select Image" : {
 

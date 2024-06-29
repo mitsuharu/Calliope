@@ -7,12 +7,19 @@
 
 import SwiftUI
 
+/**
+ 印刷コマンドをビルドする
+ 
+ @note
+ このViewはビルド特化で、他の画面とは独立している
+ */
 struct BuildView: View {
     
-    @State private var showBuildItemSelection = false
+    @State private var showAddBuildItemView = false
     
-//    @ObservedObject var viewModel = BuildViewModel()
-    @EnvironmentObject var viewModel: BuildViewModel
+    // BuildView関連でenvironmentObjectで渡す
+    @ObservedObject var viewModel = BuildViewModel()
+
     
     var body: some View {
         List {
@@ -24,23 +31,8 @@ struct BuildView: View {
             
             ForEach(viewModel.items, id: \.id) { item in
                 BuildItemCell(item: item) {
-                    NavigationRouter.shared.navigate(.editItem(item: item))
-                } deleteAction: {
                     viewModel.delete(item: item)
                 }
-
-    
-                
-               
-//                BuildItemCell(item: item) {
-//                    // スワイプ操作で削除コマンドを実行できる
-//                    if let index = items.firstIndex(where: {
-//                        $0.uuid == item.uuid
-//                    }) {
-//                        items.remove(at: index)
-//                    }
-//                }
-         
             }
             .onMove(perform: move)
             
@@ -57,16 +49,16 @@ struct BuildView: View {
                 HStack {
                     EditButton()
                     Button(action: {
-                        showBuildItemSelection.toggle()
+                        showAddBuildItemView.toggle()
                     }) {
                         Text("追加")
                     }
                 }
             }
         }
-        .sheet(isPresented: $showBuildItemSelection) {
-            BuildItemSelectionView()
-        }
+        .sheet(isPresented: $showAddBuildItemView) {
+            AddBuildItemView()
+        }.environmentObject(viewModel)
     }
 
     private func move(from source: IndexSet, to destination: Int) {
@@ -74,23 +66,12 @@ struct BuildView: View {
     }
 }
 
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
 
-//import SwiftUI
-//
-//struct BuildView: View {
-//    var body: some View {
-//        Text("BuildView")
-//    }
-//}
-//
 //#Preview {
 //    BuildView()
 //}

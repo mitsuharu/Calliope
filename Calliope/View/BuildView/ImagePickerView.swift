@@ -1,5 +1,5 @@
 //
-//  ImagePicker.swift
+//  ImagePickerView.swift
 //  Calliope
 //
 //  Created by Mitsuharu Emoto on 2024/06/29.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct ImagePickerView: UIViewControllerRepresentable {
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: ImagePicker
+        let parent: ImagePickerView
 
-        init(parent: ImagePicker) {
+        init(parent: ImagePickerView) {
             self.parent = parent
         }
 

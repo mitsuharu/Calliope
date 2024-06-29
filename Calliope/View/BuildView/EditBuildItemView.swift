@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EditBuildItemView: View {
     @EnvironmentObject var viewModel: BuildViewModel
-    @Environment(\.presentationMode) var presentationMode
     
     var item: BuildItem
     @State private var inputText: String = ""
@@ -18,7 +17,6 @@ struct EditBuildItemView: View {
 
     var body: some View {
         VStack {
-            Text("EditBuildItemView \(item)")
             if case .text(let object ) = item.object {
                 Text("Write text")
                 TextField("", text: $inputText)
@@ -32,8 +30,8 @@ struct EditBuildItemView: View {
                     .padding()
             }
             
-            if case .image(let object) = item.object {
-                if let image = object {
+            if case .image(_) = item.object {
+                if let image = selectedImage {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
@@ -46,14 +44,18 @@ struct EditBuildItemView: View {
                 }
                 .padding()
             }
-
         }
         .navigationTitle(item.object.description)
         .sheet(isPresented: $showImagePicker) {
-            ImagePicker(selectedImage: $selectedImage)
+            ImagePickerView(selectedImage: $selectedImage)
+        }
+        .onAppear {
+            if case .image(let object) = item.object {
+                selectedImage = object
+            }
         }
         .onChange(of: selectedImage) { _, newImage in
-            if let newImage = newImage {
+            if let newImage {
                 viewModel.update(item: item, object: .image(object: newImage))
             }
         }

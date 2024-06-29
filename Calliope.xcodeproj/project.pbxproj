@@ -62,9 +62,9 @@
 		9B540CE32C2FAA65001CEE8B /* EditBuildItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CE22C2FAA65001CEE8B /* EditBuildItemView.swift */; };
 		9B540CE52C2FACD1001CEE8B /* PlainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CE42C2FACD1001CEE8B /* PlainCell.swift */; };
 		9B540CE82C2FB3CF001CEE8B /* BuildItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CE72C2FB3CF001CEE8B /* BuildItemCell.swift */; };
-		9B540CEE2C2FDF6F001CEE8B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CED2C2FDF6F001CEE8B /* ImagePicker.swift */; };
+		9B540CEE2C2FDF6F001CEE8B /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CED2C2FDF6F001CEE8B /* ImagePickerView.swift */; };
 		9B540CF02C2FE52F001CEE8B /* BuildItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CEF2C2FE52F001CEE8B /* BuildItem.swift */; };
-		9B540CF22C2FE551001CEE8B /* BuildItemSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF12C2FE551001CEE8B /* BuildItemSelectionView.swift */; };
+		9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */; };
 		9B540CF62C2FE5A6001CEE8B /* BuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B853D572BE8936800ED1CE0 /* Bitmap in Frameworks */ = {isa = PBXBuildFile; productRef = 9B853D562BE8936800ED1CE0 /* Bitmap */; };
@@ -159,9 +159,9 @@
 		9B540CE22C2FAA65001CEE8B /* EditBuildItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBuildItemView.swift; sourceTree = "<group>"; };
 		9B540CE42C2FACD1001CEE8B /* PlainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainCell.swift; sourceTree = "<group>"; };
 		9B540CE72C2FB3CF001CEE8B /* BuildItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildItemCell.swift; sourceTree = "<group>"; };
-		9B540CED2C2FDF6F001CEE8B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9B540CED2C2FDF6F001CEE8B /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		9B540CEF2C2FE52F001CEE8B /* BuildItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildItem.swift; sourceTree = "<group>"; };
-		9B540CF12C2FE551001CEE8B /* BuildItemSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildItemSelectionView.swift; sourceTree = "<group>"; };
+		9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuildItemView.swift; sourceTree = "<group>"; };
 		9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildViewModel.swift; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
@@ -443,9 +443,9 @@
 				9B540CDF2C2F8745001CEE8B /* BuildView.swift */,
 				9B540CE72C2FB3CF001CEE8B /* BuildItemCell.swift */,
 				9B540CE22C2FAA65001CEE8B /* EditBuildItemView.swift */,
-				9B540CED2C2FDF6F001CEE8B /* ImagePicker.swift */,
+				9B540CED2C2FDF6F001CEE8B /* ImagePickerView.swift */,
 				9B540CEF2C2FE52F001CEE8B /* BuildItem.swift */,
-				9B540CF12C2FE551001CEE8B /* BuildItemSelectionView.swift */,
+				9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */,
 			);
 			path = BuildView;
 			sourceTree = "<group>";
@@ -639,7 +639,7 @@
 				9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */,
 				9B3939E82BE628F400EF6AED /* PrinterHandlerProtocol.swift in Sources */,
 				9B540CF62C2FE5A6001CEE8B /* BuildViewModel.swift in Sources */,
-				9B540CEE2C2FDF6F001CEE8B /* ImagePicker.swift in Sources */,
+				9B540CEE2C2FDF6F001CEE8B /* ImagePickerView.swift in Sources */,
 				9B12BEEE2BD2706D0065DA76 /* ContentView.swift in Sources */,
 				9B12BFF22BE61B4B0065DA76 /* Print.swift in Sources */,
 				9B12BFE42BE5231D0065DA76 /* PrinterState.swift in Sources */,
@@ -659,7 +659,7 @@
 				9B3939FF2BE750B900EF6AED /* EscPosCommondProtocol.swift in Sources */,
 				9B3939EA2BE62DAC00EF6AED /* PrinterHandler.swift in Sources */,
 				9B540CF02C2FE52F001CEE8B /* BuildItem.swift in Sources */,
-				9B540CF22C2FE551001CEE8B /* BuildItemSelectionView.swift in Sources */,
+				9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */,
 				9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */,
 				9B396DA32C26C5C0002263FF /* ListCell.swift in Sources */,
 				9B540CE52C2FACD1001CEE8B /* PlainCell.swift in Sources */,

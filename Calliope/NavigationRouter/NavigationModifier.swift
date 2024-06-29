@@ -20,8 +20,6 @@ struct NavigationModifier: ViewModifier {
                     ScanView().navigationTitle("scan")
                 case .build:
                     BuildView().navigationTitle("build print jobs")
-                case .editItem(let item):
-                    EditBuildItemView(item: item)
                 }
             }
     }
