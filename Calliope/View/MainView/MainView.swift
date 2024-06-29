@@ -39,6 +39,11 @@ struct MainView: View {
                     Text("ビルドした印刷コマンド")
                 }
             }
+            
+            Section {
+            } header: {
+                Text("このアプリは EPSON および SUNMI が販売・製造する一部のサーマルプリンターに対応しています。")
+            }
         }
     }
 }

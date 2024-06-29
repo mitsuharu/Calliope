@@ -22,7 +22,6 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
     var sampleCommonds: [SampleCommond] = []
     
     init() {
-        print("MainViewModel#init")
         appStore.subscribe(self) {
             $0.select { (
                 PrinterSelectors.selectPrinterName(stare: $0),
@@ -35,7 +34,6 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
     }
     
     deinit {
-        print("MainViewModel#deinit")
         appStore.unsubscribe(self)
     }
     
@@ -49,6 +47,7 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
     
     func run(jobs: [Print.Job]) {
         if (uuid?.isEmpty ?? true) == true {
+            appStore.dispatch(onMain: ToastActions.ShowToast(message: "プリンターが選択されていません"))
             return
         }
         appStore.dispatch(onMain: PrinterActions.RunPrintJobs(jobs: jobs))
