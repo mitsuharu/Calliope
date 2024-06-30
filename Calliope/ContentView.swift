@@ -21,7 +21,6 @@ struct ContentView: View {
                             router.navigate(.license)
                         }) {
                             Image(systemName: "gearshape")
-                                .foregroundColor(.primary)
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -29,7 +28,6 @@ struct ContentView: View {
                             router.navigate(.scan)
                         }) {
                             Image(systemName: "plus.viewfinder")
-                                .foregroundColor(.primary)
                         }
                     }
                 }
