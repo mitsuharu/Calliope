@@ -55,7 +55,7 @@ struct SunmiEscPosCommond: EscPosCommondProtocol {
     }
     
     static func feed() -> Data {
-        Data([0x1b, 0x64, UInt8(5)])
+        Data([0x1b, 0x64, UInt8(4)])
     }
     
     static func feed(count: Int) -> Data {

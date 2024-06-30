@@ -73,8 +73,10 @@ extension MainViewModel {
         let commond1 = SampleCommond(
             title: "テキストの印刷",
             jobs: [
-                .text(text: "Hello World!"),
-                .text(text: "日本語も印刷デキます。"),
+                .text(text: "渋谷での充実したSunday"),
+                .text(text: "written by ChatGPT"),
+                .feed(count: 1),
+                .text(text: "今日はSunday、友達のKenと渋谷でランチをしました。美味しいラーメンを食べた後、映画「サムライアドベンチャー」を観に行きました。その後、カフェでコーヒーを飲みながら楽しい一日を過ごしました。"),
                 .feed(count: 1),
             ]
         )
