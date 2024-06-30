@@ -53,8 +53,8 @@ enum Print {
         
         enum ImageWidth: Int {
             case standard = 200
-            case fiftyEight = 384
-            case eighty = 640
+            case width58 = 384
+            case width80 = 640
         }
     }
 }

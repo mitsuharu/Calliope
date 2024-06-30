@@ -45,7 +45,7 @@ final class EpsonHandler: NSObject, PrinterHandlerProtocol {
             transaction.forEach {
                 printer.addPrinterOrder(order: $0)
             }
-            printer.addFeedLine(3)
+            printer.addFeedLine(4)
             
             try sendData(printer: printer)
         } catch {
@@ -116,7 +116,7 @@ extension EpsonHandler {
             print("connect failed")
             throw PrinterError.connectFailed
         }
-        
+                
         isConnected = true
     }
     

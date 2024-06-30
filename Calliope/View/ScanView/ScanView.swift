@@ -39,6 +39,7 @@ struct ScanView: View {
                             )
                         }
                     }
+                    .textCase(nil)
                 }
                 if viewModel.bluetoorhCandiates.count > 0 {
                     Section(header: Text("Bluetooth devices (please select SUNMI)")) {
@@ -55,7 +56,11 @@ struct ScanView: View {
                             )
                         }
                     }
+                    .textCase(nil)
                 }
+                Section(header: Text("APP_Caution")) {
+                }
+                .textCase(nil)
             }
         }
     }

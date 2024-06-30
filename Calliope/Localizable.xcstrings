@@ -14,18 +14,34 @@
     "Add BuildItem" : {
 
     },
+    "APP_Caution" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This application supports some thermal printers (58 mm wide) for EPSON and SUNMI."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "このアプリは EPSON および SUNMI が販売する一部のサーマルプリンター（58mm幅）に対応しています。"
+          }
+        }
+      }
+    },
     "App_Home" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Printer App"
+            "value" : "Thermal Printer App"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "サーマルプリンター印刷アプリ"
           }
         }
@@ -99,9 +115,6 @@
       }
     },
     "UUID" : {
-
-    },
-    "このアプリは EPSON および SUNMI が販売・製造する一部のサーマルプリンターに対応しています。" : {
 
     },
     "ビルドした印刷コマンド" : {
