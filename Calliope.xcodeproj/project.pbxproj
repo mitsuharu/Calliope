@@ -65,6 +65,7 @@
 		9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */; };
 		9B540CF62C2FE5A6001CEE8B /* BuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */; };
 		9B540D0D2C3113EE001CEE8B /* LicenseList in Frameworks */ = {isa = PBXBuildFile; productRef = 9B540D0C2C3113EE001CEE8B /* LicenseList */; };
+		9B540D152C312529001CEE8B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
@@ -159,6 +160,7 @@
 		9B540CEF2C2FE52F001CEE8B /* BuildItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildItem.swift; sourceTree = "<group>"; };
 		9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuildItemView.swift; sourceTree = "<group>"; };
 		9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildViewModel.swift; sourceTree = "<group>"; };
+		9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				9B12BFA62BE509330065DA76 /* Redux */,
 				9B12BFC02BE50BDB0065DA76 /* View */,
 				9B12BFBA2BE50B130065DA76 /* ViewModifier */,
+				9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */,
 			);
 			path = Calliope;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				9B12BEF32BD2706F0065DA76 /* Preview Assets.xcassets in Resources */,
 				9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */,
 				9B12BEF02BD2706F0065DA76 /* Assets.xcassets in Resources */,
+				9B540D152C312529001CEE8B /* PrivacyInfo.xcprivacy in Resources */,
 				9B12BFD92BE51D900065DA76 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
