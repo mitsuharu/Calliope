@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LicenseList
 
 /**
  NavigationRouter に対応するルーティング制御
@@ -20,6 +21,10 @@ struct NavigationModifier: ViewModifier {
                     ScanView().navigationTitle("scan")
                 case .build:
                     BuildView().navigationTitle("build print jobs")
+                case .license:
+                    LicenseListView()
+                        .navigationTitle("LICENSE")
+                        .navigationBarTitleDisplayMode(.inline)
                 }
             }
     }

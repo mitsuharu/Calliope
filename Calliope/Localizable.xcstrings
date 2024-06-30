@@ -14,18 +14,34 @@
     "Add BuildItem" : {
 
     },
+    "APP_Caution" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This application supports some thermal printers for EPSON and SUNMI."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "このアプリは EPSON および SUNMI が販売する一部のサーマルプリンターに対応しています。"
+          }
+        }
+      }
+    },
     "App_Home" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Printer App"
+            "value" : "Thermal Printer App"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "サーマルプリンター印刷アプリ"
           }
         }
@@ -41,7 +57,7 @@
         }
       }
     },
-    "Bluetooth devices (select SUNMI)" : {
+    "Bluetooth devices (please select SUNMI)" : {
 
     },
     "build print jobs" : {
@@ -64,10 +80,13 @@
         }
       }
     },
-    "EPSON" : {
+    "EPSON devices" : {
 
     },
-    "name: " : {
+    "LICENSE" : {
+
+    },
+    "NAME" : {
 
     },
     "save" : {
@@ -98,10 +117,7 @@
         }
       }
     },
-    "uuid: " : {
-
-    },
-    "このアプリは EPSON および SUNMI が販売・製造する一部のサーマルプリンターに対応しています。" : {
+    "UUID" : {
 
     },
     "ビルドした印刷コマンド" : {
@@ -122,10 +138,16 @@
     "印刷コマンドをビルドする" : {
 
     },
+    "右上のスキャンボタンからプリンターを探してください" : {
+
+    },
     "右上の追加ボタンから印刷コマンドを追加してください" : {
 
     },
     "未設定です" : {
+
+    },
+    "未選択です" : {
 
     },
     "選択されたサーマルプリンター" : {

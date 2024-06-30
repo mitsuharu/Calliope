@@ -60,7 +60,8 @@ extension UIImage {
         // 閾値 127
         let threshold = 140
         
-        var data = [UInt8]()
+        var data = [UInt8](repeating: 0, count: height * width / 8)
+        var index = 0
         for y in 0..<height {
             for x in stride(from: 0, to: width, by: 8) {
                 var part = [UInt8](repeating: 0, count: 8)
@@ -74,7 +75,8 @@ extension UIImage {
                     part[j] = gray > threshold ? 0 : 1
                 }
                 let temp = part[0] << 7 | part[1] << 6 | part[2] << 5 | part[3] << 4 | part[4] << 3 | part[5] << 2 | part[6] << 1 | part[7]
-                data.append(temp)
+                data[index] = temp
+                index += 1
             }
         }
         
