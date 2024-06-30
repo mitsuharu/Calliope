@@ -65,7 +65,6 @@
 		9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */; };
 		9B540CF62C2FE5A6001CEE8B /* BuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
-		9B853D572BE8936800ED1CE0 /* Bitmap in Frameworks */ = {isa = PBXBuildFile; productRef = 9B853D562BE8936800ED1CE0 /* Bitmap */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
 		9B9DD9E42C0C2EFF00B5022A /* EpsonEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E32C0C2EFF00B5022A /* EpsonEscPosCommond.swift */; };
@@ -175,7 +174,6 @@
 				9B3939F92BE73F3C00EF6AED /* AsyncBluetooth in Frameworks */,
 				9B3939FC2BE73F4600EF6AED /* AlertToast in Frameworks */,
 				9B12BF202BD27B510065DA76 /* CoreBluetooth.framework in Frameworks */,
-				9B853D572BE8936800ED1CE0 /* Bitmap in Frameworks */,
 				9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */,
 				9B3939F32BE73F1B00EF6AED /* ReSwift in Frameworks */,
 				9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */,
@@ -503,7 +501,6 @@
 				9B3939F52BE73F3000EF6AED /* ReSwiftSaga */,
 				9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */,
 				9B3939FB2BE73F4600EF6AED /* AlertToast */,
-				9B853D562BE8936800ED1CE0 /* Bitmap */,
 			);
 			productName = Calliope;
 			productReference = 9B12BEE82BD2706D0065DA76 /* Calliope.app */;
@@ -583,7 +580,6 @@
 				9B3939F42BE73F3000EF6AED /* XCRemoteSwiftPackageReference "ReSwift-Saga" */,
 				9B3939F72BE73F3C00EF6AED /* XCRemoteSwiftPackageReference "AsyncBluetooth" */,
 				9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */,
-				9B853D552BE8936800ED1CE0 /* XCRemoteSwiftPackageReference "Bitmap" */,
 			);
 			productRefGroup = 9B12BEE92BD2706D0065DA76 /* Products */;
 			projectDirPath = "";
@@ -1055,14 +1051,6 @@
 				minimumVersion = 1.3.9;
 			};
 		};
-		9B853D552BE8936800ED1CE0 /* XCRemoteSwiftPackageReference "Bitmap" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dagronf/Bitmap";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1085,11 +1073,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
-		};
-		9B853D562BE8936800ED1CE0 /* Bitmap */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9B853D552BE8936800ED1CE0 /* XCRemoteSwiftPackageReference "Bitmap" */;
-			productName = Bitmap;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

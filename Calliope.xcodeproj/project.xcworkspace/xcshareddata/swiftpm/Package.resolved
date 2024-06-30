@@ -1,5 +1,5 @@
 {
-  "originHash" : "9625418bf5f8b5c60054c682c9226a4074a0ae6d6d4c09990122a6720487aee4",
+  "originHash" : "ed5d595c01e721d4bd28af034df8e717364c7461818fa96c10ca1db92dc99fea",
   "pins" : [
     {
       "identity" : "alerttoast",
@@ -20,15 +20,6 @@
       }
     },
     {
-      "identity" : "bitmap",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/dagronf/Bitmap",
-      "state" : {
-        "revision" : "200c1b78945e531bc1aab3d447a02504a92795d7",
-        "version" : "1.0.1"
-      }
-    },
-    {
       "identity" : "reswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReSwift/ReSwift",
@@ -44,15 +35,6 @@
       "state" : {
         "revision" : "2d60e2f5dec2d828b19c419eab3d72dd9330f501",
         "version" : "0.0.5"
-      }
-    },
-    {
-      "identity" : "swiftimagereadwrite",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/dagronf/SwiftImageReadWrite",
-      "state" : {
-        "revision" : "016a9cb842038e4078a91e506e35cef4f4ff76ff",
-        "version" : "1.7.2"
       }
     }
   ],

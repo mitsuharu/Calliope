@@ -63,7 +63,7 @@ struct SunmiEscPosCommond: EscPosCommondProtocol {
     }
     
     static func qrCode(text: String) -> Data {
-        var result = Data()
+        let result = Data()
         
         // FIXME: SUNMI向けを作る
 //        // QRコードのモデル設定
