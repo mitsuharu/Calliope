@@ -8,8 +8,7 @@
 import Foundation
 import AsyncBluetooth
 
-struct PrinterDeviceInfo {
-
+struct PrinterDeviceInfo {    
     enum Manufacturer {
         case epson
         case bluetooth

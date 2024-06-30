@@ -13,8 +13,7 @@ struct MainView: View {
     var body: some View {
         List {
             Section("選択されたサーマルプリンター") {
-                PrinterInfoCell(title: "NAME", detail: viewModel.name)
-                PrinterInfoCell(title: "UUID", detail: viewModel.uuid)
+                PrinterInfoCell(name: viewModel.name, uuid: viewModel.uuid)
             }
             Section("プリセットされた印刷コマンド") {
                 ForEach(viewModel.sampleCommonds, id: \.uuid) { item in

@@ -48,7 +48,6 @@
 		9B3939E82BE628F400EF6AED /* PrinterHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939E42BE628F400EF6AED /* PrinterHandlerProtocol.swift */; };
 		9B3939EA2BE62DAC00EF6AED /* PrinterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939E92BE62DAC00EF6AED /* PrinterHandler.swift */; };
 		9B3939EC2BE62F3800EF6AED /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939EB2BE62F3800EF6AED /* ScanViewModel.swift */; };
-		9B3939EE2BE6406C00EF6AED /* CandiateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3939ED2BE6406C00EF6AED /* CandiateCell.swift */; };
 		9B3939F32BE73F1B00EF6AED /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939F22BE73F1B00EF6AED /* ReSwift */; };
 		9B3939F62BE73F3000EF6AED /* ReSwiftSaga in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939F52BE73F3000EF6AED /* ReSwiftSaga */; };
 		9B3939F92BE73F3C00EF6AED /* AsyncBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */; };
@@ -148,7 +147,6 @@
 		9B3939E42BE628F400EF6AED /* PrinterHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterHandlerProtocol.swift; sourceTree = "<group>"; };
 		9B3939E92BE62DAC00EF6AED /* PrinterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterHandler.swift; sourceTree = "<group>"; };
 		9B3939EB2BE62F3800EF6AED /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
-		9B3939ED2BE6406C00EF6AED /* CandiateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandiateCell.swift; sourceTree = "<group>"; };
 		9B3939FE2BE750B900EF6AED /* EscPosCommondProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscPosCommondProtocol.swift; sourceTree = "<group>"; };
 		9B393A002BE75C4F00EF6AED /* PrintJob+Sunmi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrintJob+Sunmi.swift"; sourceTree = "<group>"; };
 		9B393A022BE7613E00EF6AED /* PrintJob+Epson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrintJob+Epson.swift"; sourceTree = "<group>"; };
@@ -340,7 +338,6 @@
 			children = (
 				9B12BFC62BE50D090065DA76 /* ScanView.swift */,
 				9B3939EB2BE62F3800EF6AED /* ScanViewModel.swift */,
-				9B3939ED2BE6406C00EF6AED /* CandiateCell.swift */,
 			);
 			path = ScanView;
 			sourceTree = "<group>";
@@ -350,7 +347,6 @@
 			children = (
 				9B12BFC32BE50CE50065DA76 /* MainView.swift */,
 				9B12BFE52BE536C40065DA76 /* MainViewModel.swift */,
-				9B396DA42C26E787002263FF /* PrinterInfoCell.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -452,6 +448,7 @@
 			children = (
 				9B396DA22C26C5C0002263FF /* ListCell.swift */,
 				9B540CE42C2FACD1001CEE8B /* PlainCell.swift */,
+				9B396DA42C26E787002263FF /* PrinterInfoCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -632,7 +629,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B3939EE2BE6406C00EF6AED /* CandiateCell.swift in Sources */,
 				9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */,
 				9B3939E82BE628F400EF6AED /* PrinterHandlerProtocol.swift in Sources */,
 				9B540CF62C2FE5A6001CEE8B /* BuildViewModel.swift in Sources */,

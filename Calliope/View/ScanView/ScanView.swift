@@ -24,25 +24,35 @@ struct ScanView: View {
             }
         } else {
             List {
-                if $viewModel.epsonCandiates.count > 0 {
-                    Section(header: Text("EPSON")) {
-                        ForEach($viewModel.epsonCandiates, id: \.self) { item in
-                            Button(action: {
-                                viewModel.selectCandiate(deviceInfo: item.wrappedValue)
-                            }) {
-                                CandiateCell(deviceInfo: item)
-                            }
+                if viewModel.epsonCandiates.count > 0 {
+                    Section(header: Text("EPSON devices")) {
+                        ForEach(viewModel.epsonCandiates, id: \.self) { item in
+                            PlainCell(
+                                label: {
+                                    PrinterInfoCell(deviceInfo: item)
+                                }, 
+                                accessory: nil,
+                                action: {
+                                    viewModel.selectCandiate(deviceInfo: item)
+                                }, 
+                                deleteSwipeAction: nil
+                            )
                         }
                     }
                 }
-                if $viewModel.bluetoorhCandiates.count > 0 {
-                    Section(header: Text("Bluetooth devices (select SUNMI)")) {
-                        ForEach($viewModel.bluetoorhCandiates, id: \.self) { item in
-                            Button(action: {
-                                viewModel.selectCandiate(deviceInfo: item.wrappedValue)
-                            }) {
-                                CandiateCell(deviceInfo: item)
-                            }
+                if viewModel.bluetoorhCandiates.count > 0 {
+                    Section(header: Text("Bluetooth devices (please select SUNMI)")) {
+                        ForEach(viewModel.bluetoorhCandiates, id: \.self) { item in
+                            PlainCell(
+                                label: {
+                                    PrinterInfoCell(deviceInfo: item)
+                                }, 
+                                accessory: nil,
+                                action: {
+                                    viewModel.selectCandiate(deviceInfo: item)
+                                },
+                                deleteSwipeAction: nil
+                            )
                         }
                     }
                 }
