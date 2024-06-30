@@ -64,6 +64,7 @@
 		9B540D152C312529001CEE8B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */; };
 		9B540D192C31332A001CEE8B /* libepos2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B540D182C31332A001CEE8B /* libepos2.xcframework */; };
 		9B540D1B2C313360001CEE8B /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B540D1A2C313360001CEE8B /* libeposeasyselect.xcframework */; };
+		9B540D1E2C314BC6001CEE8B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D1D2C314BC6001CEE8B /* InfoPlist.xcstrings */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
@@ -157,6 +158,7 @@
 		9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		9B540D182C31332A001CEE8B /* libepos2.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; name = libepos2.xcframework; path = Frameworks/Epson/libepos2.xcframework; sourceTree = "<group>"; };
 		9B540D1A2C313360001CEE8B /* libeposeasyselect.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; name = libeposeasyselect.xcframework; path = Frameworks/Epson/libeposeasyselect.xcframework; sourceTree = "<group>"; };
+		9B540D1D2C314BC6001CEE8B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				9B12BFC02BE50BDB0065DA76 /* View */,
 				9B12BFBA2BE50B130065DA76 /* ViewModifier */,
 				9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */,
+				9B540D1D2C314BC6001CEE8B /* InfoPlist.xcstrings */,
 			);
 			path = Calliope;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B540D1E2C314BC6001CEE8B /* InfoPlist.xcstrings in Resources */,
 				9B12BEF32BD2706F0065DA76 /* Preview Assets.xcassets in Resources */,
 				9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */,
 				9B12BEF02BD2706F0065DA76 /* Assets.xcassets in Resources */,
@@ -825,7 +829,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Calliope/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "さまぷり";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -864,7 +867,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Calliope/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "さまぷり";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Use this to communicate with the printer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
