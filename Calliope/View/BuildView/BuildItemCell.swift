@@ -102,10 +102,11 @@ extension BuildItemCell {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 100, height: 100)
+                                Spacer()
                             } else {
                                 Text("未設定です").foregroundColor(.secondary)
+                                Spacer()
                             }
-                            Spacer()
                         }
                     }
                 },

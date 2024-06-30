@@ -16,11 +16,18 @@ struct ContentView: View {
                 .navigationTitle("App_Home")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar{
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            router.navigate(.license)
+                        }) {
+                            Image(systemName: "gearshape")
+                        }
+                    }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
                             router.navigate(.scan)
                         }) {
-                            Label("scan", systemImage: "plus.viewfinder")
+                            Image(systemName: "plus.viewfinder")
                         }
                     }
                 }

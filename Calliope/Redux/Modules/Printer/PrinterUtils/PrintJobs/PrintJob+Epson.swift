@@ -57,6 +57,7 @@ extension Epos2Printer {
             // self.addCommand(EpsonEscPosCommond.qrCode(text: text))
             
         case .image(let image, let imageWidth):
+            
             let width = CGFloat(imageWidth.rawValue)
             let size = CGSize(
                 width: width,

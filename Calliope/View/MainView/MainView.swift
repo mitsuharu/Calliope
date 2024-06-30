@@ -13,8 +13,7 @@ struct MainView: View {
     var body: some View {
         List {
             Section("選択されたサーマルプリンター") {
-                PrinterInfoCell(title: "NAME", detail: viewModel.name)
-                PrinterInfoCell(title: "UUID", detail: viewModel.uuid)
+                PrinterInfoCell(name: viewModel.name, uuid: viewModel.uuid)
             }
             Section("プリセットされた印刷コマンド") {
                 ForEach(viewModel.sampleCommonds, id: \.uuid) { item in
@@ -42,8 +41,9 @@ struct MainView: View {
             
             Section {
             } header: {
-                Text("このアプリは EPSON および SUNMI が販売・製造する一部のサーマルプリンターに対応しています。")
+                Text("APP_Caution")
             }
+            .textCase(nil)
         }
     }
 }
