@@ -1,5 +1,5 @@
 {
-  "originHash" : "ed5d595c01e721d4bd28af034df8e717364c7461818fa96c10ca1db92dc99fea",
+  "originHash" : "03fb707e821f06465d699cbf7531ffdc52b3029acba9b9593f4e68c750625d3f",
   "pins" : [
     {
       "identity" : "alerttoast",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "2bb6c48e886b4cb2bdf82074352ed60fe0515b35",
         "version" : "1.11.0"
+      }
+    },
+    {
+      "identity" : "licenselist",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cybozu/LicenseList.git",
+      "state" : {
+        "revision" : "0828b88c1a6130d56ede2cc6c41ec50068a7ebd6",
+        "version" : "0.7.0"
       }
     },
     {

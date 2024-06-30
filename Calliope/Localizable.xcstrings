@@ -19,13 +19,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This application supports some thermal printers (58 mm wide) for EPSON and SUNMI."
+            "value" : "This application supports some thermal printers for EPSON and SUNMI."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "このアプリは EPSON および SUNMI が販売する一部のサーマルプリンター（58mm幅）に対応しています。"
+            "value" : "このアプリは EPSON および SUNMI が販売する一部のサーマルプリンターに対応しています。"
           }
         }
       }
@@ -81,6 +81,9 @@
       }
     },
     "EPSON devices" : {
+
+    },
+    "LICENSE" : {
 
     },
     "NAME" : {
