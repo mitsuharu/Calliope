@@ -30,10 +30,6 @@
 		9B12BFC72BE50D090065DA76 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC62BE50D090065DA76 /* ScanView.swift */; };
 		9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFC92BE5130A0065DA76 /* NavigationRouter.swift */; };
 		9B12BFCC2BE51A090065DA76 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFCB2BE51A090065DA76 /* NavigationModifier.swift */; };
-		9B12BFD32BE51D090065DA76 /* libepos2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCD2BE51CCB0065DA76 /* libepos2.xcframework */; };
-		9B12BFD42BE51D090065DA76 /* libepos2.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCD2BE51CCB0065DA76 /* libepos2.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9B12BFD62BE51D0B0065DA76 /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */; };
-		9B12BFD72BE51D0B0065DA76 /* libeposeasyselect.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B12BFD92BE51D900065DA76 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B12BFD82BE51D900065DA76 /* Localizable.xcstrings */; };
 		9B12BFDC2BE522E10065DA76 /* PrinterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFDB2BE522E10065DA76 /* PrinterAction.swift */; };
 		9B12BFDE2BE522ED0065DA76 /* PrinterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BFDD2BE522ED0065DA76 /* PrinterReducer.swift */; };
@@ -66,6 +62,8 @@
 		9B540CF62C2FE5A6001CEE8B /* BuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */; };
 		9B540D0D2C3113EE001CEE8B /* LicenseList in Frameworks */ = {isa = PBXBuildFile; productRef = 9B540D0C2C3113EE001CEE8B /* LicenseList */; };
 		9B540D152C312529001CEE8B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */; };
+		9B540D192C31332A001CEE8B /* libepos2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B540D182C31332A001CEE8B /* libepos2.xcframework */; };
+		9B540D1B2C313360001CEE8B /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B540D1A2C313360001CEE8B /* libeposeasyselect.xcframework */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
@@ -96,8 +94,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9B12BFD72BE51D0B0065DA76 /* libeposeasyselect.xcframework in Embed Frameworks */,
-				9B12BFD42BE51D090065DA76 /* libepos2.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,8 +128,6 @@
 		9B12BFC62BE50D090065DA76 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		9B12BFC92BE5130A0065DA76 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		9B12BFCB2BE51A090065DA76 /* NavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModifier.swift; sourceTree = "<group>"; };
-		9B12BFCD2BE51CCB0065DA76 /* libepos2.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libepos2.xcframework; sourceTree = "<group>"; };
-		9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; path = libeposeasyselect.xcframework; sourceTree = "<group>"; };
 		9B12BFD82BE51D900065DA76 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9B12BFDB2BE522E10065DA76 /* PrinterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterAction.swift; sourceTree = "<group>"; };
 		9B12BFDD2BE522ED0065DA76 /* PrinterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterReducer.swift; sourceTree = "<group>"; };
@@ -161,6 +155,8 @@
 		9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuildItemView.swift; sourceTree = "<group>"; };
 		9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildViewModel.swift; sourceTree = "<group>"; };
 		9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		9B540D182C31332A001CEE8B /* libepos2.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; name = libepos2.xcframework; path = Frameworks/Epson/libepos2.xcframework; sourceTree = "<group>"; };
+		9B540D1A2C313360001CEE8B /* libeposeasyselect.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; name = libeposeasyselect.xcframework; path = Frameworks/Epson/libeposeasyselect.xcframework; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
@@ -172,8 +168,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B540D1B2C313360001CEE8B /* libeposeasyselect.xcframework in Frameworks */,
+				9B540D192C31332A001CEE8B /* libepos2.xcframework in Frameworks */,
 				9B540D0D2C3113EE001CEE8B /* LicenseList in Frameworks */,
-				9B12BFD62BE51D0B0065DA76 /* libeposeasyselect.xcframework in Frameworks */,
 				9B3939F62BE73F3000EF6AED /* ReSwiftSaga in Frameworks */,
 				9B3939F92BE73F3C00EF6AED /* AsyncBluetooth in Frameworks */,
 				9B3939FC2BE73F4600EF6AED /* AlertToast in Frameworks */,
@@ -181,7 +178,6 @@
 				9B12BF1E2BD27B470065DA76 /* ExternalAccessory.framework in Frameworks */,
 				9B3939F32BE73F1B00EF6AED /* ReSwift in Frameworks */,
 				9B12BF1C2BD27B2F0065DA76 /* libxml2.2.tbd in Frameworks */,
-				9B12BFD32BE51D090065DA76 /* libepos2.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +228,6 @@
 				9B12BEED2BD2706D0065DA76 /* ContentView.swift */,
 				9B12BEEF2BD2706F0065DA76 /* Assets.xcassets */,
 				9B12BFD82BE51D900065DA76 /* Localizable.xcstrings */,
-				9B12BFD02BE51CCB0065DA76 /* Frameworks */,
 				9B12BFC82BE512FD0065DA76 /* NavigationRouter */,
 				9B12BEF12BD2706F0065DA76 /* Preview Content */,
 				9B12BFA62BE509330065DA76 /* Redux */,
@@ -271,6 +266,8 @@
 		9B12BF1A2BD27B200065DA76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B540D1A2C313360001CEE8B /* libeposeasyselect.xcframework */,
+				9B540D182C31332A001CEE8B /* libepos2.xcframework */,
 				9B12BF1F2BD27B510065DA76 /* CoreBluetooth.framework */,
 				9B12BF1D2BD27B470065DA76 /* ExternalAccessory.framework */,
 				9B12BF1B2BD27B200065DA76 /* libxml2.2.tbd */,
@@ -361,23 +358,6 @@
 				9B12BFCB2BE51A090065DA76 /* NavigationModifier.swift */,
 			);
 			path = NavigationRouter;
-			sourceTree = "<group>";
-		};
-		9B12BFCF2BE51CCB0065DA76 /* Epson */ = {
-			isa = PBXGroup;
-			children = (
-				9B12BFCD2BE51CCB0065DA76 /* libepos2.xcframework */,
-				9B12BFCE2BE51CCB0065DA76 /* libeposeasyselect.xcframework */,
-			);
-			path = Epson;
-			sourceTree = "<group>";
-		};
-		9B12BFD02BE51CCB0065DA76 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9B12BFCF2BE51CCB0065DA76 /* Epson */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		9B12BFDA2BE522D20065DA76 /* Printer */ = {
