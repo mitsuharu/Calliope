@@ -228,19 +228,19 @@
 		9B12BEEA2BD2706D0065DA76 /* Calliope */ = {
 			isa = PBXGroup;
 			children = (
-				9B853D522BE8901800ED1CE0 /* Resources */,
 				9B12BF212BD27BE80065DA76 /* Bridging-Header.h */,
 				9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */,
 				9B12BEED2BD2706D0065DA76 /* ContentView.swift */,
 				9B12BEEF2BD2706F0065DA76 /* Assets.xcassets */,
+				9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */,
+				9B540D1D2C314BC6001CEE8B /* InfoPlist.xcstrings */,
 				9B12BFD82BE51D900065DA76 /* Localizable.xcstrings */,
 				9B12BFC82BE512FD0065DA76 /* NavigationRouter */,
 				9B12BEF12BD2706F0065DA76 /* Preview Content */,
 				9B12BFA62BE509330065DA76 /* Redux */,
+				9B853D522BE8901800ED1CE0 /* Resources */,
 				9B12BFC02BE50BDB0065DA76 /* View */,
 				9B12BFBA2BE50B130065DA76 /* ViewModifier */,
-				9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */,
-				9B540D1D2C314BC6001CEE8B /* InfoPlist.xcstrings */,
 			);
 			path = Calliope;
 			sourceTree = "<group>";
@@ -831,7 +831,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Calliope/Preview Content\"";
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
@@ -869,7 +869,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Calliope/Preview Content\"";
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
