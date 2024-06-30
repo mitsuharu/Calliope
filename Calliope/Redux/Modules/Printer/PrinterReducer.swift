@@ -38,6 +38,20 @@ func printerReducer(action: PrinterAction, state: PrinterState) -> PrinterState 
             buildJobs: nextBuildJobs
         )
         
+    case let action as PrinterActions.DeleteBuildJobs:
+        
+        var nextBuildJobs = state.buildJobs
+        if let index = nextBuildJobs.firstIndex(where: { job in
+            job.id == action.buildJob.id
+        }) {
+            nextBuildJobs.remove(at: index)
+        }
+        return PrinterState(
+            deviceInfo: state.deviceInfo,
+            candiates: state.candiates,
+            buildJobs: nextBuildJobs
+        )
+        
     default:
         return state
     }

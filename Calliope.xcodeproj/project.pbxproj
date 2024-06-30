@@ -65,6 +65,8 @@
 		9B540D192C31332A001CEE8B /* libepos2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B540D182C31332A001CEE8B /* libepos2.xcframework */; };
 		9B540D1B2C313360001CEE8B /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B540D1A2C313360001CEE8B /* libeposeasyselect.xcframework */; };
 		9B540D1E2C314BC6001CEE8B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D1D2C314BC6001CEE8B /* InfoPlist.xcstrings */; };
+		9B540D232C315345001CEE8B /* Print+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D222C315345001CEE8B /* Print+Codable.swift */; };
+		9B540D252C3155D0001CEE8B /* PrinterState+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D242C3155D0001CEE8B /* PrinterState+Codable.swift */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
@@ -159,6 +161,8 @@
 		9B540D182C31332A001CEE8B /* libepos2.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; name = libepos2.xcframework; path = Frameworks/Epson/libepos2.xcframework; sourceTree = "<group>"; };
 		9B540D1A2C313360001CEE8B /* libeposeasyselect.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:TXAEAV5RN4:Seiko Epson Corporation"; lastKnownFileType = wrapper.xcframework; name = libeposeasyselect.xcframework; path = Frameworks/Epson/libeposeasyselect.xcframework; sourceTree = "<group>"; };
 		9B540D1D2C314BC6001CEE8B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		9B540D222C315345001CEE8B /* Print+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Print+Codable.swift"; sourceTree = "<group>"; };
+		9B540D242C3155D0001CEE8B /* PrinterState+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrinterState+Codable.swift"; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
@@ -372,6 +376,7 @@
 				9B12BFDD2BE522ED0065DA76 /* PrinterReducer.swift */,
 				9B12BFE12BE523120065DA76 /* PrinterSelectors.swift */,
 				9B12BFE32BE5231D0065DA76 /* PrinterState.swift */,
+				9B540D242C3155D0001CEE8B /* PrinterState+Codable.swift */,
 			);
 			path = Printer;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				9B12BFF12BE61B4B0065DA76 /* Print.swift */,
 				9B393A022BE7613E00EF6AED /* PrintJob+Epson.swift */,
 				9B393A002BE75C4F00EF6AED /* PrintJob+Sunmi.swift */,
+				9B540D222C315345001CEE8B /* Print+Codable.swift */,
 			);
 			path = PrintJobs;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				9B3939FF2BE750B900EF6AED /* EscPosCommondProtocol.swift in Sources */,
 				9B3939EA2BE62DAC00EF6AED /* PrinterHandler.swift in Sources */,
 				9B540CF02C2FE52F001CEE8B /* BuildItem.swift in Sources */,
+				9B540D252C3155D0001CEE8B /* PrinterState+Codable.swift in Sources */,
 				9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */,
 				9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */,
 				9B396DA32C26C5C0002263FF /* ListCell.swift in Sources */,
@@ -652,6 +659,7 @@
 				9B12BFB62BE509330065DA76 /* AppStore.swift in Sources */,
 				9B393A032BE7613E00EF6AED /* PrintJob+Epson.swift in Sources */,
 				9B3939EC2BE62F3800EF6AED /* ScanViewModel.swift in Sources */,
+				9B540D232C315345001CEE8B /* Print+Codable.swift in Sources */,
 				9B12BFB52BE509330065DA76 /* AppState.swift in Sources */,
 				9B12BEEC2BD2706D0065DA76 /* CalliopeApp.swift in Sources */,
 				9B12BFAC2BE509330065DA76 /* ToastAction.swift in Sources */,

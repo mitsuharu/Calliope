@@ -12,10 +12,12 @@ import ReSwiftSaga
 func makeAppStore() -> Store<AppState> {
     let sagaMiddleware: Middleware<AppState> = createSagaMiddleware()
     
+    let persistMiddleware = persistMiddleware()
+    
     let store = Store<AppState>(
         reducer: appReducer,
         state: AppState.initialState(),
-        middleware: [sagaMiddleware]
+        middleware: [sagaMiddleware, persistMiddleware]
     )
     
     Task.detached {
@@ -27,6 +29,18 @@ func makeAppStore() -> Store<AppState> {
     }
     
     return store
+}
+
+private func persistMiddleware() -> Middleware<AppState> {
+   return { dispatch, getState in
+       return { next in
+           return { action in
+               let nextAction: Void = next(action)
+               AppState.persist(action: action, state: getState())
+               return nextAction
+           }
+       }
+   }
 }
 
 extension Store {

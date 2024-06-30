@@ -13,12 +13,16 @@ struct PrinterState {
     let candiates: Set<PrinterDeviceInfo>?
     var buildJobs: [PrinterState.BuildJob]
     
-    static func initialState() -> PrinterState {
-        PrinterState(
-            deviceInfo: nil,
-            candiates: nil,
-            buildJobs: []
-        )
+    static func initialState() -> PrinterState {        
+        if let state = PrinterState.load() {
+            return state
+        } else {
+            return PrinterState(
+                deviceInfo: nil,
+                candiates: nil,
+                buildJobs: []
+            )
+        }
     }
 }
 
@@ -32,7 +36,7 @@ extension PrinterState: Hashable {
             hasher.combine(id)
         }
         
-        let id = UUID()
+        var id = UUID()
         let title: String
         let jobs: [Print.Job]
     }
