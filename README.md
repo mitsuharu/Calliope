@@ -1,8 +1,6 @@
-Calliope
-==
+# さまぷり / Calliope
 
 iOS向けの感熱紙印刷のアプリです
-
 
 ### What is Calliope?
 
@@ -16,12 +14,14 @@ iOS向けの感熱紙印刷のアプリです
 
 - [TM-P20Ⅱ](https://www.epson.jp/products/receiptprinter/tmp202/)
 	- [開発キット Epson ePOS SDK](https://www.epson.jp/products/receiptprinter/develop/devkit.htm) を利用しています
-	-  その SDK に対応していれば、他の同社製品でも利用できます
+	- その SDK に対応していれば、他の同社製品でも利用できます
+	-  事前に端末とペアリングしてください
 
 ### Bluetooth機器 [^not-support-sdk]
 
 - SUNMI 58mm サーマルプリンタ
 	- SUNMI-TRP58-UWB
+	- ペアリング不要
 
 | Model | FW version | SUNMI APP version | Partner APP version | MiniApp version |
 | :-: | :-: | :-: | :-: | :-: |
@@ -31,6 +31,7 @@ iOS向けの感熱紙印刷のアプリです
 	- SUNMI-TRP80-ULWB
 	- SUNMI 80mm キッチンプリンター
 	- [https://www.sunmi.com/ja/80-kitchen-cloud-printer/](https://www.sunmi.com/ja/80-kitchen-cloud-printer/)
+	- ペアリング不要
 
 | Model | FW version | SUNMI APP version | Partner APP version | MiniApp version |
 | :-: | :-: | :-: | :-: | :-: |
