@@ -30,7 +30,9 @@ struct MainView: View {
             Section {
                 ForEach(viewModel.buildJobs, id: \.id) { buildJob in
                     ListCell(title: buildJob.title) {
-                        viewModel.runBuildJobs(buildJob: buildJob)
+                        viewModel.runBuildJob(buildJob: buildJob)
+                    } deleteSwipeAction: {
+                        viewModel.deleteBuildJob(buildJob: buildJob)
                     }
                 }
             } header: {

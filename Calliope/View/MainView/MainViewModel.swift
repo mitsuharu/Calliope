@@ -53,8 +53,12 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
         appStore.dispatch(onMain: PrinterActions.RunPrintJobs(jobs: jobs))
     }
     
-    func runBuildJobs(buildJob: PrinterState.BuildJob) {
+    func runBuildJob(buildJob: PrinterState.BuildJob) {
         run(jobs: buildJob.jobs)
+    }
+    
+    func deleteBuildJob(buildJob: PrinterState.BuildJob) {
+        appStore.dispatch(onMain: PrinterActions.DeleteBuildJobs(buildJob: buildJob))
     }
 }
 

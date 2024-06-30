@@ -38,4 +38,8 @@ enum PrinterActions {
         let buildJob: PrinterState.BuildJob
     }
     
+    struct DeleteBuildJobs: PrinterAction {
+        let buildJob: PrinterState.BuildJob
+    }
+    
 }
