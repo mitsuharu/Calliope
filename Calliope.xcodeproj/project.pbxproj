@@ -304,8 +304,8 @@
 		9B12BFA12BE509330065DA76 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9B540D3A2C36D8E4001CEE8B /* Loading */,
 				9B12BFDA2BE522D20065DA76 /* Printer */,
+				9B540D3A2C36D8E4001CEE8B /* Loading */,
 				9B12BF9A2BE509330065DA76 /* Toast */,
 			);
 			path = Modules;
