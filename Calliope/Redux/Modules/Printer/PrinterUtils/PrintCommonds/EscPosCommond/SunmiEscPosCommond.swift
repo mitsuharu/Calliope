@@ -10,8 +10,7 @@ import Foundation
 /**
  SUNMI向けのESC/POSコマンド
  */
-struct SunmiEscPosCommond: EscPosCommondProtocol {
-    private init() {}
+enum SunmiEscPosCommond: EscPosCommondProtocol {
         
     static func initialize() -> Data {
         Data([0x1b, 0x40])

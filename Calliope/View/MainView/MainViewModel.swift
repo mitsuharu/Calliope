@@ -46,10 +46,6 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
     }
     
     func run(jobs: [Print.Job]) {
-        if (uuid?.isEmpty ?? true) == true {
-            appStore.dispatch(onMain: ToastActions.ShowToast(message: "プリンターが選択されていません"))
-            return
-        }
         appStore.dispatch(onMain: PrinterActions.RunPrintJobs(jobs: jobs))
     }
     
@@ -80,13 +76,13 @@ extension MainViewModel {
                 .text(text: "渋谷での充実したSunday"),
                 .text(text: "written by ChatGPT"),
                 .feed(count: 1),
-                .text(text: "今日はSunday、友達のKenと渋谷でランチをしました。美味しいラーメンを食べた後、映画「サムライアドベンチャー」を観に行きました。その後、カフェでコーヒーを飲みながら楽しい一日を過ごしました。"),
+                .text(text: "今日はSunday、友達のKenと渋谷でランチをしました。美味しいラーメンを食べた後、映画「サムライアドベンチャー」を観に行きました。その後、カフェでコーヒーを飲みながら楽しい１日を過ごしました。"),
                 .feed(count: 1),
             ]
         )
         commonds.append(commond1)
         
-        if let image = UIImage(named: "himawari.jpg") {
+        if let image = UIImage(named: "himawari2.jpg") {
             let commond2 = SampleCommond(
                 title: "画像の印刷",
                 jobs: [
@@ -99,15 +95,15 @@ extension MainViewModel {
             commonds.append(commond2)
         }
         
-        let commond3 = SampleCommond(
-            title: "QRコードの印刷",
-            jobs: [
-                .text(text: "QRコードで「http://www.example.com」を印刷します"),
-                .qrCode(text: "http://www.example.com"),
-                .feed(count: 1),
-            ]
-        )
-        commonds.append(commond3)
+//        let commond3 = SampleCommond(
+//            title: "QRコードの印刷",
+//            jobs: [
+//                .text(text: "QRコードで「http://www.example.com」を印刷します"),
+//                .qrCode(text: "http://www.example.com"),
+//                .feed(count: 1),
+//            ]
+//        )
+//        commonds.append(commond3)
         
         return commonds
         
