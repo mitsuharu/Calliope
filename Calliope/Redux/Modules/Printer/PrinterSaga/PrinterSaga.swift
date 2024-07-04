@@ -67,7 +67,7 @@ private let runPrintJobsSaga: Saga = { action async in
     
     do {
         let handler = PrinterHandler.shared
-        try await handler.run(device: device, transaction: action.jobs)
+        try await handler.run(device: device, jobs: action.jobs)
     } catch {
         let message = "印刷に失敗しました"
         appStore.dispatch(onMain: ToastActions.ShowToast(message: message))

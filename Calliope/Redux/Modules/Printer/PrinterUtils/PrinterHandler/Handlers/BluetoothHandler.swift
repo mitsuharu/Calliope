@@ -10,7 +10,7 @@ import Combine
 import AsyncBluetooth
 import CoreBluetooth
 
-final class SunmiBluetoothHandler: PrinterHandlerProtocol {
+final class BluetoothHandler: PrinterHandlerProtocol {
     
     private let centralManager = CentralManager()    
     private var cancellables: Set<AnyCancellable> = []
@@ -42,14 +42,14 @@ final class SunmiBluetoothHandler: PrinterHandlerProtocol {
         }
     }
     
-    func run(device: PrinterDeviceInfo, transaction: [Print.Job]) async throws {
+    func run(device: PrinterDeviceInfo, jobs: [Print.Job]) async throws {
         guard let peripheral = device.bluetooth else {
             throw PrinterError.instanceFailed
         }
         
         try await connectBluetooth(peripheral: peripheral)
         
-        let value = makeCommandData(transaction: transaction)
+        let value = makeCommandData(jobs: jobs)
         try await send(peripheral: peripheral, data: value)
         
         try await disconnectBluetooth(peripheral: peripheral)
@@ -57,7 +57,7 @@ final class SunmiBluetoothHandler: PrinterHandlerProtocol {
     
 }
 
-extension SunmiBluetoothHandler {
+extension BluetoothHandler {
     
     fileprivate func showToastForCentralManagerEvent(state: CentralManagerEvent) {
         switch state {
@@ -162,13 +162,13 @@ extension SunmiBluetoothHandler {
         }
     }
         
-    fileprivate func makeCommandData(transaction: [Print.Job]) -> Data {
+    fileprivate func makeCommandData(jobs: [Print.Job]) -> Data {
         
         // 初期化 ESC @
         var result = SunmiEscPosCommond.initialize()
         
-        transaction.forEach {
-            result.append($0.sunmiBluetoothCommand)
+        jobs.forEach {
+            result.append($0.sunmiEscPosCommand)
         }
         
         // 紙送り

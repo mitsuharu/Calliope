@@ -24,8 +24,8 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "このアプリは EPSON および SUNMI が販売する一部のサーマルプリンターに対応しています。"
+            "state" : "translated",
+            "value" : "このアプリは EPSON および SUNMI が販売する一部のサーマルプリンターに対応しています。また、幅58mmの感熱紙を主に対象にしています。"
           }
         }
       }
@@ -58,7 +58,14 @@
       }
     },
     "Bluetooth devices (please select SUNMI)" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bluetooth機器（SUNMI製品を選んでください）"
+          }
+        }
+      }
     },
     "build print jobs" : {
       "localizations" : {
@@ -81,13 +88,34 @@
       }
     },
     "EPSON devices" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EPSON製品"
+          }
+        }
+      }
     },
     "LICENSE" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライセンス"
+          }
+        }
+      }
     },
     "NAME" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NAME"
+          }
+        }
+      }
     },
     "save" : {
       "extractionState" : "manual",
@@ -118,7 +146,14 @@
       }
     },
     "UUID" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UUID"
+          }
+        }
+      }
     },
     "ビルドした印刷コマンド" : {
 
