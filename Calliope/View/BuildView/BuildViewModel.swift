@@ -52,7 +52,7 @@ class BuildViewModel: ObservableObject {
         }
         
         if jobs.isEmpty {
-            appStore.dispatch(onMain: ToastActions.ShowToast(
+            appStore.dispatch(onMain: ToastActions.Show(
                 message: "印刷データが空だったので、保存しません",
                 subMessage: nil)
             )

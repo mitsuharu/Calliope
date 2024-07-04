@@ -47,16 +47,12 @@ final class BluetoothHandler: PrinterHandlerProtocol {
             throw PrinterError.instanceFailed
         }
         
-//        appStore.dispatch(onMain: ToastActions.ShowLoading(message: "印刷準備中…"))
-        
         try await connectBluetooth(peripheral: peripheral)
         
         let value = makeCommandData(jobs: jobs)
         try await send(peripheral: peripheral, data: value)
         
         try await disconnectBluetooth(peripheral: peripheral)
-        
-//        appStore.dispatch(onMain: ToastActions.dissmissToast())
     }
     
 }
@@ -105,7 +101,7 @@ extension BluetoothHandler {
     
     fileprivate func showToast(message: String?, subMessage: String?, type: ToastViewModel.ToastType) {
         if let message {
-            appStore.dispatch(onMain: ToastActions.ShowToast(
+            appStore.dispatch(onMain: ToastActions.Show(
                 message: message,
                 subMessage: subMessage,
                 type: type

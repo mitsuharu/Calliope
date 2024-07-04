@@ -11,6 +11,7 @@ import ReSwiftSaga
 let appSage: Saga = { _ async in
     do {
         try await fork(toastSaga)
+        try await fork(loadingSaga)
         try await fork(printerSaga)
     } catch {
         print(error)

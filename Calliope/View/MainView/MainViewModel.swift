@@ -89,7 +89,7 @@ extension MainViewModel {
                     .text(text: "ひまわり"),
                     .feed(count: 1),
                     .image(image: image, imageWidth: .width58),
-                    .feed(count: 3)
+                    .feed(count: 1)
                 ]
             )
             commonds.append(commond2)

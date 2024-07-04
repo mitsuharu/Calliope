@@ -9,15 +9,18 @@ import Foundation
 import ReSwiftSaga
 
 let toastSaga: Saga = { _ in
-    await takeEvery(ToastActions.ShowToast.self, saga: showToastSaga)
-    await takeEvery(ToastActions.ShowLoading.self, saga: showLoadingSaga)
-    await takeEvery(ToastActions.dissmissToast.self, saga: dismissToastSaga)
+    await takeEvery(ToastActions.Show.self, saga: showToastSaga)
+    await takeEvery(ToastActions.Dismiss.self, saga: dismissToastSaga)
 }
 
 let showToastSaga: Saga = { action async in
-    guard let action = action as? ToastActions.ShowToast else {
+    guard let action = action as? ToastActions.Show else {
         return
     }
+    
+    // 利用する Toast の不具合か？
+    // .loading と併用するとtoastが閉じれなくなるので、別々に管理する
+    await LoadingViewModel.shared.dismiss()
     
     let toastViewModel = ToastViewModel.shared
     await toastViewModel.showToast(
@@ -27,24 +30,10 @@ let showToastSaga: Saga = { action async in
     )
 }
 
-let showLoadingSaga: Saga = { action async in
-    guard let action = action as? ToastActions.ShowLoading else {
-        return
-    }
-    
-    let toastViewModel = ToastViewModel.shared
-    if toastViewModel.showToast {
-        await toastViewModel.dismiss()
-    }
-    
-    await toastViewModel.showLoading(message: action.message)
-}
-
 let dismissToastSaga: Saga = { action async in
-    guard let action = action as? ToastActions.dissmissToast else {
+    guard let action = action as? ToastActions.Dismiss else {
         return
     }
-    
     let toastViewModel = ToastViewModel.shared
     await toastViewModel.dismiss()
 }

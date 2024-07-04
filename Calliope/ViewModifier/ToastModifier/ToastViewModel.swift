@@ -16,7 +16,6 @@ final class ToastViewModel: ObservableObject {
     enum ToastType {
         case regular
         case error
-        case loading
     }
     
     @Published var showToast: Bool = false
@@ -31,20 +30,14 @@ final class ToastViewModel: ObservableObject {
         self.subMessage = subMessage
         self.type = type
     }
-    
-    @MainActor
-    func showLoading(message: String?) {
-        self.showToast = true
-        self.message = message
-        self.subMessage = nil
-        self.type = .loading
-    }
-    
+        
     @MainActor
     func dismiss() {
-        showToast = false
-        self.message = nil
-        self.subMessage = nil
-        self.type = .regular
+        if self.showToast {
+            self.showToast = false
+            self.message = nil
+            self.subMessage = nil
+            self.type = .regular
+        }
     }
 }

@@ -61,16 +61,18 @@ private let runPrintJobsSaga: Saga = { action async in
         let device = PrinterSelectors.selectPrinterDeviceInfo(stare: appStore.state)
     else {
         let message = "プリンターが選択されていません"
-        appStore.dispatch(onMain: ToastActions.ShowToast(message: message))
+        appStore.dispatch(onMain: ToastActions.Show(message: message))
         return
     }
     
     do {
+        appStore.dispatch(onMain: LoadingActions.Show(message: "印刷準備中…"))
         let handler = PrinterHandler.shared
         try await handler.run(device: device, jobs: action.jobs)
+        appStore.dispatch(onMain: LoadingActions.Dissmiss())
     } catch {
         let message = "印刷に失敗しました"
-        appStore.dispatch(onMain: ToastActions.ShowToast(message: message))
+        appStore.dispatch(onMain: ToastActions.Show(message: message))
     }
 }
 
