@@ -13,7 +13,7 @@ let toastSaga: Saga = { _ in
     await takeEvery(ToastActions.Dismiss.self, saga: dismissToastSaga)
 }
 
-let showToastSaga: Saga = { action async in
+private let showToastSaga: Saga = { action async in
     guard let action = action as? ToastActions.Show else {
         return
     }
@@ -30,7 +30,7 @@ let showToastSaga: Saga = { action async in
     )
 }
 
-let dismissToastSaga: Saga = { action async in
+private let dismissToastSaga: Saga = { action async in
     guard let action = action as? ToastActions.Dismiss else {
         return
     }

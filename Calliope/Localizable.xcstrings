@@ -12,7 +12,14 @@
       }
     },
     "Add BuildItem" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印刷コマンドを追加する"
+          }
+        }
+      }
     },
     "APP_Caution" : {
       "localizations" : {
