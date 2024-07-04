@@ -20,7 +20,7 @@ final class ToastViewModel: ObservableObject {
     
     @Published var showToast: Bool = false
     private(set) var type: ToastType = .regular
-    private(set) var message: String = ""
+    private(set) var message: String? = nil
     private(set) var subMessage: String? = nil
 
     @MainActor
@@ -29,5 +29,15 @@ final class ToastViewModel: ObservableObject {
         self.message = message
         self.subMessage = subMessage
         self.type = type
+    }
+        
+    @MainActor
+    func dismiss() {
+        if self.showToast {
+            self.showToast = false
+            self.message = nil
+            self.subMessage = nil
+            self.type = .regular
+        }
     }
 }

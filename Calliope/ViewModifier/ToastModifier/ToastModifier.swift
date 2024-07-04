@@ -19,12 +19,19 @@ struct ToastModifier: ViewModifier {
             return false
         }
     }
+
+    private var backgroundColor: Color {
+        if case .error = viewModel.type {
+            return .red
+        }
+        return .gray
+    }
     
     func body(content: Content) -> some View {
         content
             .toast(isPresenting: $viewModel.showToast, duration: isRegular ? 3.0 : 4.0, tapToDismiss: true) {
                 let style = AlertToast.AlertStyle.style(
-                    backgroundColor: isRegular ? .gray : .red,
+                    backgroundColor: backgroundColor,
                     titleColor: .white,
                     subTitleColor: nil,
                     titleFont: nil,

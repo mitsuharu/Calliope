@@ -31,7 +31,7 @@ final class EpsonHandler: NSObject, PrinterHandlerProtocol {
         try stopScanEpson()
     }
         
-    func run(device: PrinterDeviceInfo, transaction: [Print.Job]) async throws {
+    func run(device: PrinterDeviceInfo, jobs: [Print.Job]) async throws {
         guard
             let printer = printer,
             let device = device.epson
@@ -42,8 +42,8 @@ final class EpsonHandler: NSObject, PrinterHandlerProtocol {
         do {
             try await connectEpson(printer: printer, device: device)
             
-            transaction.forEach {
-                printer.addPrinterOrder(order: $0)
+            jobs.forEach {
+                printer.addPrinterJob(job: $0)
             }
             printer.addFeedLine(4)
             

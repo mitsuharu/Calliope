@@ -11,7 +11,7 @@ import ReSwift
 protocol ToastAction: Action {}
 
 enum ToastActions {
-    struct ShowToast: ToastAction {
+    struct Show: ToastAction {
         let message: String
         let subMessage: String?
         let type: ToastViewModel.ToastType
@@ -22,4 +22,8 @@ enum ToastActions {
             self.type = type
         }
     }
+    
+    struct Dismiss: ToastAction {
+    }
+    
 }

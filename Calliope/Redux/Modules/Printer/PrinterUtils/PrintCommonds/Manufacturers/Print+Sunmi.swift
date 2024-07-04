@@ -9,7 +9,7 @@ import Foundation
 
 extension Print.Job {
     
-    var sunmiBluetoothCommand: Data {
+    var sunmiEscPosCommand: Data {
         get {
             switch self {
             case .initialize:

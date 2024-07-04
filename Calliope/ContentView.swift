@@ -33,6 +33,7 @@ struct ContentView: View {
                 }
                 .modifier(NavigationModifier())
                 .modifier(ToastModifier())
+                .modifier(LoadingModifier())
         }
         .environmentObject(router)
     }

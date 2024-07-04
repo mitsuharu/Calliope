@@ -10,8 +10,7 @@ import Foundation
 /**
  エプソン向けのESC/POSコマンド
  */
-struct EpsonEscPosCommond: EscPosCommondProtocol {
-    private init() {}
+enum EpsonEscPosCommond: EscPosCommondProtocol {
     
     static func initialize() -> Data {
         Data([0x1b, 0x40])

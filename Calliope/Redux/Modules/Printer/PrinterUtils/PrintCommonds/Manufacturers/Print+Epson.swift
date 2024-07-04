@@ -9,8 +9,8 @@ import Foundation
 
 extension Epos2Printer {
     
-    func addPrinterOrder(order: Print.Job) {
-        switch order {
+    func addPrinterJob(job: Print.Job) {
+        switch job {
         case .initialize:
             self.addCommand(EpsonEscPosCommond.initialize())
             
