@@ -20,11 +20,32 @@ struct ToastModifier: ViewModifier {
         }
     }
     
+    private var duration: Double {
+        if case .loading = viewModel.type {
+            return 0
+        }
+        return isRegular ? 3.0 : 4.0
+    }
+    
+    private var type: AlertToast.AlertType {
+        if case .loading = viewModel.type {
+            return .loading
+        }
+        return .regular
+    }
+    
+    private var backgroundColor: Color {
+        if case .error = viewModel.type {
+            return .red
+        }
+        return .gray
+    }
+    
     func body(content: Content) -> some View {
         content
-            .toast(isPresenting: $viewModel.showToast, duration: isRegular ? 3.0 : 4.0, tapToDismiss: true) {
+            .toast(isPresenting: $viewModel.showToast, duration: duration, tapToDismiss: true) {
                 let style = AlertToast.AlertStyle.style(
-                    backgroundColor: isRegular ? .gray : .red,
+                    backgroundColor: backgroundColor,
                     titleColor: .white,
                     subTitleColor: nil,
                     titleFont: nil,
@@ -32,7 +53,7 @@ struct ToastModifier: ViewModifier {
                 )
                 let alert = AlertToast(
                     displayMode: .alert, // .banner(.pop),
-                    type: .regular,
+                    type: type,
                     title: viewModel.message,
                     subTitle: viewModel.subMessage,
                     style: style

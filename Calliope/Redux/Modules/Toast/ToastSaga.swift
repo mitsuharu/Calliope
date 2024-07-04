@@ -10,6 +10,8 @@ import ReSwiftSaga
 
 let toastSaga: Saga = { _ in
     await takeEvery(ToastActions.ShowToast.self, saga: showToastSaga)
+    await takeEvery(ToastActions.ShowLoading.self, saga: showLoadingSaga)
+    await takeEvery(ToastActions.dissmissToast.self, saga: dismissToastSaga)
 }
 
 let showToastSaga: Saga = { action async in
@@ -23,4 +25,26 @@ let showToastSaga: Saga = { action async in
         subMessage: action.subMessage,
         type: action.type
     )
+}
+
+let showLoadingSaga: Saga = { action async in
+    guard let action = action as? ToastActions.ShowLoading else {
+        return
+    }
+    
+    let toastViewModel = ToastViewModel.shared
+    if toastViewModel.showToast {
+        await toastViewModel.dismiss()
+    }
+    
+    await toastViewModel.showLoading(message: action.message)
+}
+
+let dismissToastSaga: Saga = { action async in
+    guard let action = action as? ToastActions.dissmissToast else {
+        return
+    }
+    
+    let toastViewModel = ToastViewModel.shared
+    await toastViewModel.dismiss()
 }

@@ -67,6 +67,7 @@
 		9B540D1E2C314BC6001CEE8B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D1D2C314BC6001CEE8B /* InfoPlist.xcstrings */; };
 		9B540D232C315345001CEE8B /* Print+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D222C315345001CEE8B /* Print+Codable.swift */; };
 		9B540D252C3155D0001CEE8B /* PrinterState+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D242C3155D0001CEE8B /* PrinterState+Codable.swift */; };
+		9B540D372C36B9EA001CEE8B /* himawari2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D362C36B9EA001CEE8B /* himawari2.jpg */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
@@ -163,6 +164,7 @@
 		9B540D1D2C314BC6001CEE8B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		9B540D222C315345001CEE8B /* Print+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Print+Codable.swift"; sourceTree = "<group>"; };
 		9B540D242C3155D0001CEE8B /* PrinterState+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrinterState+Codable.swift"; sourceTree = "<group>"; };
+		9B540D362C36B9EA001CEE8B /* himawari2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari2.jpg; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 		9B853D522BE8901800ED1CE0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9B540D362C36B9EA001CEE8B /* himawari2.jpg */,
 				9B853D532BE8903100ED1CE0 /* himawari.jpg */,
 			);
 			path = Resources;
@@ -606,6 +609,7 @@
 				9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */,
 				9B12BEF02BD2706F0065DA76 /* Assets.xcassets in Resources */,
 				9B540D152C312529001CEE8B /* PrivacyInfo.xcprivacy in Resources */,
+				9B540D372C36B9EA001CEE8B /* himawari2.jpg in Resources */,
 				9B12BFD92BE51D900065DA76 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,7 +25,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "このアプリは EPSON および SUNMI が販売する一部のサーマルプリンターに対応しています。また、幅58mmの感熱紙を主に対象にしています。"
+            "value" : "このアプリは EPSON および SUNMI が販売する一部のサーマルプリンターに対応しています。また、幅58mmの感熱紙を主にサポートしています。"
           }
         }
       }
@@ -41,8 +41,8 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "サーマルプリンター印刷アプリ"
+            "state" : "translated",
+            "value" : "さまぷり"
           }
         }
       }

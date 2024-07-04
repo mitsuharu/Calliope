@@ -58,9 +58,6 @@ struct ScanView: View {
                     }
                     .textCase(nil)
                 }
-                Section(header: Text("APP_Caution")) {
-                }
-                .textCase(nil)
             }
         }
     }

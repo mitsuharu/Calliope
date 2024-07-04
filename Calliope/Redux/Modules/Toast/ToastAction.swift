@@ -22,4 +22,15 @@ enum ToastActions {
             self.type = type
         }
     }
+    
+    struct ShowLoading: ToastAction {
+        let message: String?
+        init(message: String?) {
+            self.message = message
+        }
+    }
+    
+    struct dissmissToast: ToastAction {
+    }
+    
 }

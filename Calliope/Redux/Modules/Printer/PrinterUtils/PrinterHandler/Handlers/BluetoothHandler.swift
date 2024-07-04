@@ -47,12 +47,16 @@ final class BluetoothHandler: PrinterHandlerProtocol {
             throw PrinterError.instanceFailed
         }
         
+//        appStore.dispatch(onMain: ToastActions.ShowLoading(message: "印刷準備中…"))
+        
         try await connectBluetooth(peripheral: peripheral)
         
         let value = makeCommandData(jobs: jobs)
         try await send(peripheral: peripheral, data: value)
         
         try await disconnectBluetooth(peripheral: peripheral)
+        
+//        appStore.dispatch(onMain: ToastActions.dissmissToast())
     }
     
 }
@@ -109,16 +113,15 @@ extension BluetoothHandler {
         }
     }
     
-    
-    
     fileprivate func prepareBluetooth() {
         AsyncBluetoothLogging.isEnabled = false
         
         centralManager.eventPublisher
-            .sink {
-                self.showToastForCentralManagerEvent(state: $0)
+            .sink { [weak self] in
+                self?.showToastForCentralManagerEvent(state: $0)
             }
             .store(in: &cancellables)
+        
     }
     
     fileprivate func startScanBluetooth() async throws {
@@ -183,17 +186,20 @@ extension BluetoothHandler {
         let uuid = try await peripheral.fetchWritableUUID()
         
         // FIXME: MTUサイズの取得で、関数で取得すると値が大きく、印刷で失敗する
-        // let mtuSize = peripheral.maximumWriteValueLength(for: .withResponse)
+//        let mtuSize = peripheral.maximumWriteValueLength(for: .withResponse)
+//        print("mtuSize: \(mtuSize)")
 
-        // MTUサイズの取得（値はヒューリスティックに決めた）
-        let mtuSize = 150
+        // MTUサイズの取得
+        // 値はヒューリスティックに決めた。180ぐらいまでOK、200はNGだったので、安全牌
+        let mtuSize = 160
         
         // MTUサイズ単位で分割して、送信する
         for chunk in data.chunk(size: mtuSize) {
             try await peripheral.writeValue(
                 chunk,
                 forCharacteristicWithUUID: uuid.characteristic,
-                ofServiceWithUUID: uuid.service
+                ofServiceWithUUID: uuid.service,
+                type: .withResponse
             )
         }
     }

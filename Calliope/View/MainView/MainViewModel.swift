@@ -82,14 +82,14 @@ extension MainViewModel {
         )
         commonds.append(commond1)
         
-        if let image = UIImage(named: "himawari.jpg") {
+        if let image = UIImage(named: "himawari2.jpg") {
             let commond2 = SampleCommond(
                 title: "画像の印刷",
                 jobs: [
                     .text(text: "ひまわり"),
                     .feed(count: 1),
                     .image(image: image, imageWidth: .width58),
-                    .feed(count: 1)
+                    .feed(count: 3)
                 ]
             )
             commonds.append(commond2)
