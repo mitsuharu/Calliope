@@ -45,8 +45,8 @@ class BuildViewModel: ObservableObject {
         let jobs: [Print.Job] = items.compactMap { item in
             if case .text(let object) = item.object, let text = object {
                 return Print.Job.text(text: text, size: .normal, style: .normal)
-            } else if case .image(let object) = item.object, let image = object {
-                return Print.Job.image(image: image, imageWidth: .width58)
+            } else if case .image(let object) = item.object, let object = object {
+                return Print.Job.makeJobImage(image: object, imageWidth: .width58)
             }
             return nil
         }

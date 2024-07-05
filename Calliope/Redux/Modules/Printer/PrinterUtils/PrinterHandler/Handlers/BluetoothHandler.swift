@@ -187,7 +187,7 @@ extension BluetoothHandler {
 
         // MTUサイズの取得
         // 値はヒューリスティックに決めた。180ぐらいまでOK、200はNGだったので、安全牌
-        let mtuSize = 160
+        let mtuSize = 180
         
         // MTUサイズ単位で分割して、送信する
         for chunk in data.chunk(size: mtuSize) {

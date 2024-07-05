@@ -97,9 +97,11 @@ enum SunmiEscPosCommond: EscPosCommondProtocol {
         let height: Int = Int((image.size.height / image.size.width) * CGFloat(width))
         let targetSize = CGSize(width: width, height: height)
         
-        guard let bitmap = image.convertOneBitBitmap(size: targetSize) else {
+        // 二値画像 -> convertBinaryOneBitBitmap
+        // グレイスケール風（ディザー画像） -> convertDitherOneBitBitmap
+        guard let bitmap = image.convertDitherOneBitBitmap(size: targetSize) else {
             return Data()
-        }
+        }        
         
         var data = Data()
         data.append(contentsOf: [0x1D, 0x76, 0x30])

@@ -86,7 +86,7 @@ extension Print.Job: Codable {
         case style
         case count
         case data
-        case image
+        case imageURL
         case imageWidth
     }
     
@@ -129,12 +129,9 @@ extension Print.Job: Codable {
             let data = try container.decode(Data.self, forKey: .data)
             self = .rawCommond(data: data)
         case .image:
-            let imageData = try container.decode(Data.self, forKey: .image)
-            guard let image = UIImage(data: imageData) else {
-                throw DecodingError.dataCorruptedError(forKey: .image, in: container, debugDescription: "Invalid image data")
-            }
+            let imageURL = try container.decode(String.self, forKey: .imageURL)
             let imageWidth = try container.decode(ImageWidth.self, forKey: .imageWidth)
-            self = .image(image: image, imageWidth: imageWidth)
+            self = .image(imageURL: URL(string: imageURL)!, imageWidth: imageWidth)
         }
     }
     
@@ -164,12 +161,9 @@ extension Print.Job: Codable {
         case .rawCommond(let data):
             try container.encode(JobType.rawCommond, forKey: .type)
             try container.encode(data, forKey: .data)
-        case .image(let image, let imageWidth):
+        case .image(let imageURL, let imageWidth):
             try container.encode(JobType.image, forKey: .type)
-            guard let imageData = image.pngData() else {
-                throw EncodingError.invalidValue(image, EncodingError.Context(codingPath: container.codingPath, debugDescription: "Invalid image data"))
-            }
-            try container.encode(imageData, forKey: .image)
+            try container.encode(imageURL.absoluteString, forKey: .imageURL)
             try container.encode(imageWidth, forKey: .imageWidth)
         }
     }

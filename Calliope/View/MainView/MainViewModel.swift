@@ -41,7 +41,10 @@ final class MainViewModel: ObservableObject, StoreSubscriber {
         Task { @MainActor in
             self.name = state.name
             self.uuid = state.uuid
-            self.buildJobs = state.buildJobs
+            
+            if self.buildJobs != state.buildJobs {
+                self.buildJobs = state.buildJobs
+            }
         }
     }
     
@@ -82,13 +85,16 @@ extension MainViewModel {
         )
         commonds.append(commond1)
         
-        if let image = UIImage(named: "himawari2.jpg") {
+        if 
+            let image = UIImage(named: "himawari2.jpg"),
+            let imageJob = Print.Job.makeJobImage(image: image, imageWidth: .width58, filename: "himawari")
+        {
             let commond2 = SampleCommond(
                 title: "画像の印刷",
                 jobs: [
                     .text(text: "ひまわり"),
                     .feed(count: 1),
-                    .image(image: image, imageWidth: .width58),
+                    imageJob,
                     .feed(count: 1)
                 ]
             )

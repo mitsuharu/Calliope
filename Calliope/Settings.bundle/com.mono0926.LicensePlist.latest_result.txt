@@ -1,0 +1,11 @@
+name: AlertToast, nameSpecified: alerttoast, owner: elai950, version: 1.3.9, source: https://github.com/elai950/AlertToast
+
+name: AsyncBluetooth, nameSpecified: asyncbluetooth, owner: manolofdez, version: 1.11.0, source: https://github.com/manolofdez/AsyncBluetooth
+
+name: ReSwift, nameSpecified: reswift, owner: ReSwift, version: 6.1.1, source: https://github.com/ReSwift/ReSwift
+
+name: ReSwift-Saga, nameSpecified: reswift-saga, owner: mitsuharu, version: 0.0.5, source: https://github.com/mitsuharu/ReSwift-Saga
+
+add-version-numbers: false
+
+LicensePlist Version: 3.21.1

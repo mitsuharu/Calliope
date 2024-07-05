@@ -101,8 +101,9 @@ enum EpsonEscPosCommond: EscPosCommondProtocol {
         let height: Int = Int((image.size.height / image.size.width) * CGFloat(width))
         let size = CGSize(width: width, height: height)
                         
-        guard let bitmap = image.convertOneBitBitmap(size: size) else {
-            print("Error converting image")
+        // 二値画像 -> convertBinaryOneBitBitmap
+        // グレイスケール風（ディザー画像） -> convertDitherOneBitBitmap
+        guard let bitmap = image.convertDitherOneBitBitmap(size: size) else {
             return Data()
         }
         

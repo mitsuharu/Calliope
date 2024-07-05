@@ -14,7 +14,7 @@ struct LoadingModifier: ViewModifier {
  
     func body(content: Content) -> some View {
         content
-            .toast(isPresenting: $viewModel.showToast, duration: 0, tapToDismiss: true) {
+            .toast(isPresenting: $viewModel.showToast, duration: 0, tapToDismiss: false) {
                 let style = AlertToast.AlertStyle.style(
                     backgroundColor: .gray,
                     titleColor: .white,
