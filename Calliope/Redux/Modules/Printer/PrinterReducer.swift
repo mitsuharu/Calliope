@@ -44,6 +44,9 @@ func printerReducer(action: PrinterAction, state: PrinterState) -> PrinterState 
         if let index = nextBuildJobs.firstIndex(where: { job in
             job.id == action.buildJob.id
         }) {
+            nextBuildJobs[index].jobs.forEach {
+                $0.delete()
+            }
             nextBuildJobs.remove(at: index)
         }
         return PrinterState(

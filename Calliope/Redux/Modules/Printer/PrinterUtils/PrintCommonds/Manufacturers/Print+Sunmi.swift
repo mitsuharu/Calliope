@@ -45,7 +45,10 @@ extension Print.Job {
             case .qrCode(let text):
                 return SunmiEscPosCommond.qrCode(text: text)
             case .image(let image, let imageWidth):
-                return SunmiEscPosCommond.image(image:image, imageWidth: imageWidth.rawValue)
+                if let image = self.image() {
+                    return SunmiEscPosCommond.image(image:image, imageWidth: imageWidth.rawValue)
+                }
+                return Data()
             }
         }
     }

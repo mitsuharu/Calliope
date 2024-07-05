@@ -10,6 +10,16 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var router = NavigationRouter.shared
     
+    private func navigateAppSettings() {
+        if 
+            let url = URL(string: UIApplication.openSettingsURLString),
+            UIApplication.shared.canOpenURL(url) 
+        {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    
     var body: some View {
         NavigationStack(path: $router.items) {
             MainView()
@@ -18,7 +28,7 @@ struct ContentView: View {
                 .toolbar{
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button(action: {
-                            router.navigate(.license)
+                            navigateAppSettings()
                         }) {
                             Image(systemName: "gearshape")
                         }
@@ -32,9 +42,9 @@ struct ContentView: View {
                     }
                 }
                 .modifier(NavigationModifier())
-                .modifier(ToastModifier())
-                .modifier(LoadingModifier())
         }
+        .modifier(ToastModifier())
+        .modifier(LoadingModifier())
         .environmentObject(router)
     }
 }

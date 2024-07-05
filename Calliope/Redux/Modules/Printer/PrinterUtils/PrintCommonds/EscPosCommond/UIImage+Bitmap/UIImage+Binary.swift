@@ -1,28 +1,15 @@
 //
-//  UIImage+OneBitBitmap.swift
+//  UIImage+Binary.swift
 //  Calliope
 //
-//  Created by Mitsuharu Emoto on 2024/06/02.
+//  Created by Mitsuharu Emoto on 2024/07/05.
 //
 
 import Foundation
 
 extension UIImage {
-        
-    struct OneBitBitmap {
-        let data: [UInt8]
-        let width: Int
-        let height: Int
-    }
     
-    func resized(size: CGSize) -> UIImage {
-        let renderer = UIGraphicsImageRenderer(size: size)
-        return renderer.image {
-            _ in draw(in: CGRect(origin: .zero, size: size))
-        }
-    }
-    
-    func convertOneBitBitmap(size: CGSize) -> OneBitBitmap? {
+    func convertBinaryOneBitBitmap(size: CGSize) -> OneBitBitmap? {
         
         // 幅を8倍に調整する
         let width = Int(ceil(Double(size.width) / 8.0) * 8.0)
@@ -51,7 +38,7 @@ extension UIImage {
             return nil
         }
         
-        context.draw(cgImage, 
+        context.draw(cgImage,
                      in: CGRect(x: 0, y: 0, width: width, height: height))
         
         guard let rawData = rawData else { return nil }
@@ -90,5 +77,5 @@ extension UIImage {
         return result
     }
     
-}
     
+}
