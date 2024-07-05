@@ -60,7 +60,6 @@
 		9B540CF02C2FE52F001CEE8B /* BuildItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CEF2C2FE52F001CEE8B /* BuildItem.swift */; };
 		9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF12C2FE551001CEE8B /* AddBuildItemView.swift */; };
 		9B540CF62C2FE5A6001CEE8B /* BuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540CF52C2FE5A6001CEE8B /* BuildViewModel.swift */; };
-		9B540D0D2C3113EE001CEE8B /* LicenseList in Frameworks */ = {isa = PBXBuildFile; productRef = 9B540D0C2C3113EE001CEE8B /* LicenseList */; };
 		9B540D152C312529001CEE8B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D142C312529001CEE8B /* PrivacyInfo.xcprivacy */; };
 		9B540D192C31332A001CEE8B /* libepos2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B540D182C31332A001CEE8B /* libepos2.xcframework */; };
 		9B540D1B2C313360001CEE8B /* libeposeasyselect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B540D1A2C313360001CEE8B /* libeposeasyselect.xcframework */; };
@@ -74,6 +73,7 @@
 		9B540D412C36D98F001CEE8B /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D3E2C36D98F001CEE8B /* LoadingViewModel.swift */; };
 		9B540D432C379DAB001CEE8B /* UIImage+Dither.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D422C379DAB001CEE8B /* UIImage+Dither.swift */; };
 		9B540D4B2C37AAB0001CEE8B /* UIImage+Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D4A2C37AAB0001CEE8B /* UIImage+Binary.swift */; };
+		9B540D4D2C3801BE001CEE8B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D4C2C3801BE001CEE8B /* Settings.bundle */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
@@ -177,6 +177,7 @@
 		9B540D3E2C36D98F001CEE8B /* LoadingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		9B540D422C379DAB001CEE8B /* UIImage+Dither.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Dither.swift"; sourceTree = "<group>"; };
 		9B540D4A2C37AAB0001CEE8B /* UIImage+Binary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Binary.swift"; sourceTree = "<group>"; };
+		9B540D4C2C3801BE001CEE8B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
@@ -190,7 +191,6 @@
 			files = (
 				9B540D1B2C313360001CEE8B /* libeposeasyselect.xcframework in Frameworks */,
 				9B540D192C31332A001CEE8B /* libepos2.xcframework in Frameworks */,
-				9B540D0D2C3113EE001CEE8B /* LicenseList in Frameworks */,
 				9B3939F62BE73F3000EF6AED /* ReSwiftSaga in Frameworks */,
 				9B3939F92BE73F3C00EF6AED /* AsyncBluetooth in Frameworks */,
 				9B3939FC2BE73F4600EF6AED /* AlertToast in Frameworks */,
@@ -242,6 +242,7 @@
 		9B12BEEA2BD2706D0065DA76 /* Calliope */ = {
 			isa = PBXGroup;
 			children = (
+				9B540D4C2C3801BE001CEE8B /* Settings.bundle */,
 				9B12BF212BD27BE80065DA76 /* Bridging-Header.h */,
 				9B12BEEB2BD2706D0065DA76 /* CalliopeApp.swift */,
 				9B12BEED2BD2706D0065DA76 /* ContentView.swift */,
@@ -537,6 +538,7 @@
 				9B12BEE52BD2706D0065DA76 /* Frameworks */,
 				9B12BEE62BD2706D0065DA76 /* Resources */,
 				9B12BFD52BE51D090065DA76 /* Embed Frameworks */,
+				9B540D4E2C380242001CEE8B /* Run Script for license-plist */,
 			);
 			buildRules = (
 			);
@@ -548,7 +550,6 @@
 				9B3939F52BE73F3000EF6AED /* ReSwiftSaga */,
 				9B3939F82BE73F3C00EF6AED /* AsyncBluetooth */,
 				9B3939FB2BE73F4600EF6AED /* AlertToast */,
-				9B540D0C2C3113EE001CEE8B /* LicenseList */,
 			);
 			productName = Calliope;
 			productReference = 9B12BEE82BD2706D0065DA76 /* Calliope.app */;
@@ -628,7 +629,6 @@
 				9B3939F42BE73F3000EF6AED /* XCRemoteSwiftPackageReference "ReSwift-Saga" */,
 				9B3939F72BE73F3C00EF6AED /* XCRemoteSwiftPackageReference "AsyncBluetooth" */,
 				9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */,
-				9B540D0B2C3113EE001CEE8B /* XCRemoteSwiftPackageReference "LicenseList" */,
 			);
 			productRefGroup = 9B12BEE92BD2706D0065DA76 /* Products */;
 			projectDirPath = "";
@@ -646,6 +646,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B540D4D2C3801BE001CEE8B /* Settings.bundle in Resources */,
 				9B540D1E2C314BC6001CEE8B /* InfoPlist.xcstrings in Resources */,
 				9B12BEF32BD2706F0065DA76 /* Preview Assets.xcassets in Resources */,
 				9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */,
@@ -671,6 +672,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B540D4E2C380242001CEE8B /* Run Script for license-plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script for license-plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which license-plist > /dev/null; then\n  git diff --name-only | grep Package.resolved | while read filename; do\n    if [ $CONFIGURATION = \"Debug\" ]; then\n      cd $SRCROOT\n      license-plist --output-path $PRODUCT_NAME/Settings.bundle\n    fi\n  done\nelse\n  echo \"warning: license-plist not installed, download from https://github.com/mono0926/LicensePlist\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B12BEE42BD2706D0065DA76 /* Sources */ = {
@@ -1113,14 +1135,6 @@
 				minimumVersion = 1.3.9;
 			};
 		};
-		9B540D0B2C3113EE001CEE8B /* XCRemoteSwiftPackageReference "LicenseList" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/cybozu/LicenseList.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1143,11 +1157,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B3939FA2BE73F4600EF6AED /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
-		};
-		9B540D0C2C3113EE001CEE8B /* LicenseList */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9B540D0B2C3113EE001CEE8B /* XCRemoteSwiftPackageReference "LicenseList" */;
-			productName = LicenseList;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

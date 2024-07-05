@@ -15,6 +15,12 @@ extension UIImage {
         let height: Int
     }
     
+    func resized(width: CGFloat) -> UIImage {
+        let height: CGFloat = ((self.size.height / self.size.width) * CGFloat(width)).rounded()
+        let size = CGSize(width: width, height: height)
+        return self.resized(size: size)
+    }
+    
     func resized(size: CGSize) -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: size)
         return renderer.image {
