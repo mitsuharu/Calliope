@@ -72,6 +72,8 @@
 		9B540D3C2C36D8E5001CEE8B /* LoadingSaga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D392C36D8E4001CEE8B /* LoadingSaga.swift */; };
 		9B540D402C36D98F001CEE8B /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D3D2C36D98F001CEE8B /* LoadingModifier.swift */; };
 		9B540D412C36D98F001CEE8B /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D3E2C36D98F001CEE8B /* LoadingViewModel.swift */; };
+		9B540D432C379DAB001CEE8B /* UIImage+Dither.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D422C379DAB001CEE8B /* UIImage+Dither.swift */; };
+		9B540D4B2C37AAB0001CEE8B /* UIImage+Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D4A2C37AAB0001CEE8B /* UIImage+Binary.swift */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
@@ -173,6 +175,8 @@
 		9B540D392C36D8E4001CEE8B /* LoadingSaga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingSaga.swift; sourceTree = "<group>"; };
 		9B540D3D2C36D98F001CEE8B /* LoadingModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
 		9B540D3E2C36D98F001CEE8B /* LoadingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		9B540D422C379DAB001CEE8B /* UIImage+Dither.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Dither.swift"; sourceTree = "<group>"; };
+		9B540D4A2C37AAB0001CEE8B /* UIImage+Binary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Binary.swift"; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
@@ -483,6 +487,16 @@
 			path = LoadingModifier;
 			sourceTree = "<group>";
 		};
+		9B540D492C37AA8A001CEE8B /* UIImage+Bitmap */ = {
+			isa = PBXGroup;
+			children = (
+				9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */,
+				9B540D4A2C37AAB0001CEE8B /* UIImage+Binary.swift */,
+				9B540D422C379DAB001CEE8B /* UIImage+Dither.swift */,
+			);
+			path = "UIImage+Bitmap";
+			sourceTree = "<group>";
+		};
 		9B853D522BE8901800ED1CE0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,10 +509,10 @@
 		9B9DD9E52C0C34A600B5022A /* EscPosCommond */ = {
 			isa = PBXGroup;
 			children = (
+				9B540D492C37AA8A001CEE8B /* UIImage+Bitmap */,
 				9B3939FE2BE750B900EF6AED /* EscPosCommondProtocol.swift */,
 				9B9DD9E32C0C2EFF00B5022A /* EpsonEscPosCommond.swift */,
 				9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */,
-				9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */,
 			);
 			path = EscPosCommond;
 			sourceTree = "<group>";
@@ -674,6 +688,7 @@
 				9B12BFE02BE522F90065DA76 /* PrinterSaga.swift in Sources */,
 				9B12BFCA2BE5130A0065DA76 /* NavigationRouter.swift in Sources */,
 				9B12BFE62BE536C40065DA76 /* MainViewModel.swift in Sources */,
+				9B540D4B2C37AAB0001CEE8B /* UIImage+Binary.swift in Sources */,
 				9B3939E62BE628F400EF6AED /* BluetoothHandler.swift in Sources */,
 				9B540CE82C2FB3CF001CEE8B /* BuildItemCell.swift in Sources */,
 				9B540D402C36D98F001CEE8B /* LoadingModifier.swift in Sources */,
@@ -692,6 +707,7 @@
 				9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */,
 				9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */,
 				9B396DA32C26C5C0002263FF /* ListCell.swift in Sources */,
+				9B540D432C379DAB001CEE8B /* UIImage+Dither.swift in Sources */,
 				9B540CE52C2FACD1001CEE8B /* PlainCell.swift in Sources */,
 				9B12BFCC2BE51A090065DA76 /* NavigationModifier.swift in Sources */,
 				9B540D3C2C36D8E5001CEE8B /* LoadingSaga.swift in Sources */,
