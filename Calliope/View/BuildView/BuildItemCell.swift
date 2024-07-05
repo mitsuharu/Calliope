@@ -78,6 +78,7 @@ extension BuildItemCell {
                     Spacer()
                 }
             }
+            .modifier(EndEditingModifier())
         }
     }
     
@@ -112,6 +113,7 @@ extension BuildItemCell {
                 },
                 accessory: nil,
                 action: {
+                    UIApplication.shared.endEditing()
                     showImagePicker.toggle()
                 },
                 deleteSwipeAction: nil

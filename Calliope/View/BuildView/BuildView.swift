@@ -25,6 +25,7 @@ struct BuildView: View {
             if !viewModel.items.isEmpty {
                 Section {
                     TextField("印刷コマンドの名前の入力してください", text: $viewModel.title)
+                        .modifier(EndEditingModifier())
                 } header: {
                     Text("印刷コマンドの名前（任意）")
                 }
@@ -47,6 +48,7 @@ struct BuildView: View {
             Section {
                 if !viewModel.items.isEmpty {
                     ListCell(title: String(localized: "save")) {
+                        UIApplication.shared.endEditing()
                         viewModel.save()
                         NavigationRouter.shared.goBack()
                     }
@@ -67,7 +69,8 @@ struct BuildView: View {
         }
         .sheet(isPresented: $showAddBuildItemView) {
             AddBuildItemView()
-        }.environmentObject(viewModel)
+        }
+        .environmentObject(viewModel)
     }
 
     private func move(from source: IndexSet, to destination: Int) {
