@@ -79,6 +79,7 @@
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
 		9B9DD9E42C0C2EFF00B5022A /* EpsonEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E32C0C2EFF00B5022A /* EpsonEscPosCommond.swift */; };
+		9BF062452C389D360048E2A5 /* MainViewModel+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF062442C389D360048E2A5 /* MainViewModel+Sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +185,7 @@
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
 		9B9DD9E32C0C2EFF00B5022A /* EpsonEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpsonEscPosCommond.swift; sourceTree = "<group>"; };
+		9BF062442C389D360048E2A5 /* MainViewModel+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewModel+Sample.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 			children = (
 				9B12BFC32BE50CE50065DA76 /* MainView.swift */,
 				9B12BFE52BE536C40065DA76 /* MainViewModel.swift */,
+				9BF062442C389D360048E2A5 /* MainViewModel+Sample.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				9B540CE02C2F8745001CEE8B /* BuildView.swift in Sources */,
 				9B12BFB32BE509330065DA76 /* AppReducer.swift in Sources */,
 				9B12BFC42BE50CE50065DA76 /* MainView.swift in Sources */,
+				9BF062452C389D360048E2A5 /* MainViewModel+Sample.swift in Sources */,
 				9B3939E72BE628F400EF6AED /* EpsonHandler.swift in Sources */,
 				9B12BFDC2BE522E10065DA76 /* PrinterAction.swift in Sources */,
 				9B3939FF2BE750B900EF6AED /* EscPosCommondProtocol.swift in Sources */,
@@ -925,7 +929,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Calliope/Preview Content\"";
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
@@ -963,7 +967,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Calliope/Preview Content\"";
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
