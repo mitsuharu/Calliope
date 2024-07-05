@@ -74,6 +74,7 @@
 		9B540D432C379DAB001CEE8B /* UIImage+Dither.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D422C379DAB001CEE8B /* UIImage+Dither.swift */; };
 		9B540D4B2C37AAB0001CEE8B /* UIImage+Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D4A2C37AAB0001CEE8B /* UIImage+Binary.swift */; };
 		9B540D4D2C3801BE001CEE8B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9B540D4C2C3801BE001CEE8B /* Settings.bundle */; };
+		9B540D532C382FC9001CEE8B /* EndEditingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B540D522C382FC9001CEE8B /* EndEditingModifier.swift */; };
 		9B853D542BE8903100ED1CE0 /* himawari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B853D532BE8903100ED1CE0 /* himawari.jpg */; };
 		9B9DD9E02C0BFEB000B5022A /* UIImage+OneBitBitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */; };
 		9B9DD9E22C0C1A8B00B5022A /* SunmiEscPosCommond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */; };
@@ -178,6 +179,7 @@
 		9B540D422C379DAB001CEE8B /* UIImage+Dither.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Dither.swift"; sourceTree = "<group>"; };
 		9B540D4A2C37AAB0001CEE8B /* UIImage+Binary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Binary.swift"; sourceTree = "<group>"; };
 		9B540D4C2C3801BE001CEE8B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		9B540D522C382FC9001CEE8B /* EndEditingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndEditingModifier.swift; sourceTree = "<group>"; };
 		9B853D532BE8903100ED1CE0 /* himawari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = himawari.jpg; sourceTree = "<group>"; };
 		9B9DD9DF2C0BFEB000B5022A /* UIImage+OneBitBitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OneBitBitmap.swift"; sourceTree = "<group>"; };
 		9B9DD9E12C0C1A8B00B5022A /* SunmiEscPosCommond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunmiEscPosCommond.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 		9B12BFBA2BE50B130065DA76 /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
+				9B540D512C382FBA001CEE8B /* EndEditingModifier */,
 				9B540D3F2C36D98F001CEE8B /* LoadingModifier */,
 				9B12BFB92BE50B130065DA76 /* ToastModifier */,
 			);
@@ -496,6 +499,14 @@
 				9B540D422C379DAB001CEE8B /* UIImage+Dither.swift */,
 			);
 			path = "UIImage+Bitmap";
+			sourceTree = "<group>";
+		};
+		9B540D512C382FBA001CEE8B /* EndEditingModifier */ = {
+			isa = PBXGroup;
+			children = (
+				9B540D522C382FC9001CEE8B /* EndEditingModifier.swift */,
+			);
+			path = EndEditingModifier;
 			sourceTree = "<group>";
 		};
 		9B853D522BE8901800ED1CE0 /* Resources */ = {
@@ -728,6 +739,7 @@
 				9B540D252C3155D0001CEE8B /* PrinterState+Codable.swift in Sources */,
 				9B540CF22C2FE551001CEE8B /* AddBuildItemView.swift in Sources */,
 				9B12BFBB2BE50B130065DA76 /* ToastModifier.swift in Sources */,
+				9B540D532C382FC9001CEE8B /* EndEditingModifier.swift in Sources */,
 				9B396DA32C26C5C0002263FF /* ListCell.swift in Sources */,
 				9B540D432C379DAB001CEE8B /* UIImage+Dither.swift in Sources */,
 				9B540CE52C2FACD1001CEE8B /* PlainCell.swift in Sources */,
@@ -913,7 +925,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Calliope/Preview Content\"";
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
@@ -951,7 +963,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Calliope/Preview Content\"";
 				DEVELOPMENT_TEAM = X2E52A945M;
 				ENABLE_PREVIEWS = YES;
