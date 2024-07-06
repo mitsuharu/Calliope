@@ -15,7 +15,7 @@ struct MainView: View {
             Section("選択されたサーマルプリンター") {
                 PrinterInfoCell(name: viewModel.name, uuid: viewModel.uuid)
             }
-            Section("プリセットされた印刷コマンド") {
+            Section("サンプル印刷コマンド") {
                 ForEach(viewModel.sampleCommonds, id: \.uuid) { item in
                     ListCell(title: item.title) {
                         viewModel.run(jobs: item.jobs)

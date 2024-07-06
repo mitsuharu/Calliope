@@ -49,7 +49,9 @@ class BuildViewModel: ObservableObject {
                 return Print.Job.makeJobImage(image: object, imageWidth: .width58)
             }
             return nil
-        }
+        }.map {
+            [$0, Print.Job.feed(count: 1)]
+        }.flatMap{ $0 }
         
         if jobs.isEmpty {
             appStore.dispatch(onMain: ToastActions.Show(
