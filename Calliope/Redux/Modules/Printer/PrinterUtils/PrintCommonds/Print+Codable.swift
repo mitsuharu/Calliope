@@ -129,9 +129,9 @@ extension Print.Job: Codable {
             let data = try container.decode(Data.self, forKey: .data)
             self = .rawCommond(data: data)
         case .image:
-            let imageURL = try container.decode(String.self, forKey: .imageURL)
+            let imageURL = try container.decode(URL.self, forKey: .imageURL)
             let imageWidth = try container.decode(ImageWidth.self, forKey: .imageWidth)
-            self = .image(imageURL: URL(string: imageURL)!, imageWidth: imageWidth)
+            self = .image(imageURL: imageURL, imageWidth: imageWidth)
         }
     }
     
@@ -163,7 +163,7 @@ extension Print.Job: Codable {
             try container.encode(data, forKey: .data)
         case .image(let imageURL, let imageWidth):
             try container.encode(JobType.image, forKey: .type)
-            try container.encode(imageURL.absoluteString, forKey: .imageURL)
+            try container.encode(imageURL, forKey: .imageURL)
             try container.encode(imageWidth, forKey: .imageWidth)
         }
     }
