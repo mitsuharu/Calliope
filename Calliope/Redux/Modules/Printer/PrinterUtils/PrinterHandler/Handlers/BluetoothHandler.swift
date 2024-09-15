@@ -265,15 +265,8 @@ extension Data {
      Data を size ごとに分割する
      */
     fileprivate func chunk(size: Int) -> [Data] {
-        let count = self.count
-        var chunks: [Data] = []
-        var offset = 0
-        while offset < count {
-            let chunkLength = Swift.min(size, count - offset)
-            let chunk = self.subdata(in: offset..<(offset + chunkLength))
-            chunks.append(chunk)
-            offset += chunkLength
+        stride(from: 0, to: self.count, by: size).map {
+            self.subdata(in: $0..<Swift.min($0 + size, self.count))
         }
-        return chunks
     }
 }
